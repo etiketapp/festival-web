@@ -1,2 +1,1 @@
-# etiketapp-web
 # festival-web

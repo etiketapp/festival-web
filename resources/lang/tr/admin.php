@@ -76,15 +76,6 @@ return [
         'title'             => 'Sözleşmeler',
         'new_update'        => 'Sözleşme Güncelle',
     ],
-    'clinical' => [
-        'title'                 => 'Klinik|Klinikler',
-        'new_create'            => 'Yeni Klinik Oluştur',
-        'new_update'            => 'Kliniği Güncelle',
-        'about'                 => 'Hakkında',
-        'gallery'               => 'Galeri',
-        'billing_information'   => 'Fatura Bilgileri',
-        'dietician'             => 'Diyetisyen',
-    ],
     'setting' => [
         'title'             => 'Ayar|Ayarlar',
         'new_update'        => 'Ayarları Güncelle',
@@ -99,4 +90,9 @@ return [
         'new_create'        => 'Ekle',
         'new_update'        => 'Güncelle',
     ],
+    'festival' => [
+        'title'             => 'Festival',
+        'new_create'        => 'Festival Ekle',
+        'new_update'        => 'Festivali Güncelle',
+    ]
 ];

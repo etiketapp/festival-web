@@ -14,14 +14,20 @@ class CreateFestivalsTable extends Migration
     public function up()
     {
         Schema::create('festivals', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title');
             $table->text('sub_title');
             $table->text('content');
             $table->text('place');
             $table->decimal('price');
             $table->text('about');
+            $table->date('date');
             $table->timestamps();
+
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')
+                ->on('categories')->onUpdate('cascade')->onDelete('cascade');
+
         });
     }
 

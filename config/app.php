@@ -174,6 +174,7 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Geocoder\Laravel\Providers\GeocoderService::class,
 
         /*
          * Application Service Providers...

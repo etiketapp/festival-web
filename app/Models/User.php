@@ -22,6 +22,8 @@ class User extends Authenticatable implements JWTSubject
         'email',
         'gender',
         'birth_date',
+
+        'location',
     ];
 
     /**
@@ -38,6 +40,14 @@ class User extends Authenticatable implements JWTSubject
         'deleted_at'
     ];
 
+    protected $geofields = [
+        'location',
+    ];
+
+    protected $distance = [
+        'distance',
+    ];
+
     //Cinsiyet
     const GENDER_MALE   = 'male';
     const GENDER_FEMALE = 'female';
@@ -47,6 +57,46 @@ class User extends Authenticatable implements JWTSubject
         self::GENDER_FEMALE,
     ];
 
+    /*
+    * ATTRIBUTE
+    */
+    public function getLocationAttribute($value)
+    {
+        if (!isset($this->attributes['location'])) {
+            return null;
+        }
+
+        $value = $this->attributes['location'];
+
+        // Coordinate Check
+        if (!preg_match('/POINT\((?<latitude>\-?\d+(\.\d+)?)[\s,](?<longitude>-?\d+(\.\d+)?)\)/', $value, $matches)) {
+            return null;
+        }
+
+        $location = new \stdClass();
+        $location->latitude = (float)$matches['latitude'];
+        $location->longitude = (float)$matches['longitude'];
+
+        return $location;
+    }
+
+    public function setLocationAttribute($value)
+    {
+        $this->attributes['location'] = DB::raw("POINT($value)");
+    }
+
+    public function getDistanceAttribute($value)
+    {
+        if (!isset($this->attributes['distance'])) {
+            return null;
+        }
+        return $this->attributes['distance'];
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');

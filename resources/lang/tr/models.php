@@ -147,5 +147,8 @@ return [
         'place'             => 'Festival Yeri',
         'price'             => 'Ücret',
         'about'             => 'Festival Hakkında',
-    ]
+    ],
+    'category'  =>  [
+        'title'             => 'Kategoriler',
+    ],
 ];

@@ -20,6 +20,7 @@ class FestivalController extends Controller
     {
         $data = [
             ['name' => 'id', 'data' => 'id', 'translate' => trans('models.common.id')],
+            ['name' => 'image', 'data' => 'image', 'translate' => trans('models.common.image')],
             ['name' => 'title', 'data' => 'title', 'translate' => trans($this->transPrefix . 'title')],
             ['name' => 'sub_title', 'data' => 'sub_title', 'translate' => trans($this->transPrefix . 'sub_title')],
             ['name' => 'cpntent', 'data' => 'content', 'translate' => trans($this->transPrefix . 'content')],
@@ -167,7 +168,7 @@ class FestivalController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions', 'title', 'sub_title', 'content', 'place', 'price'])
+            ->rawColumns(['actions', 'title', 'sub_title', 'content', 'place', 'price', 'image'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)
@@ -187,6 +188,10 @@ class FestivalController extends Controller
             })
             ->addColumn('price', function (Festival $model) {
                 return $model->price;
+            })
+            ->addColumn('image', function (Festival $model){
+                return view('admin.crud.datatable.image')
+                    ->with('image', $model->image);
             })
 
             ->make(true);

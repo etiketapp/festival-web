@@ -113,16 +113,6 @@ class AuthController extends Controller
             return response()->error('auth.social.invalid');
         }
 
-        // If already logged in before
-        $social = Social::whereProvider($provider)->whereProviderId($socialUser->getId())->first();
-        if ($social) {
-            // Update Token
-            $social->access_token = $token;
-            $social->save();
-
-            return response()->success($social->user->login());
-        }
-
         // If users email address already registered
         $user = User::where('email', $socialUser->getEmail())->first();
         if ($user) {
@@ -134,7 +124,17 @@ class AuthController extends Controller
             $social->user()->associate($user);
             $social->save();
 
-            return response()->success($user->login());
+            return response()->success(auth('api')->login($user));
+        }
+
+        // If already logged in before
+        $social = Social::whereProvider($provider)->whereProviderId($socialUser->getId())->first();
+        if ($social) {
+            // Update Token
+            $social->access_token = $token;
+            $social->save();
+
+            return response()->success(auth('api')->login($user));
         }
 
         // Check Required fields

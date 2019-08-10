@@ -94,5 +94,10 @@ return [
         'title'             => 'Festival',
         'new_create'        => 'Festival Ekle',
         'new_update'        => 'Festivali Güncelle',
+    ],
+    'category'  => [
+        'title'             => 'Kategoriler',
+        'new_create'        => 'Kategori Oluştur',
+        'new_update'        => 'Kategori GÜncelle',
     ]
 ];

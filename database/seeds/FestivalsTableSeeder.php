@@ -3,6 +3,7 @@
 use App\Models\Festival;
 use App\Models\User;
 use App\Models\Image;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class FestivalsTableSeeder extends Seeder
@@ -21,6 +22,8 @@ class FestivalsTableSeeder extends Seeder
             'place'         => 'Festival place',
             'price'         => 500.00,
             'about'         => 'Festival about',
+            'category_id'   => 3,
+            'date'          => Carbon::now(),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));
@@ -32,6 +35,8 @@ class FestivalsTableSeeder extends Seeder
             'place'         => 'Festival2 place',
             'price'         => 300.00,
             'about'         => 'Festival2 about',
+            'category_id'   => 2,
+            'date'          => Carbon::now(),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));
@@ -43,6 +48,8 @@ class FestivalsTableSeeder extends Seeder
             'place'         => 'Festival4 place',
             'about'         => 'Festival4 about',
             'price'         => 800.00,
+            'category_id'   => 1,
+            'date'          => Carbon::now(),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));

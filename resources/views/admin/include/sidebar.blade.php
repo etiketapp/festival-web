@@ -46,6 +46,16 @@
                     </span>
                 </a>
             </li>
+            <li class="m-menu__item {{ Helper::isActiveRoute(['category'])  }}" aria-haspopup="true">
+                <a href="{{ route('admin.category.index') }}" class="m-menu__link ">
+                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <span class="m-menu__link-title">
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text">{{ trans_choice('models.category.title', 2) }}</span>
+                        </span>
+                    </span>
+                </a>
+            </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['contract'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.contract.index') }}" class="m-menu__link ">
                     <i class="m-menu__link-icon flaticon-line-graph"></i>

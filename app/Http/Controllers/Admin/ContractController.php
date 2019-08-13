@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Contract;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ContractController extends Controller
 {
@@ -19,6 +23,7 @@ class ContractController extends Controller
         $data = [
             ['name' => 'id', 'data' => 'id', 'translate' => trans('models.common.id')],
             ['name' => 'title', 'data' => 'title', 'translate' => trans('models.contract.title')],
+            ['name' => 'actions', 'data' => 'actions', 'translate' => trans('models.common.actions')],
         ];
         $columns = json_encode($data);
 
@@ -46,6 +51,49 @@ class ContractController extends Controller
     }
 
     /**
+     * @param $id
+     * @return Factory|RedirectResponse|View
+     */
+    public function edit($id)
+    {
+        $model = Contract::query()->find($id);
+        if(!$model) {
+            return redirect()->route($this->routePrefix . 'index');
+        }
+
+        return view('admin.crud.edit')
+            ->with('model', $model);
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function update(Request $request, $id)
+    {
+        $model = Contract::query()->find($id);
+        if(!$model) {
+            return redirect()->route($this->routePrefix . 'index');
+        }
+
+        $model->fill($request->input());
+        $model->save();
+
+        return redirect()->route($this->routePrefix . 'index')
+            ->with('success', trans('messages.crud.update', ['title' => $this->title()]));
+    }
+
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function destroy($id)
+    {
+        return redirect()->route($this->routePrefix . 'index');
+    }
+
+    /**
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
@@ -59,7 +107,12 @@ class ContractController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['title'])
+            ->rawColumns(['actions', 'title'])
+            ->addColumn('actions', function ($model) {
+                return view('admin.crud.datatable.actions')
+                    ->with('routePrefix', $this->routePrefix)
+                    ->with('model', $model);
+            })
             ->addColumn('title', function (Contract $model) {
                 return $model->title;
             })

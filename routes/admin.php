@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     // Contract
     Route::get('contract/datatable', ['as' => 'contract.datatable', 'uses' => 'ContractController@datatable']);
-    Route::resource('contract', 'ContractController', ['only' => 'index', 'show']);
+    Route::resource('contract', 'ContractController');
 
     // Festival
     Route::get('festival/datatable', ['as' => 'festival.datatable', 'uses' => 'FestivalController@datatable']);

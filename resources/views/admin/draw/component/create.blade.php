@@ -19,21 +19,11 @@
 </div>
 <div class="form-group m-form__group row">
     <div class="col-lg-6 m-form__group-sub">
-        {!! Form::label('price', trans($transPrefix.'price'), ['class' => 'form-control-label']) !!}
-        {!! Form::number('price', null, ['class' => 'form-control m-input m-input--solid']) !!}
-    </div>
-    <div class="col-lg-6 m-form__group-sub">
-        {!! Form::label('place', trans($transPrefix.'place'), ['class' => 'form-control-label']) !!}
-        {!! Form::text('place',  null, ['class' => 'form-control m-input m-input--solid']) !!}
-    </div>
-</div>
-<div class="form-group m-form__group row">
-    <div class="col-lg-6 m-form__group-sub">
         {!! Form::label('content', trans($transPrefix.'content'), ['class' => 'form-control-label']) !!}
         {!! Form::textarea('content', null, ['class' => 'form-control m-input m-input--solid']) !!}
     </div>
     <div class="col-lg-6 m-form__group-sub">
-        {!! Form::label('about', trans($transPrefix.'about'), ['class' => 'form-control-label']) !!}
-        {!! Form::textarea('about',  null, ['class' => 'form-control m-input m-input--solid']) !!}
+        {!! Form::label('last_date', trans($transPrefix.'last_date'), ['class' => 'form-control-label']) !!}
+        {!! Form::text('last_date',  null, ['class' => 'form-control m-input m-input--solid date']) !!}
     </div>
 </div>

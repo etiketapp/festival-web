@@ -13,15 +13,14 @@ Route::post('auth/forgot', ['as' => 'auth.forgot', 'uses' => 'AuthController@for
 Route::get('contract', ['as' => 'contract.index', 'uses' => 'ContractController@index']);
 Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractController@show']);
 
-Route::resource('sale', 'SaleController');
-
 Route::group(['middleware' => 'auth:api'], function () {
     // User
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
     Route::resource('user', 'UserController', ['only' => ['show', 'update']]);
 
-    // Messages
-    Route::post('messages/post/{id}', ['as' => 'messages.post.{id}', 'uses' => 'MessageController@store']);
-    Route::resource('messages', 'MessageController', ['only' => 'index', 'show', 'destroy']);
+    // Categories
+    Route::get('category', ['as' => 'category.index', 'uses' => 'CategoryController@index']);
 
+    // Festival
+    Route::get('festival', ['as' => 'festival.index', 'uses' => 'FestivalController@index']);
 });

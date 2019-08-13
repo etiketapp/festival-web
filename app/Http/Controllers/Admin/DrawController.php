@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Draw;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class DrawController extends Controller
@@ -19,6 +20,7 @@ class DrawController extends Controller
     {
         $data = [
             ['name' => 'id', 'data' => 'id', 'translate' => trans('models.common.id')],
+            ['name' => 'image', 'data' => 'image', 'translate' => trans('models.common.image')],
             ['name' => 'title', 'data' => 'title', 'translate' => trans($this->transPrefix . 'title')],
             ['name' => 'sub_title', 'data' => 'sub_title', 'translate' => trans($this->transPrefix . 'sub_title')],
             ['name' => 'last_date', 'data' => 'last_date', 'translate' => trans($this->transPrefix . 'last_date')],
@@ -49,7 +51,21 @@ class DrawController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Draw($request->input());
+        $model->save();
+
+        if($request->hasFile('image')) {
+            $model->image()->delete();
+
+            $model->image()->save(new Image([
+                'image' => $request->file('image')
+            ]));
+        }
+
+        $model->save();
+
+        return redirect()->route($this->routePrefix .'index')
+            ->with('success', trans('messages.crud.store', ['title' => $this->title()]));
     }
 
     /**
@@ -64,6 +80,9 @@ class DrawController extends Controller
         if(!$model) {
             return redirect()->route($this->routePrefix . 'index');
         }
+
+        return view('admin.crud.show')
+            ->with('model', $model);
     }
 
     /**
@@ -92,7 +111,24 @@ class DrawController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = Draw::query()->find($id);
+        if(!$model) {
+            return redirect()->route($this->routePrefix . 'index');
+        }
+
+        $model->fill($request->input());
+        $model->save();
+
+        if($request->hasFile('image')) {
+            $model->image()->delete();
+
+            $model->image()->save(new Image([
+                'image' => $request->file('image')
+            ]));
+        }
+
+        return redirect()->route($this->routePrefix . 'index')
+            ->with('success', trans('messages.crud.update', ['title' => $this->title()]));
     }
 
     /**
@@ -129,7 +165,7 @@ class DrawController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions', 'title', 'sub_title', 'last_date'])
+            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'image'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)
@@ -143,6 +179,10 @@ class DrawController extends Controller
             })
             ->addColumn('last_date', function (Draw $model) {
                 return $model->last_date;
+            })
+            ->addColumn('image', function ($model) {
+                return view('admin.crud.datatable.image')
+                    ->with('image', $model->image);
             })
             ->make(true);
     }

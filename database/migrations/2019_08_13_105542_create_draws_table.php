@@ -19,10 +19,7 @@ class CreateDrawsTable extends Migration
             $table->string('sub_title');
             $table->text('content');
             $table->date('last_date');
-
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')
-                ->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

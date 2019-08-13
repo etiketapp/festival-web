@@ -11,14 +11,15 @@ class Draw extends Model
         'sub_title',
         'content',
         'last_date',
+        'is_active',
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function user()
+    public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'draw_users')->withPivot('id', 'join');
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Symfony\Component\HttpKernel\Tests\DependencyInjection\ArgumentWithoutTypeController;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -140,6 +141,11 @@ class User extends Authenticatable implements JWTSubject
     public function received()
     {
         return $this->hasMany(Message::class, 'receiver_id');
+    }
+
+    public function draws()
+    {
+        return $this->belongsToMany(Draw::class, 'draws')->withPivot('join');
     }
 
     /**

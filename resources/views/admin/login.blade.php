@@ -19,7 +19,7 @@
             <div class="m-login__container">
                 <div class="m-login__logo">
                     <a href="#">
-                        <img src="/backend/assets/app/media/img/logo/logo.png" style="max-width: 225px;">
+                        <img src="/backend/assets/app/media/img/logo/festival.png" style="max-width: 325px;">
                     </a>
                 </div>
                     <div class="m-login__head">

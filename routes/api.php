@@ -20,14 +20,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
     Route::resource('user', 'UserController', ['only' => ['show', 'update']]);
 
-    // Wanted
-//    Route::post('wanted/post', ['as' => 'wanted.post', 'uses' => 'WantedController@store']);
-    Route::resource('wanted', 'WantedController');
-
-    // Sale
-//    Route::post('sale/post', ['as' => 'sale.post', 'uses' => 'SaleController@store']);
-    Route::resource('sale', 'SaleController');
-
     // Messages
     Route::post('messages/post/{id}', ['as' => 'messages.post.{id}', 'uses' => 'MessageController@store']);
     Route::resource('messages', 'MessageController', ['only' => 'index', 'show', 'destroy']);

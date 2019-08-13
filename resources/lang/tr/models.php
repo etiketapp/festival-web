@@ -151,4 +151,10 @@ return [
     'category'  =>  [
         'title'             => 'Kategoriler',
     ],
+    'draw'      => [
+        'title'         => 'Çekiliş',
+        'sub_title'     => 'Alt Başlık',
+        'content'       => 'Çekiliş İçeriği',
+        'last_date'     => 'Son Katılım Tarihi',
+    ]
 ];

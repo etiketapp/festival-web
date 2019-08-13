@@ -27,7 +27,11 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('festival/datatable', ['as' => 'festival.datatable', 'uses' => 'FestivalController@datatable']);
     Route::resource('festival', 'FestivalController');
 
-    // Festival
+    // Category
     Route::get('category/datatable', ['as' => 'category.datatable', 'uses' => 'CategoryController@datatable']);
     Route::resource('category', 'CategoryController');
+
+    // Draw
+    Route::get('draw/datatable', ['as' => 'draw.datatable', 'uses' => 'DrawController@datatable']);
+    Route::resource('draw', 'DrawController');
 });

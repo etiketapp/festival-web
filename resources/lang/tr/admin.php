@@ -99,5 +99,10 @@ return [
         'title'             => 'Kategoriler',
         'new_create'        => 'Kategori Oluştur',
         'new_update'        => 'Kategori GÜncelle',
-    ]
+    ],
+    'draw'      => [
+        'title'             => 'Çekilişler',
+        'new_create'        => 'Çekiliş Oluştur',
+        'new_update'        => 'Çekilişi Güncelle',
+    ],
 ];

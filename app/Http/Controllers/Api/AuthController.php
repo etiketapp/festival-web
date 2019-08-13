@@ -47,7 +47,7 @@ class AuthController extends Controller
      * @param RegisterRequest $request
      * @return mixed
      */
-    public function register(RegisterRequest $request)
+    public function register(Request $request)
     {
         $user = new User($request->input());
         $user->password = $request->input('password');

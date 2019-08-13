@@ -13,6 +13,9 @@ Route::post('auth/forgot', ['as' => 'auth.forgot', 'uses' => 'AuthController@for
 Route::get('contract', ['as' => 'contract.index', 'uses' => 'ContractController@index']);
 Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractController@show']);
 
+Route::get('messages', ['as' => 'messages.index', 'uses' => 'MessageController@index']);
+
+
 Route::group(['middleware' => 'auth:api'], function () {
     // User
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
@@ -23,4 +26,6 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     // Festival
     Route::get('festival', ['as' => 'festival.index', 'uses' => 'FestivalController@index']);
+
+    // Messages
 });

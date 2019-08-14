@@ -11,6 +11,11 @@ class Conversation extends Model
         'user_two',
     ];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function user()
     {
         return $this->belongsToMany(User::class);

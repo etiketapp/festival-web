@@ -98,6 +98,8 @@ class DrawController extends Controller
             return redirect()->route($this->routePrefix . 'index');
         }
 
+
+
         return view('admin.crud.edit')
             ->with('model', $model);
     }
@@ -178,7 +180,7 @@ class DrawController extends Controller
                 return $model->sub_title;
             })
             ->addColumn('last_date', function (Draw $model) {
-                return $model->last_date;
+                return $model->last_join_at;
             })
             ->addColumn('image', function ($model) {
                 return view('admin.crud.datatable.image')

@@ -16,15 +16,14 @@ class CreateDrawUsersTable extends Migration
         Schema::create('draw_users', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('join')->default(null);
 
             $table->unsignedInteger('draw_id');
-            $table->foreign('draw_id')->references('id')->on('draws')
-                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('draw_id')->references('id')
+                ->on('draws')->onUpdate('cascade')->onDelete('cascade');
 
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

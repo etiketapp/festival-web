@@ -17,9 +17,7 @@ class CreateDrawsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('sub_title');
-            $table->text('content');
             $table->date('last_date');
-            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

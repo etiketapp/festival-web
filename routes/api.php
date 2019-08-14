@@ -14,10 +14,6 @@ Route::get('contract', ['as' => 'contract.index', 'uses' => 'ContractController@
 Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractController@show']);
 
 
-// Message
-Route::get('message/{user}', ['as' => 'message.{user}.index', 'uses' => 'MessageController@index']);
-Route::post('message/{user}/send', ['as' => 'message.{user}.send', 'uses' => 'MessageController@sendMessage']);
-
 Route::group(['middleware' => 'auth:api'], function () {
     // User
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
@@ -33,5 +29,12 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('festival/comment', ['as' => 'festival.comment', 'uses' => 'FestivalController@comment']);
     Route::get('festival/comment/count', ['as' => 'festival.comment.count', 'uses' => 'FestivalController@commentCount']);
 
+    // Message
+    Route::get('message/{user}', ['as' => 'message.{user}.index', 'uses' => 'MessageController@index']);
+    Route::post('message/{user}/send', ['as' => 'message.{user}.send', 'uses' => 'MessageController@sendMessage']);
 
+    // Draw
+    Route::get('draw/{drawId}/join', ['as' => 'draw.{drawId}.join', 'uses' => 'DrawController@joinDraw']);
+    Route::get('draw/{drawId}/disjoin', ['as' => 'draw.{drawId}.disjoin', 'uses' => 'DrawController@disJoinDraw']);
+    Route::get('draw/{drawId}/users', ['as' => 'draw.{drawId}.users', 'uses' => 'DrawController@users']);
 });

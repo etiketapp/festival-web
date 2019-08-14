@@ -11,13 +11,15 @@ class Conversation extends Model
         'user_two',
     ];
 
-    protected $dates = [
+    protected $hidden = [
         'created_at',
-        'updated_at',
+        'deleted_at',
     ];
 
-    public function user()
-    {
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function user() {
         return $this->belongsToMany(User::class);
     }
 }

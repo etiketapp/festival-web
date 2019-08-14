@@ -13,8 +13,10 @@ Route::post('auth/forgot', ['as' => 'auth.forgot', 'uses' => 'AuthController@for
 Route::get('contract', ['as' => 'contract.index', 'uses' => 'ContractController@index']);
 Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractController@show']);
 
-Route::get('messages', ['as' => 'messages.index', 'uses' => 'MessageController@index']);
 
+// Message
+Route::get('message/{user}', ['as' => 'message.{user}.index', 'uses' => 'MessageController@index']);
+Route::post('message/{user}/send', ['as' => 'message.{user}.send', 'uses' => 'MessageController@sendMessage']);
 
 Route::group(['middleware' => 'auth:api'], function () {
     // User
@@ -30,5 +32,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('festival/like/count', ['as' => 'festival.like.count', 'uses' => 'FestivalController@likeCount']);
     Route::get('festival/comment', ['as' => 'festival.comment', 'uses' => 'FestivalController@comment']);
     Route::get('festival/comment/count', ['as' => 'festival.comment.count', 'uses' => 'FestivalController@commentCount']);
+
 
 });

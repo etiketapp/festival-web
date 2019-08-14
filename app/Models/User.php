@@ -114,38 +114,6 @@ class User extends Authenticatable implements JWTSubject
     /**
      * @return HasMany
      */
-    public function wanteds()
-    {
-        return $this->hasMany(Wanted::class);
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function sales()
-    {
-        return $this->hasMany(Sale::class);
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function sent()
-    {
-        return $this->hasMany(Message::class, 'sender_id');
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function received()
-    {
-        return $this->hasMany(Message::class, 'receiver_id');
-    }
-
-    /**
-     * @return HasMany
-     */
     public function likes()
     {
         return $this->hasMany(Like::class);
@@ -162,6 +130,11 @@ class User extends Authenticatable implements JWTSubject
     public function draws()
     {
         return $this->belongsToMany(Draw::class, 'draws')->withPivot('join');
+    }
+
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
     }
 
     /**

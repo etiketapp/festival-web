@@ -9,25 +9,26 @@ class Message extends Model
     protected $fillable = [
         'message',
 
-        'deleted_from_sender',
-        'deleted_from_receiver',
         'user_id',
         'conversation_id',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'deleted_at',
+    ];
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function conversation()
-    {
-        return $this->belongsToMany(Conversation::class);
+    public function user() {
+        return $this->belongsToMany('App\User');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function user()
-    {
-        return $this->belongsToMany(User::class);
+    public function conversation() {
+        return $this->belongsToMany('App\Conversation');
     }
 }

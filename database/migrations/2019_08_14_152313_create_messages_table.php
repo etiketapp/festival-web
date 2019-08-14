@@ -15,14 +15,16 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('message')->comment('Message Text');
-            $table->boolean('deleted_from_sender')->default(0);
-            $table->boolean('deleted_from_receiver')->default(0);
-            $table->integer('user_id')->unsigned()->index()->comment('Sender ID');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('conversation_id')->unsigned()->index()->comment('Conversation ID');
-            $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
+            $table->text('message');
             $table->timestamps();
+
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->unsignedInteger('conversation_id');
+            $table->foreign('conversation_id')->references('id')
+                ->on('conversations')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

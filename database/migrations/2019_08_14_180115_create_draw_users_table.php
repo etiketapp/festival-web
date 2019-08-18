@@ -24,6 +24,15 @@ class CreateDrawUsersTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->unsignedInteger('winner_id_first')->nullable();
+            $table->foreign('winner_id_first')->references('id')
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->unsignedInteger('winner_id_second')->nullable();
+            $table->foreign('winner_id_second')->references('id')
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
+
         });
     }
 

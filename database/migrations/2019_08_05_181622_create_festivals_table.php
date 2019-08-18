@@ -28,6 +28,7 @@ class CreateFestivalsTable extends Migration
             $table->foreign('category_id')->references('id')
                 ->on('categories')->onUpdate('cascade')->onDelete('cascade');
 
+
         });
     }
 

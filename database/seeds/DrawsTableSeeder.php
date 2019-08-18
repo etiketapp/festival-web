@@ -16,6 +16,7 @@ class DrawsTableSeeder extends Seeder
         Draw::create([
             'title'         => 'Draw 1',
             'sub_title'     => 'Draw Sub Title',
+            'content'       => 'Draw Content',
             'last_date'     => \Carbon\Carbon::now()
         ]);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\AdminRequest;
 use App\Models\Admin;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -49,7 +50,7 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         $model = new Admin($request->input());
         $model->password = $request->input('password');
@@ -108,7 +109,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         $model = Admin::query()->find($id);
         if(!$model) {

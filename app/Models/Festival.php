@@ -16,7 +16,6 @@ class Festival extends Model
         'date',
 
         'category_id',
-        'like_id',
         'location',
     ];
 

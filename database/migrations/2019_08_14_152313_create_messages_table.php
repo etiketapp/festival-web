@@ -22,6 +22,10 @@ class CreateMessagesTable extends Migration
             $table->foreign('user_id')->references('id')
                 ->on('users')->onUpdate('cascade')->onDelete('cascade');
 
+            $table->unsignedInteger('receiver_id');
+            $table->foreign('receiver_id')->references('id')
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
+
             $table->unsignedInteger('conversation_id');
             $table->foreign('conversation_id')->references('id')
                 ->on('conversations')->onUpdate('cascade')->onDelete('cascade');

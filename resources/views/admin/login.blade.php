@@ -42,9 +42,11 @@
                         </div>
                     </div>
                     -->
+                <center>
                     <div class="m-login__form-action">
                         <button href="{{ route('admin.login') }}" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">{!! trans('admin.login.sing-in') !!}</button>
                     </div>
+                </center>
                     {!! Form::close() !!}
                 </div>
                 <div class="m-login__forget-password">

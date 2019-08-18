@@ -10,45 +10,35 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    public function index($id, Request $request)
+    public function index(Request $request)
     {
-        $user_one = $request->user('api');
-        $user_two = User::query()->find($id);
-        if(!$user_two) {
-            return response()->error('user.not-found');
-        }
+        $user = $request->user('api')
+            ->load('image', 'conversations', 'messages');
 
-        $conversation = Conversation::query()->whereIn('user_one', [$user_one->id, $id])
-            ->whereIn('user_two', [$id, $user_one->id])
-            ->first();
+        $user['messages'] = $user->messages()->orderBy('created_at', 'desc')->get();
 
-
-        $messages = '';
-        if($conversation) {
-            $messages = Message::query()->where('conversation_id', $conversation->id)->get();
-        }
-
-        return response()->success($messages);
+        return response()->success($user);
     }
 
-    public function sendMessage($id, Request $request)
+    public function sendMessage(Request $request)
     {
         $user = $request->user('api');
+        $user_two = $request->input('user_two');
 
-        if($id == $user->id) {
+        if($user_two== $user->id) {
             return response()->error('message.self');
         }
 
         // Get conversation data
-        $conversation = Conversation::whereIn('user_one', [$user->id, $id])
-            ->whereIn('user_two', [$id, $user->id])
+        $conversation = Conversation::whereIn('user_id', [$user->id, $user_two])
+            ->whereIn('user_two', [$user_two, $user->id])
             ->first();
 
         if ($conversation == NULL)
         {
             $newConversation = Conversation::create([
-                'user_one' => $user->id,
-                'user_two' => $id,
+                'user_id' => $user->id,
+                'user_two' => $user_two,
             ]);
         }
 
@@ -56,6 +46,7 @@ class MessageController extends Controller
         $model = Message::create([
             'message'           => $request->input('message'),
             'user_id'           => $user->id,
+            'receiver_id'  => $user_two,
             'conversation_id'   => $conversation !== NULL ? $conversation->id : $newConversation->id,
         ]);
 

@@ -9,6 +9,7 @@ class Draw extends Model
     protected $fillable = [
         'title',
         'sub_title',
+        'content',
         'last_date',
     ];
 

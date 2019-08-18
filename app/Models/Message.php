@@ -10,6 +10,7 @@ class Message extends Model
         'message',
 
         'user_id',
+        'receiver_id',
         'conversation_id',
     ];
 
@@ -22,13 +23,13 @@ class Message extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function user() {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(User::class);
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function conversation() {
-        return $this->belongsToMany('App\Conversation');
+        return $this->belongsToMany(Conversation::class);
     }
 }

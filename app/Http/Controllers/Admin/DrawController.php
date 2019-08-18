@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\DrawRequest;
 use App\Models\Draw;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -49,7 +50,7 @@ class DrawController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DrawRequest $request)
     {
         $model = new Draw($request->input());
         $model->save();
@@ -111,7 +112,7 @@ class DrawController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DrawRequest $request, $id)
     {
         $model = Draw::query()->find($id);
         if(!$model) {
@@ -180,7 +181,7 @@ class DrawController extends Controller
                 return $model->sub_title;
             })
             ->addColumn('last_date', function (Draw $model) {
-                return $model->last_join_at;
+                return $model->last_date;
             })
             ->addColumn('image', function ($model) {
                 return view('admin.crud.datatable.image')

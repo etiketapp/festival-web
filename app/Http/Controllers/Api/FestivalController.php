@@ -24,6 +24,7 @@ class FestivalController extends Controller
     /**
      * @param Request $request
      * @return mixed
+     *
      */
     public function like(Request $request)
     {

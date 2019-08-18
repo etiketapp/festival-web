@@ -29,6 +29,16 @@
 </div>
 <div class="form-group m-form__group row">
     <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('date', trans($transPrefix.'date'), ['class' => 'form-control-label']) !!}
+        {!! Form::text('date', null, ['class' => 'form-control m-input m-input--solid date']) !!}
+    </div>
+    <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('category_id', trans($transPrefix.'category_id'), ['class' => 'form-control-label']) !!}
+        {!! Form::select('category_id', $categories, null, ['class' => 'form-control m-input--solid m-bootstrap-select m_selectpicker', 'placeholder' => 'Seçiniz', ' data-live-search="true"']) !!}
+    </div>
+</div>
+<div class="form-group m-form__group row">
+    <div class="col-lg-6 m-form__group-sub">
         {!! Form::label('content', trans($transPrefix.'content'), ['class' => 'form-control-label']) !!}
         {!! Form::textarea('content', null, ['class' => 'form-control m-input m-input--solid']) !!}
     </div>

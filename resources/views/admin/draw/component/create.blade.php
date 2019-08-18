@@ -23,7 +23,7 @@
         {!! Form::textarea('content', null, ['class' => 'form-control m-input m-input--solid']) !!}
     </div>
     <div class="col-lg-6 m-form__group-sub">
-        {!! Form::label('last_join_at', trans($transPrefix.'last_date'), ['class' => 'form-control-label']) !!}
-        {!! Form::text('last_join_at',  null, ['class' => 'form-control m-input m-input--solid date']) !!}
+        {!! Form::label('last_date', trans($transPrefix.'last_date'), ['class' => 'form-control-label']) !!}
+        {!! Form::text('last_date',  null, ['class' => 'form-control m-input m-input--solid date']) !!}
     </div>
 </div>

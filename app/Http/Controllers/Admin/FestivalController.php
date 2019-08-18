@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\FestivalRequest;
+use App\Models\Category;
 use App\Models\Festival;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -43,7 +45,10 @@ class FestivalController extends Controller
      */
     public function create()
     {
-        return view('admin.crud.create');
+        $categories = Category::query()->pluck('title', 'id');
+
+        return view('admin.crud.create')
+            ->with('categories', $categories);
     }
 
     /**
@@ -52,7 +57,7 @@ class FestivalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FestivalRequest $request)
     {
         $model = new Festival($request->input());
         $model->save();
@@ -112,7 +117,7 @@ class FestivalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FestivalRequest $request, $id)
     {
         $model = Festival::query()->find($id);
         if(!$model) {

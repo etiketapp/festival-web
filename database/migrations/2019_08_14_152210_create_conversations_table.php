@@ -17,8 +17,8 @@ class CreateConversationsTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            $table->unsignedInteger('user_one');
-            $table->foreign('user_one')->references('id')
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')
                 ->on('users')->onUpdate('cascade')->onDelete('cascade');
 
             $table->unsignedInteger('user_two');

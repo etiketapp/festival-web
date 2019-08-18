@@ -30,8 +30,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('festival/comment/count', ['as' => 'festival.comment.count', 'uses' => 'FestivalController@commentCount']);
 
     // Message
-    Route::get('message/{user}', ['as' => 'message.{user}.index', 'uses' => 'MessageController@index']);
-    Route::post('message/{user}/send', ['as' => 'message.{user}.send', 'uses' => 'MessageController@sendMessage']);
+    Route::get('message/', ['as' => 'message.index', 'uses' => 'MessageController@index']);
+    Route::get('message/send', ['as' => 'message.send', 'uses' => 'MessageController@sendMessage']);
 
     // Draw
     Route::get('draw/{drawId}/join', ['as' => 'draw.{drawId}.join', 'uses' => 'DrawController@joinDraw']);

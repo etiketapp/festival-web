@@ -147,9 +147,11 @@ return [
         'place'             => 'Festival Yeri',
         'price'             => 'Ücret',
         'about'             => 'Festival Hakkında',
+        'date'              => 'Tarih',
+        'category_id'       => 'Kategori',
     ],
     'category'  =>  [
-        'title'             => 'Kategoriler',
+        'title'             => 'Kategori Adı',
     ],
     'draw'      => [
         'title'         => 'Çekiliş',

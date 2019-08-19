@@ -20,5 +20,10 @@ class Draw extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    public function DrawUserWinner()
+    {
+        return $this->hasMany(Draw::class);
+    }
 }
 

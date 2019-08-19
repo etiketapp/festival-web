@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\DrawRequest;
 use App\Models\Draw;
+use App\Models\DrawUser;
+use App\Models\DrawUserWinner;
+use App\Models\User;
 use App\Models\Image;
 use Illuminate\Http\Request;
 
@@ -11,7 +14,7 @@ class DrawController extends Controller
 {
     protected $routePrefix = 'admin.draw.';
     protected $transPrefix = 'models.draw.';
-    protected $mdoel       = Draw::class;
+    protected $model       = Draw::class;
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +34,9 @@ class DrawController extends Controller
 
         return view('admin.crud.datatable.index')
             ->with('datatable', route($this->routePrefix . 'datatable'))
-            ->with('columns', $columns);
+            ->with('columns', $columns)
+            ->with('model', $this->model)
+            ->with('is_draw', true);
     }
 
     /**
@@ -154,6 +159,33 @@ class DrawController extends Controller
             ->with('success', trans('messages.crud.destroy', ['title' => $this->title()]));
     }
 
+    public function makeDrawGet()
+    {
+        $draws = Draw::query()->pluck('title', 'id');
+
+        return view('admin.draw.component.draw')
+            ->with('draws', $draws);
+    }
+
+    public function makeDrawPost(Request $request)
+    {
+        $draw = DrawUser::query()->find($request->input('draw_id'));
+        if(!$draw) {
+            return redirect()->route($this->routePrefix . 'index');
+        }
+
+        $model = new DrawUserWinner();
+        $winnerUser = rand(1, 3
+        );
+        $user = User::query()->find()
+
+    }
+
+    public function drawResultGet(Request $request)
+    {
+
+    }
+
     /**
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
@@ -168,7 +200,7 @@ class DrawController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'image'])
+            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'image', 'draw'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)

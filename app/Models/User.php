@@ -146,6 +146,14 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * @return HasMany
+     */
+    public function DrawUserWinner()
+    {
+        return $this->hasMany(DrawUserWinner::class);
+    }
+
+    /**
      * @return mixed
      */
     public function getJWTIdentifier() {

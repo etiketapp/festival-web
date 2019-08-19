@@ -158,5 +158,7 @@ return [
         'sub_title'     => 'Alt Başlık',
         'content'       => 'Çekiliş İçeriği',
         'last_date'     => 'Son Katılım Tarihi',
+        'make_draw'     => 'Çekiliş Yap',
+        'category_id'   => 'Çekiliş Seç',
     ]
 ];

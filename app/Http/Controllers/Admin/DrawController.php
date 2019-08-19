@@ -175,10 +175,13 @@ class DrawController extends Controller
         }
 
         $model = new DrawUserWinner();
-        $winnerUser = rand(1, 3
-        );
-        $user = User::query()->find()
+        $winnerUser = rand(1, 3);
+        $user = User::query()->find($winnerUser);
+        $model->draw()->associate($draw);
+        $model->user()->associate($user);
+        $model->save();
 
+        return response()->success($model);
     }
 
     public function drawResultGet(Request $request)

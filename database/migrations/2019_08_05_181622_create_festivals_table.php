@@ -22,7 +22,8 @@ class CreateFestivalsTable extends Migration
             $table->text('place');
             $table->decimal('price');
             $table->text('about');
-            $table->date('date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
 
             $table->unsignedInteger('category_id');

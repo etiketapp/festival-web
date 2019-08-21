@@ -24,7 +24,8 @@ class FestivalsTableSeeder extends Seeder
             'price'         => 500.00,
             'about'         => 'Festival about',
             'category_id'   => 3,
-            'date'          => Carbon::now(),
+            'start_date'    => Carbon::now(),
+            'end_date'      => Carbon::now(),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));
@@ -37,7 +38,8 @@ class FestivalsTableSeeder extends Seeder
             'price'         => 300.00,
             'about'         => 'Festival2 about',
             'category_id'   => 2,
-            'date'          => Carbon::now(),
+            'start_date'    => Carbon::now(),
+            'end_date'      => Carbon::now(),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));
@@ -60,7 +62,8 @@ class FestivalsTableSeeder extends Seeder
             'about'         => 'Festival4 about',
             'price'         => 800.00,
             'category_id'   => 1,
-            'date'          => Carbon::now(),
+            'start_date'    => Carbon::now(),
+            'end_date'      => Carbon::now(),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));

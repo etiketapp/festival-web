@@ -14,7 +14,8 @@ class Festival extends Model
         'place',
         'price',
         'about',
-        'date',
+        'start_date',
+        'end_date',
 
         'category_id',
         'location',

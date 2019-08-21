@@ -37,3 +37,13 @@
         {!! Form::textarea('about', $model->about, ['class' => 'form-control m-input m-input--solid']) !!}
     </div>
 </div>
+<div class="form-group m-form__group row">
+    <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('start_date', trans($transPrefix.'start_date'), ['class' => 'form-control-label']) !!}
+        {!! Form::text('start_date', null, ['class' => 'form-control m-input m-input--solid date']) !!}
+    </div>
+    <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('end_date', trans($transPrefix.'end_date'), ['class' => 'form-control-label']) !!}
+        {!! Form::text('end_date', null, ['class' => 'form-control m-input m-input--solid date']) !!}
+    </div>
+</div>

@@ -148,6 +148,8 @@ return [
         'price'             => 'Ücret',
         'about'             => 'Festival Hakkında',
         'date'              => 'Tarih',
+        'start_date'        => 'Başlangıç Tarihi',
+        'end_date'          => 'Bitiş Tarihi',
         'category_id'       => 'Kategori',
     ],
     'category'  =>  [

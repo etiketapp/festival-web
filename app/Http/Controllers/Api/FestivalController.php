@@ -36,10 +36,8 @@ class FestivalController extends Controller
                 break;
         }
 
-        switch ($category){
-            case '1':
-                $query->orderBy($category, 'asc');
-                break;
+        if($category) {
+            $query->orderBy($category, 'asc');
         }
 
 

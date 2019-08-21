@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Festival extends Model
@@ -75,6 +76,17 @@ class Festival extends Model
             return null;
         }
         return $this->attributes['distance'];
+    }
+
+    public function newQueryWithoutScopes()
+    {
+        $raw = '';
+        foreach ($this->geofields as $column) {
+            $raw .= 'astext(' . $this->getTable() . '.' . $column . ') as ' . $column . ' ';
+        }
+
+        return parent::newQueryWithoutScopes()
+            ->addSelect($this->getTable() . '.*', DB::raw($raw));
     }
 
     /**

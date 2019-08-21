@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Address;
 use App\Models\Festival;
 use App\Models\User;
 use App\Models\Image;
@@ -41,6 +42,16 @@ class FestivalsTableSeeder extends Seeder
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));
 
+        $d4 = Festival::query()->find(2);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Adana',
+        ]);
+
+        $adress->addressable()->associate($d4);
+        $adress->save();
+
         Festival::create([
             'title'         => 'Festival4 title',
             'sub_title'     => 'Festival4 sub-title',
@@ -54,6 +65,14 @@ class FestivalsTableSeeder extends Seeder
             'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
         ]));
 
+        $d5 = Festival::query()->find(1);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Adana',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
 
     }
 }

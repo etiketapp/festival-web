@@ -28,10 +28,15 @@ class Festival extends Model
 
     protected $geofields = [
         'location',
+    ];
+
+    protected $appends = [
         'distance',
     ];
 
-    //SCOPE
+    /*
+    * SCOPE
+    */
     public function scopeDistance($query, $location)
     {
         if ($location) {
@@ -44,7 +49,9 @@ class Festival extends Model
         return $query->addSelect(DB::raw('null as distance'));
     }
 
-    //ATTRIBUTE
+    /*
+     * ATTRIBUTE
+     */
     public function getLocationAttribute($value)
     {
         if (!isset($this->attributes['location'])) {
@@ -89,6 +96,7 @@ class Festival extends Model
             ->addSelect($this->getTable() . '.*', DB::raw($raw));
     }
 
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -127,6 +135,14 @@ class Festival extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function address()
+    {
+        return $this->morphOne(Address::class, 'addressable');
     }
 
 }

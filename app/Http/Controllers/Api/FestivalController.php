@@ -17,17 +17,38 @@ class FestivalController extends Controller
     // isim kategori konum
     public function index(Request $request)
     {
-        $title  = $request->input('title') ?? '';
-        $sort   = $request->input('sort') ?? null;
-        $type   = $request->input('type') ?? null;
+        $title      = $request->input('title') ?? '';
+        $sort       = $request->input('sort') ?? null;
+        $category   = $request->input('category') ?? null;
 
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');
 
         $location = $latitude && $longitude ? "{$latitude},{$longitude}" : null;
-        $model = Festival::query()->with('image')->get();
 
-        return response()->success($model);
+        $query = Festival::query()
+            ->with('image', 'address.city', 'address.county')
+            ->where('title', 'LIKE',  "%{$title}%");
+
+        switch ($sort) {
+            case 'title':
+                $query->orderBy('title', 'asc');
+                break;
+        }
+
+        switch ($category){
+            case '1':
+                $query->orderBy($category, 'asc');
+                break;
+        }
+
+
+
+        $query->distance($location);
+
+        $model = $query;
+
+        return response()->success($model->get());
     }
 
     /**

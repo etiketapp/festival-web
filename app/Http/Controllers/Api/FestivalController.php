@@ -16,7 +16,7 @@ class FestivalController extends Controller
      */
     public function index()
     {
-        $model = Festival::query()->with('image', 'likes', 'comments')->get();
+        $model = Festival::query()->with('image')->get();
 
         return response()->success($model);
     }

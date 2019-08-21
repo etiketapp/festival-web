@@ -76,6 +76,16 @@
                     </span>
                 </a>
             </li>
+            <li class="m-menu__item {{ Helper::isActiveRoute(['drawwinner'])  }}" aria-haspopup="true">
+                <a href="{{ route('admin.drawwinner.index') }}" class="m-menu__link ">
+                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <span class="m-menu__link-title">
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text">{{ trans_choice('admin.drawwinner.title', 2) }}</span>
+                        </span>
+                    </span>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- END: Aside Menu -->

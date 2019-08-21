@@ -36,4 +36,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('draw/makeDrawGet', ['as' => 'draw.makeDrawGet', 'uses' => 'DrawController@makeDrawGet']);
     Route::get('draw/makeDrawPost', ['as' => 'draw.makeDrawPost', 'uses' => 'DrawController@makeDrawPost']);
     Route::resource('draw', 'DrawController');
+
+    // Draw Winner User
+    Route::get('drawwinner/datatable', ['as' => 'drawwinner.datatable', 'uses' => 'DrawWinnerController@datatable']);
+    Route::get('drawwinner/index', ['as' => 'drawwinner.index', 'uses' => 'DrawWinnerController@index']);
 });

@@ -104,8 +104,6 @@ class DrawController extends Controller
             return redirect()->route($this->routePrefix . 'index');
         }
 
-
-
         return view('admin.crud.edit')
             ->with('model', $model);
     }
@@ -169,7 +167,7 @@ class DrawController extends Controller
 
     public function makeDrawPost(Request $request)
     {
-        $draw = DrawUser::query()->find($request->input('draw_id'));
+        $draw = Draw::query()->find(1);
         if(!$draw) {
             return redirect()->route($this->routePrefix . 'index');
         }
@@ -181,12 +179,19 @@ class DrawController extends Controller
         $model->user()->associate($user);
         $model->save();
 
-        return response()->success($model);
+        return redirect()->route($this->routePrefix .'index')
+            ->with('success', trans('messages.crud.store', ['title' => $this->title()]));
     }
 
     public function drawResultGet(Request $request)
     {
+        $model = DrawUserWinner::query()->get();
+        if(!$model) {
+            return redirect()->route($this->routePrefix . 'index');
+        }
 
+        return view('admin.draw.component.drawresult')
+            ->with('model', $model);
     }
 
     /**

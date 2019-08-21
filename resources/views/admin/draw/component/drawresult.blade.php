@@ -10,6 +10,4 @@
         {!! Form::select('draw_id', $draws, null, ['class' => 'form-control m-input--solid m-bootstrap-select m_selectpicker', 'placeholder' => 'Seçiniz', ' data-live-search="true"']) !!}
     </div>
 </div>
-<a href="{!! route($routePrefix. 'makeDrawPost') !!}" class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">Çekiliş Yap</a>
-    {!! Form::close() !!}
 @stop

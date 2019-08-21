@@ -17,8 +17,7 @@
             <div class="col-xl-4 order-1 order-xl-2 m--align-right mt-3">
                 @if($is_draw ?? null)
                     <a href="{!! route($routePrefix. 'makeDrawGet', $routeParameters ?? []) !!}" class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">Çekiliş Yap</a>
-                </a>
-                    <div class="m-separator m-separator--dashed d-xl-none"></div>
+{{--                    <div class="m-separator m-separator--dashed d-xl-none"></div>--}}
                 @endif
                 @if($is_create ?? true)
                     <a href="{!! route($routePrefix.'create', $routeParameters ?? []) !!}" class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">

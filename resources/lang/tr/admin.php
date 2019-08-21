@@ -104,4 +104,9 @@ return [
         'new_create'        => 'Çekiliş Oluştur',
         'new_update'        => 'Çekilişi Güncelle',
     ],
+    'drawwinner'      => [
+        'title'             => 'Çekiliş Kazananlar',
+        'new_create'        => 'Çekiliş Oluştur',
+        'new_update'        => 'Çekilişi Güncelle',
+    ],
 ];

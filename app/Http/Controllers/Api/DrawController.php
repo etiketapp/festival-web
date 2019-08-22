@@ -9,6 +9,13 @@ use App\Http\Controllers\Controller;
 
 class DrawController extends Controller
 {
+    public function index()
+    {
+        $model = Draw::query()->get();
+
+        return response()->success($model);
+    }
+
     public function joinDraw(Request $request, $drawId)
     {
         $user = $request->user('api');

@@ -10,7 +10,7 @@ class Festival extends Model
     protected $fillable = [
         'title',
         'sub_title',
-        'content',
+        'advice',
         'place',
         'price',
         'about',

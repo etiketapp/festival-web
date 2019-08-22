@@ -25,5 +25,25 @@ class DrawsTableSeeder extends Seeder
            'draw_id'        => 1,
            'user_id'        => 1,
         ]);
+
+        DrawUser::create([
+            'draw_id'        => 1,
+            'user_id'        => 2,
+        ]);
+
+        DrawUser::create([
+            'draw_id'        => 1,
+            'user_id'        => 3,
+        ]);
+
+        DrawUser::create([
+            'draw_id'        => 1,
+            'user_id'        => 4,
+        ]);
+
+        DrawUser::create([
+            'draw_id'        => 1,
+            'user_id'        => 5,
+        ]);
     }
 }

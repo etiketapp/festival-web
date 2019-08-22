@@ -19,7 +19,7 @@ class FestivalsTableSeeder extends Seeder
         Festival::create([
             'title'         => 'Zeytinli Rock Festivali 2019',
             'sub_title'     => 'Zeytinli Rock Festivali 2019',
-            'content'       => 'Siyah tişörtler hazırsa, bu seneki Zeytinli Rock Festivali için düğmeye basabiliriz. Türk rock müziğine adeta bir saygı duruşu olan Zeytinli Rock Festivali, 5 gün boyunca Akçay sahilinde olacak. Festivalin programının yakın bir zamanda açıklanması bekleniyor.',
+            'advice'       => 'Siyah tişörtler hazırsa, bu seneki Zeytinli Rock Festivali için düğmeye basabiliriz. Türk rock müziğine adeta bir saygı duruşu olan Zeytinli Rock Festivali, 5 gün boyunca Akçay sahilinde olacak. Festivalin programının yakın bir zamanda açıklanması bekleniyor.',
             'place'         => 'Edremit Akçay Sahili',
             'price'         => 500.00,
             'about'         => '28 Ağustos – 1 Eylül / Edremit Akçay Sahili',
@@ -33,7 +33,7 @@ class FestivalsTableSeeder extends Seeder
         Festival::create([
             'title'         => 'Holifest 2019',
             'sub_title'     => 'Holifest 2019',
-            'content'       => 'Hint kültürünün en önemli bayramları arasında sayılan Holifest, bu yıl Türkiye’de dördüncü defa düzenleniyor. Masmavi deniz ve ormanın sessizliğiyle kutlanacak Holifest, tam bir aktivite yuvası olacak.',
+            'advice'        => 'Hint kültürünün en önemli bayramları arasında sayılan Holifest, bu yıl Türkiye’de dördüncü defa düzenleniyor. Masmavi deniz ve ormanın sessizliğiyle kutlanacak Holifest, tam bir aktivite yuvası olacak.',
             'place'         => 'İzmir – İzmir Arena',
             'price'         => 300.00,
             'about'         => '20 Nisan / İzmir – İzmir Arena',
@@ -57,7 +57,7 @@ class FestivalsTableSeeder extends Seeder
         Festival::create([
             'title'         => 'Kuşadası Gençlik Festivali 2019',
             'sub_title'     => 'Kuşadası Gençlik Festivali 2019',
-            'content'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
             'place'         => 'Kuşadası Sevgi Plajı',
             'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
             'price'         => 800.00,

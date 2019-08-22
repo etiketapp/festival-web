@@ -18,7 +18,7 @@ class CreateFestivalsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('sub_title');
-            $table->text('content');
+            $table->text('advice');
             $table->text('place');
             $table->decimal('price');
             $table->text('about');

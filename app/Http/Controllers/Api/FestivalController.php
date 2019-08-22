@@ -27,7 +27,7 @@ class FestivalController extends Controller
         $location = $latitude && $longitude ? "{$latitude},{$longitude}" : null;
 
         $query = Festival::query()
-            ->with('image', 'address.city', 'address.county')
+            ->with('image', 'address.city', 'address.county', 'category')
             ->where('title', 'LIKE',  "%{$title}%");
 
         switch ($sort) {
@@ -39,7 +39,6 @@ class FestivalController extends Controller
         if($category) {
             $query->orderBy($category, 'asc');
         }
-
 
 
         $query->distance($location);

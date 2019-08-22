@@ -146,4 +146,13 @@ class Festival extends Model
         return $this->morphOne(Address::class, 'addressable');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function galleries()
+    {
+        return $this->hasMany(FestivalGallery::class);
+    }
+
+
 }

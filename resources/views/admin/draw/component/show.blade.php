@@ -17,8 +17,8 @@
 </div>
 <div class="form-group m-form__group row">
     <div class="col-lg-6 m-form__group-sub">
-        {!! Form::label('content', trans($transPrefix.'content'), ['class' => 'form-control-label']) !!}
-        {!! Form::textarea('content', $model->content, ['class' => 'form-control m-input m-input--solid', 'disabled']) !!}
+        {!! Form::label('advice', trans($transPrefix.'content'), ['class' => 'form-control-label']) !!}
+        {!! Form::textarea('advice', $model->content, ['class' => 'form-control m-input m-input--solid', 'disabled']) !!}
     </div>
     <div class="col-lg-6 m-form__group-sub">
         {!! Form::label('last_join_at', trans($transPrefix.'last_date'), ['class' => 'form-control-label']) !!}

@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     // Festival
     Route::get('festival/datatable', ['as' => 'festival.datatable', 'uses' => 'FestivalController@datatable']);
+    Route::get('festival/ajax/div', ['as' => 'festival.ajax.div', 'uses' => 'FestivalController@ajaxDiv']);
+    Route::post('festival/{draw}/ajax/delete', ['as' => 'festival.ajax.delete', 'uses' => 'FestivalController@ajaxDelete']);
     Route::resource('festival', 'FestivalController');
 
     // Category
@@ -35,6 +37,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('draw/datatable', ['as' => 'draw.datatable', 'uses' => 'DrawController@datatable']);
     Route::get('draw/makeDrawGet', ['as' => 'draw.makeDrawGet', 'uses' => 'DrawController@makeDrawGet']);
     Route::post('draw/makeDrawPost', ['as' => 'draw.makeDrawPost', 'uses' => 'DrawController@makeDrawPost']);
+    Route::get('draw/ajax/div', ['as' => 'draw.ajax.div', 'uses' => 'DrawController@ajaxDiv']);
+    Route::post('draw/{draw}/ajax/delete', ['as' => 'draw.ajax.delete', 'uses' => 'DrawController@ajaxDelete']);
     Route::resource('draw', 'DrawController');
 
     // Draw Winner User

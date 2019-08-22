@@ -37,5 +37,13 @@ class Draw extends Model
         return $this->belongsTo(DrawUser::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function galleries()
+    {
+        return $this->hasMany(DrawGallery::class);
+    }
+
 }
 

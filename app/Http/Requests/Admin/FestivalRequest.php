@@ -17,11 +17,12 @@ class FestivalRequest extends FormRequest
             'image'             => $this->isMethod('post') ? 'required|image' : '',
             'title'             => 'required',
             'sub_title'         => 'required',
-            'content'           => 'required',
+            'advice'           => 'required',
             'place'             => 'required',
             'price'             => 'required',
             'about'             => 'required',
-            'date'              => 'required',
+            'start_date'              => 'required',
+            'end_date'              => 'required',
 
             'category_id'       => 'required',
         ];
@@ -38,11 +39,13 @@ class FestivalRequest extends FormRequest
             'image'         => trans('models.common.image'),
             'title'         => trans('models.festival.title'),
             'sub_title'     => trans('models.festival.sub_title'),
-            'content'       => trans('models.festival.content'),
+            'advice'       => trans('models.festival.content'),
             'place'         => trans('models.festival.place'),
             'price'         => trans('models.festival.price'),
             'about'         => trans('models.festival.about'),
-            'date'          => trans('models.festival.date'),
+            'start_date'     => trans('models.festival.start_date'),
+            'end_date'        => trans('models.festival.end_date'),
+
 
             'category_id'   => trans('models.festival.category_id'),
         ];

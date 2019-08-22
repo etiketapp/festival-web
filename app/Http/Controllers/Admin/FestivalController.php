@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\Admin\FestivalRequest;
 use App\Models\Category;
 use App\Models\Festival;
+use App\Models\FestivalGallery;
 use App\Models\Image;
 use Illuminate\Http\Request;
 
@@ -59,6 +60,10 @@ class FestivalController extends Controller
      */
     public function store(FestivalRequest $request)
     {
+
+        $galleries      = $request->input('galleries') ?? null;
+        $galleriesImage = $request->file('galleries') ?? null;
+
         $model = new Festival($request->input());
         $model->save();
 
@@ -72,6 +77,26 @@ class FestivalController extends Controller
 
         $model->save();
 
+        if($galleries){
+            foreach ($galleries as $key => $gallery){
+                if ($galleriesImage[$key] ?? null) {
+                    $galleryId = $gallery['id'];
+                    $galleryModel = FestivalGallery::query()->find($galleryId);
+                    if(!$galleryModel){
+                        $galleryModel = new FestivalGallery();
+                    }
+                    $galleryModel->festival()->associate($model);
+                    $galleryModel->save();
+
+                    $galleryModel->image()->delete();
+                    $galleryModel->image()->save(new Image([
+                        'image' =>  $galleriesImage[$key]['image'],
+                    ]));
+                }//if ($galleriesImage[$key] ?? null)
+            }//foreach ($galleries as $key => $gallery)
+        }//$galleries
+
+
         return redirect()->route($this->routePrefix .'index')
             ->with('success', trans('messages.crud.store', ['title' => $this->title()]));
     }
@@ -84,7 +109,7 @@ class FestivalController extends Controller
      */
     public function show($id)
     {
-        $model = Festival::query()->find($id);
+        $model = Festival::query()->with('galleries')->find($id);
         if(!$model) {
             return redirect()->route($this->routePrefix . 'index');
         }
@@ -105,9 +130,12 @@ class FestivalController extends Controller
         if(!$model) {
             return redirect()->route($this->routePrefix . 'index');
         }
+        $categories = Category::query()->pluck('title', 'id');
+
 
         return view('admin.crud.edit')
-            ->with('model', $model);
+            ->with('model', $model)
+            ->with('categories', $categories);
     }
 
     /**
@@ -119,6 +147,9 @@ class FestivalController extends Controller
      */
     public function update(FestivalRequest $request, $id)
     {
+        $galleries      = $request->input('galleries') ?? null;
+        $galleriesImage = $request->file('galleries') ?? null;
+
         $model = Festival::query()->find($id);
         if(!$model) {
             return redirect()->route($this->routePrefix . 'index');
@@ -134,6 +165,25 @@ class FestivalController extends Controller
                 'image' => $request->file('image')
             ]));
         }
+
+        if($galleries){
+            foreach ($galleries as $key => $gallery){
+                if ($galleriesImage[$key] ?? null) {
+                    $galleryId = $gallery['id'];
+                    $galleryModel = FestivalGallery::query()->find($galleryId);
+                    if(!$galleryModel){
+                        $galleryModel = new FestivalGallery();
+                    }
+                    $galleryModel->festival()->associate($model);
+                    $galleryModel->save();
+
+                    $galleryModel->image()->delete();
+                    $galleryModel->image()->save(new Image([
+                        'image' =>  $galleriesImage[$key]['image'],
+                    ]));
+                }//if ($galleriesImage[$key] ?? null)
+            }//foreach ($galleries as $key => $gallery)
+        }//$galleries
 
         return redirect()->route($this->routePrefix . 'index')
             ->with('success', trans('messages.crud.update', ['title' => $this->title()]));
@@ -200,5 +250,32 @@ class FestivalController extends Controller
             })
 
             ->make(true);
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ajaxDiv(Request $request)
+    {
+        $count  = (int) $request->input('count') ?? 1;
+        $view = 'admin.festival.ajax.gallery';
+
+        return view($view)
+            ->with('count', $count);
+    }
+
+    public function ajaxDelete(Request $request, $id)
+    {
+        $ajaxId = $request->input('ajax_id') ?? 0;
+        $type   = $request->input('type') ?? null;
+
+        $model = Festival::query()->find($id);
+        if (!$model) {
+            return response()->error('festival.not-found');
+        }
+
+        $model->galleries()->where('id', $ajaxId)->delete();
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Models\Address;
 use App\Models\Festival;
+use App\Models\FestivalGallery;
 use App\Models\User;
 use App\Models\Image;
 use Carbon\Carbon;
@@ -76,6 +77,69 @@ class FestivalsTableSeeder extends Seeder
         ]);
         $adress->addressable()->associate($d5);
         $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 1,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 1,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 1,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        FestivalGallery::create([
+            'festival_id' => 2,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+
+        FestivalGallery::create([
+            'festival_id' => 2,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+
+
+        FestivalGallery::create([
+            'festival_id' => 2,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+
+        FestivalGallery::create([
+            'festival_id' => 3,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+
+        FestivalGallery::create([
+            'festival_id' => 3,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+
+        FestivalGallery::create([
+            'festival_id' => 3,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
 
     }
 }

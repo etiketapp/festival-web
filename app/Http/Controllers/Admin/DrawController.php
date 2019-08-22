@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\DrawRequest;
+use App\Models\DieticianGallery;
 use App\Models\Draw;
+use App\Models\DrawGallery;
 use App\Models\DrawUser;
 use App\Models\DrawUserWinner;
 use App\Models\User;
@@ -57,6 +59,9 @@ class DrawController extends Controller
      */
     public function store(DrawRequest $request)
     {
+        $galleries      = $request->input('galleries') ?? null;
+        $galleriesImage = $request->file('galleries') ?? null;
+
         $model = new Draw($request->input());
         $model->save();
 
@@ -69,6 +74,25 @@ class DrawController extends Controller
         }
 
         $model->save();
+
+        if($galleries){
+            foreach ($galleries as $key => $gallery){
+                if ($galleriesImage[$key] ?? null) {
+                    $galleryId = $gallery['id'];
+                    $galleryModel = DrawGallery::query()->find($galleryId);
+                    if(!$galleryModel){
+                        $galleryModel = new DrawGallery();
+                    }
+                    $galleryModel->draw()->associate($model);
+                    $galleryModel->save();
+
+                    $galleryModel->image()->delete();
+                    $galleryModel->image()->save(new Image([
+                        'image' =>  $galleriesImage[$key]['image'],
+                    ]));
+                }//if ($galleriesImage[$key] ?? null)
+            }//foreach ($galleries as $key => $gallery)
+        }//$galleries
 
         return redirect()->route($this->routePrefix .'index')
             ->with('success', trans('messages.crud.store', ['title' => $this->title()]));
@@ -99,7 +123,7 @@ class DrawController extends Controller
      */
     public function edit($id)
     {
-        $model = Draw::query()->find($id);
+        $model = Draw::query()->with('galleries')->find($id);
         if(!$model) {
             return redirect()->route($this->routePrefix . 'index');
         }
@@ -117,6 +141,9 @@ class DrawController extends Controller
      */
     public function update(DrawRequest $request, $id)
     {
+        $galleries      = $request->input('galleries') ?? null;
+        $galleriesImage = $request->file('galleries') ?? null;
+
         $model = Draw::query()->find($id);
         if(!$model) {
             return redirect()->route($this->routePrefix . 'index');
@@ -132,6 +159,25 @@ class DrawController extends Controller
                 'image' => $request->file('image')
             ]));
         }
+
+        if($galleries){
+            foreach ($galleries as $key => $gallery){
+                if ($galleriesImage[$key] ?? null) {
+                    $galleryId = $gallery['id'];
+                    $galleryModel = DrawGallery::query()->find($galleryId);
+                    if(!$galleryModel){
+                        $galleryModel = new DrawGallery();
+                    }
+                    $galleryModel->draw()->associate($model);
+                    $galleryModel->save();
+
+                    $galleryModel->image()->delete();
+                    $galleryModel->image()->save(new Image([
+                        'image' =>  $galleriesImage[$key]['image'],
+                    ]));
+                }//if ($galleriesImage[$key] ?? null)
+            }//foreach ($galleries as $key => $gallery)
+        }//$galleries
 
         return redirect()->route($this->routePrefix . 'index')
             ->with('success', trans('messages.crud.update', ['title' => $this->title()]));
@@ -229,5 +275,31 @@ class DrawController extends Controller
                     ->with('image', $model->image);
             })
             ->make(true);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ajaxDiv(Request $request)
+    {
+        $count  = (int) $request->input('count') ?? 1;
+        $view = 'admin.draw.ajax.gallery';
+
+        return view($view)
+            ->with('count', $count);
+    }
+
+    public function ajaxDelete(Request $request, $id)
+    {
+        $ajaxId = $request->input('ajax_id') ?? 0;
+        $type   = $request->input('type') ?? null;
+
+        $model = Draw::query()->find($id);
+        if (!$model) {
+            return response()->error('draw.not-found');
+        }
+
+        $model->galleries()->where('id', $ajaxId)->delete();
     }
 }

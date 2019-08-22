@@ -55,4 +55,13 @@ class DrawController extends Controller
         return response()->success($model);
     }
 
+    public function userCount($id)
+    {
+        $model = DrawUser::query()->where('draw_id', $id)->get();
+
+        $count = $model->count();
+
+        return response()->success($count);
+    }
+
 }

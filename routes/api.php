@@ -38,4 +38,5 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('draw/{drawId}/join', ['as' => 'draw.{drawId}.join', 'uses' => 'DrawController@joinDraw']);
     Route::get('draw/{drawId}/disjoin', ['as' => 'draw.{drawId}.disjoin', 'uses' => 'DrawController@disJoinDraw']);
     Route::get('draw/{drawId}/users', ['as' => 'draw.{drawId}.users', 'uses' => 'DrawController@users']);
+    Route::get('draw/{drawId}/count', ['as' => 'draw.{drawId}.count', 'uses' => 'DrawController@userCount']);
 });

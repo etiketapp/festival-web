@@ -25,7 +25,6 @@
                     <div class="m-login__head">
                         <h3 class="m-login__title">{!! trans('admin.login.sing_in') !!}</h3>
                     </div>
-{{--                    {!! Form::open(['route' => 'admin.login', 'class' => 'm-login__form m-form', 'id' => 'login-form', 'data-redirect' => route('admin.home.index')]) !!}--}}
                     {{ Form::open(array('route' => 'admin.login', 'method' => 'POST', 'data-redirect' => route('admin.home.index'))) }}
                     <div class="form-group m-form__group">
 {{--                        {!! Form::email('email', null, ['class' => 'form-control m-input', 'placeholder' => trans('admin.login.email'), 'autocomplate' => 'off', 'required']) !!}--}}

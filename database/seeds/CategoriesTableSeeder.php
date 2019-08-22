@@ -13,23 +13,27 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Category::create([
-            'title'         => 'Kategori 1',
+            'title'         => 'Festival',
         ]);
 
         Category::create([
-            'title'         => 'Kategori 2',
+            'title'         => 'Müzik',
         ]);
 
         Category::create([
-            'title'         => 'Kategori 3',
+            'title'         => 'Spor',
         ]);
 
         Category::create([
-            'title'         => 'Kategori 4',
+            'title'         => 'Teknoloji',
         ]);
 
         Category::create([
-            'title'         => 'Kategori 5',
+            'title'         => 'Yemek',
+        ]);
+
+        Category::create([
+            'title'         => 'Sinema',
         ]);
     }
 }

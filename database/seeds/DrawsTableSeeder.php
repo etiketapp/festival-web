@@ -2,6 +2,7 @@
 
 use App\Models\Draw;
 
+use App\Models\DrawUser;
 use Illuminate\Database\Seeder;
 
 class DrawsTableSeeder extends Seeder
@@ -14,10 +15,15 @@ class DrawsTableSeeder extends Seeder
     public function run()
     {
         Draw::create([
-            'title'         => 'Draw 1',
-            'sub_title'     => 'Draw Sub Title',
-            'content'       => 'Draw Content',
+            'title'         => 'Araba Çekilişi',
+            'sub_title'     => 'Araba Çekilişi',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'last_date'     => \Carbon\Carbon::now()
+        ]);
+
+        DrawUser::create([
+           'draw_id'        => 1,
+           'user_id'        => 1,
         ]);
     }
 }

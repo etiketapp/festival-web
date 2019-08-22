@@ -27,7 +27,8 @@ class CategoryController extends Controller
 
         return view('admin.crud.datatable.index')
             ->with('datatable', route($this->routePrefix . 'datatable'))
-            ->with('columns', $columns);
+            ->with('columns', $columns)
+            ->with('is_create', false);
     }
 
     /**

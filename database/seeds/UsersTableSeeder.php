@@ -14,66 +14,66 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'full_name'  => 'User1',
+            'full_name'  => 'Basak Insel',
             'email'      => 'user1@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_MALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/female_1.jpg')),
         ]));
 
         User::create([
-            'full_name'  => 'User2',
+            'full_name'  => 'Yusuf Ozturk',
             'email'      => 'user2@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_MALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/female_2.jpg')),
         ]));
 
         User::create([
-            'full_name'  => 'User3',
+            'full_name'  => 'Ayse Cengiz',
             'email'      => 'user3@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_MALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/female_3.jpg')),
         ]));
 
         User::create([
-            'full_name'  => 'User4',
+            'full_name'  => 'Ali Koç',
             'email'      => 'user4@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_FEMALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/male_1.jpg')),
         ]));
 
         User::create([
-            'full_name'  => 'User5',
+            'full_name'  => 'Azmi Yilmaz',
             'email'      => 'user5@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_MALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/male_2.jpg')),
         ]));
 
         User::create([
-            'full_name'  => 'User6',
+            'full_name'  => 'Ayse Tugba Sengel',
             'email'      => 'user6@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_MALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/female_1.jpg')),
         ]));
 
         User::create([
-            'full_name'  => 'User7',
+            'full_name'  => 'Jesse Pinkman',
             'email'      => 'user7@user.com',
             'password'   => 'password',
             'gender'     => User::GENDER_FEMALE,
         ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/users/logo.png')),
+            'image'     => Intervention::make(database_path('seeds/images/users/users/male_1.jpg')),
         ]));
 
 

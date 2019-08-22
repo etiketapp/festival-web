@@ -167,13 +167,14 @@ class DrawController extends Controller
 
     public function makeDrawPost(Request $request)
     {
-        $draw = Draw::query()->find(1);
+        $drawId = $request->input('draw_id');
+        $draw = DrawUser::query()->where('draw_id', $drawId)->with('user')->first();
         if(!$draw) {
             return redirect()->route($this->routePrefix . 'index');
         }
 
         $model = new DrawUserWinner();
-        $winnerUser = rand(1, 3);
+        $winnerUser = rand(1, $draw->count());
         $user = User::query()->find($winnerUser);
         $model->draw()->associate($draw);
         $model->user()->associate($user);

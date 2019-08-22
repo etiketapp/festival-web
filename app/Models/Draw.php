@@ -21,9 +21,21 @@ class Draw extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function DrawUserWinner()
     {
-        return $this->hasMany(Draw::class);
+        return $this->hasOne(DrawUserWinner::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function drawUsers()
+    {
+        return $this->belongsTo(DrawUser::class);
+    }
+
 }
 

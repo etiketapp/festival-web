@@ -27,7 +27,7 @@ class FestivalController extends Controller
         $location = $latitude && $longitude ? "{$latitude},{$longitude}" : null;
 
         $query = Festival::query()
-            ->with('image', 'address.city', 'address.county', 'category', 'galleries')
+            ->with('image', 'address.city', 'address.county', 'category', 'galleries.image')
             ->where('title', 'LIKE',  "%{$title}%");
 
         switch ($sort) {

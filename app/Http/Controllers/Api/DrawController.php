@@ -11,7 +11,7 @@ class DrawController extends Controller
 {
     public function index()
     {
-        $model = Draw::query()->with('image', 'galleries')->get();
+        $model = Draw::query()->with('image', 'galleries.image')->get();
 
         return response()->success($model);
     }
@@ -54,4 +54,5 @@ class DrawController extends Controller
 
         return response()->success($model);
     }
+
 }

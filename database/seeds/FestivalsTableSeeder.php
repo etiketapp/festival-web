@@ -134,6 +134,15 @@ class FestivalsTableSeeder extends Seeder
                 'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
             ])
         );
+        $d4 = Festival::query()->find(3);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Edirne',
+        ]);
+
+        $adress->addressable()->associate($d4);
+        $adress->save();
 
         Festival::create([
             'title'         => 'Kuşadası Gençlik Festivali 2020',

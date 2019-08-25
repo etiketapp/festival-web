@@ -1,11 +1,4 @@
 <div class="form-group m-form__group row">
-    <div class="col-md-2">
-        <label for="image" class="pointer mrg-top-10" style="width: 100%;">
-            <img src="{{ $model->image->url ?? null }}" class="mrg-btm-10" style="max-width: 100%;"/>
-        </label>
-    </div>
-</div>
-<div class="form-group m-form__group row">
     <div class="col-lg-6 m-form__group-sub">
         {!! Form::label('title', trans($transPrefix.'title'), ['class' => 'form-control-label']) !!}
         {!! Form::text('title', $model->title, ['class' => 'form-control m-input m-input--solid', 'disabled']) !!}

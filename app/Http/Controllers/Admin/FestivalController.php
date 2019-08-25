@@ -23,7 +23,6 @@ class FestivalController extends Controller
     {
         $data = [
             ['name' => 'id', 'data' => 'id', 'translate' => trans('models.common.id')],
-            ['name' => 'image', 'data' => 'image', 'translate' => trans('models.common.image')],
             ['name' => 'title', 'data' => 'title', 'translate' => trans($this->transPrefix . 'title')],
             ['name' => 'sub_title', 'data' => 'sub_title', 'translate' => trans($this->transPrefix . 'sub_title')],
             ['name' => 'cpntent', 'data' => 'content', 'translate' => trans($this->transPrefix . 'content')],
@@ -65,16 +64,6 @@ class FestivalController extends Controller
         $galleriesImage = $request->file('galleries') ?? null;
 
         $model = new Festival($request->input());
-        $model->save();
-
-        if($request->hasFile('image')) {
-            $model->image()->delete();
-
-            $model->image()->save(new Image([
-                'image' => $request->file('image')
-            ]));
-        }
-
         $model->save();
 
         if($galleries){
@@ -158,14 +147,6 @@ class FestivalController extends Controller
         $model->fill($request->input());
         $model->save();
 
-        if($request->hasFile('image')) {
-            $model->image()->delete();
-
-            $model->image()->save(new Image([
-                'image' => $request->file('image')
-            ]));
-        }
-
         if($galleries){
             foreach ($galleries as $key => $gallery){
                 if ($galleriesImage[$key] ?? null) {
@@ -223,7 +204,7 @@ class FestivalController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions', 'title', 'sub_title', 'content', 'place', 'price', 'image'])
+            ->rawColumns(['actions', 'title', 'sub_title', 'content', 'place', 'price'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)
@@ -243,10 +224,6 @@ class FestivalController extends Controller
             })
             ->addColumn('price', function (Festival $model) {
                 return $model->price;
-            })
-            ->addColumn('image', function (Festival $model){
-                return view('admin.crud.datatable.image')
-                    ->with('image', $model->image);
             })
 
             ->make(true);

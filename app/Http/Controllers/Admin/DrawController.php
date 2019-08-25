@@ -26,7 +26,6 @@ class DrawController extends Controller
     {
         $data = [
             ['name' => 'id', 'data' => 'id', 'translate' => trans('models.common.id')],
-            ['name' => 'image', 'data' => 'image', 'translate' => trans('models.common.image')],
             ['name' => 'title', 'data' => 'title', 'translate' => trans($this->transPrefix . 'title')],
             ['name' => 'sub_title', 'data' => 'sub_title', 'translate' => trans($this->transPrefix . 'sub_title')],
             ['name' => 'last_date', 'data' => 'last_date', 'translate' => trans($this->transPrefix . 'last_date')],
@@ -63,16 +62,6 @@ class DrawController extends Controller
         $galleriesImage = $request->file('galleries') ?? null;
 
         $model = new Draw($request->input());
-        $model->save();
-
-        if($request->hasFile('image')) {
-            $model->image()->delete();
-
-            $model->image()->save(new Image([
-                'image' => $request->file('image')
-            ]));
-        }
-
         $model->save();
 
         if($galleries){
@@ -151,14 +140,6 @@ class DrawController extends Controller
 
         $model->fill($request->input());
         $model->save();
-
-        if($request->hasFile('image')) {
-            $model->image()->delete();
-
-            $model->image()->save(new Image([
-                'image' => $request->file('image')
-            ]));
-        }
 
         if($galleries){
             foreach ($galleries as $key => $gallery){
@@ -255,7 +236,7 @@ class DrawController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'image', 'draw'])
+            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'draw'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)
@@ -269,10 +250,6 @@ class DrawController extends Controller
             })
             ->addColumn('last_date', function (Draw $model) {
                 return $model->last_date;
-            })
-            ->addColumn('image', function ($model) {
-                return view('admin.crud.datatable.image')
-                    ->with('image', $model->image);
             })
             ->make(true);
     }

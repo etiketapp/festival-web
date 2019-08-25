@@ -27,9 +27,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 3,
             'start_date'    => Carbon::now()->addDays(1),
             'end_date'      => Carbon::now()->addDays(20),
-        ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
-        ]));
+        ]);
 
         Festival::create([
             'title'         => 'Holifest 2019',
@@ -41,9 +39,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 2,
             'start_date'    => Carbon::now()->addDays(7),
             'end_date'      => Carbon::now()->addDays(12),
-        ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
-        ]));
+        ]);
 
         $d4 = Festival::query()->find(2);
         $adress = new Address([
@@ -65,9 +61,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(4),
             'end_date'      => Carbon::now()->addDays(31),
-        ])->image()->save(new Image([
-            'image'     => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
-        ]));
+        ]);
 
         $d5 = Festival::query()->find(1);
         $adress = new Address([

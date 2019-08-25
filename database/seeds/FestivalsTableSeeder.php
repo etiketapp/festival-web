@@ -309,8 +309,8 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(8);
         $adress = new Address([
-            'city_id'   => 89,
-            'county_id' => 500,
+            'city_id'   => 49,
+            'county_id' => 350,
             'address'   => 'Trabzon',
         ]);
         $adress->addressable()->associate($d5);

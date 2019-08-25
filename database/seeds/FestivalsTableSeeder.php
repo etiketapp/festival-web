@@ -65,9 +65,9 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(1);
         $adress = new Address([
-            'city_id'   => 1,
-            'county_id' => 1,
-            'address'   => 'Adana',
+            'city_id'   => 2,
+            'county_id' => 2,
+            'address'   => 'Adıyaman',
         ]);
         $adress->addressable()->associate($d5);
         $adress->save();
@@ -149,9 +149,9 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(4);
         $adress = new Address([
-            'city_id'   => 1,
-            'county_id' => 1,
-            'address'   => 'Bağcılar',
+            'city_id'   => 3,
+            'county_id' => 3,
+            'address'   => 'Ağrı',
         ]);
         $adress->addressable()->associate($d5);
         $adress->save();

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="379" column="63" selection-start-line="379" selection-start-column="63" selection-end-line="379" selection-end-column="63" />
+            <state relative-caret-position="222">
+              <caret line="192" column="29" lean-forward="true" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
               <folding>
                 <element signature="e#7#30#0#PHP" expanded="true" />
               </folding>
@@ -488,7 +487,7 @@
       <workItem from="1566492828441" duration="6567000" />
       <workItem from="1566549859716" duration="3000" />
       <workItem from="1566734242305" duration="3289000" />
-      <workItem from="1566740577933" duration="973000" />
+      <workItem from="1566740577933" duration="1437000" />
     </task>
     <task id="LOCAL-00001" summary="Product wanted sale">
       <created>1564174826328</created>
@@ -735,11 +734,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566736909300</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="festival seeder fix">
+      <created>1566741634940</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1566741634940</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154705000" />
+    <option name="totallyTimeSpent" value="155169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -768,7 +774,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4986577" visible="true" weight="0.33569404" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4986577" weight="0.33569404" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013423" side_tool="true" weight="0.33569404" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1176,8 +1182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="379" column="63" selection-start-line="379" selection-start-column="63" selection-end-line="379" selection-end-column="63" />
+        <state relative-caret-position="222">
+          <caret line="192" column="29" lean-forward="true" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
           <folding>
             <element signature="e#7#30#0#PHP" expanded="true" />
           </folding>

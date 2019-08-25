@@ -229,8 +229,8 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(6);
         $adress = new Address([
-            'city_id'   => 1,
-            'county_id' => 1,
+            'city_id'   => 40,
+            'county_id' => 440,
             'address'   => 'Çamlıca Tepesi',
         ]);
         $adress->addressable()->associate($d5);
@@ -269,8 +269,8 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(7);
         $adress = new Address([
-            'city_id'   => 1,
-            'county_id' => 1,
+            'city_id'   => 45,
+            'county_id' => 450,
             'address'   => 'Hakkari',
         ]);
         $adress->addressable()->associate($d5);
@@ -309,8 +309,8 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(8);
         $adress = new Address([
-            'city_id'   => 1,
-            'county_id' => 1,
+            'city_id'   => 89,
+            'county_id' => 500,
             'address'   => 'Trabzon',
         ]);
         $adress->addressable()->associate($d5);
@@ -349,8 +349,8 @@ class FestivalsTableSeeder extends Seeder
 
         $d5 = Festival::query()->find(9);
         $adress = new Address([
-            'city_id'   => 1,
-            'county_id' => 1,
+            'city_id'   => 31,
+            'county_id' => 310,
             'address'   => 'Muş',
         ]);
         $adress->addressable()->associate($d5);

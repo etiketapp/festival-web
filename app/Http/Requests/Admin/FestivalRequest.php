@@ -14,15 +14,14 @@ class FestivalRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'image'             => $this->isMethod('post') ? 'required|image' : '',
             'title'             => 'required',
             'sub_title'         => 'required',
-            'advice'           => 'required',
+            'advice'            => 'required',
             'place'             => 'required',
             'price'             => 'required',
             'about'             => 'required',
-            'start_date'              => 'required',
-            'end_date'              => 'required',
+            'start_date'        => 'required',
+            'end_date'          => 'required',
 
             'category_id'       => 'required',
         ];
@@ -36,7 +35,6 @@ class FestivalRequest extends FormRequest
     public function attributes()
     {
         return [
-            'image'         => trans('models.common.image'),
             'title'         => trans('models.festival.title'),
             'sub_title'     => trans('models.festival.sub_title'),
             'advice'       => trans('models.festival.content'),

@@ -25,8 +25,8 @@ class FestivalsTableSeeder extends Seeder
             'price'         => 500.00,
             'about'         => '28 Ağustos – 1 Eylül / Edremit Akçay Sahili',
             'category_id'   => 3,
-            'start_date'    => Carbon::now()->addDays(10),
-            'end_date'      => Carbon::now()->addDays(2),
+            'start_date'    => Carbon::now()->addDays(1),
+            'end_date'      => Carbon::now()->addDays(20),
         ])->image()->save(new Image([
             'image'     => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
         ]));

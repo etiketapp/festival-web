@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
+    <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="festival draw galleries">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,40 +21,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-              <folding>
-                <element signature="e#44#67#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+            <state relative-caret-position="136">
+              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
+        <entry file="file://$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="40" column="109" selection-start-line="40" selection-start-column="109" selection-end-line="40" selection-end-column="109" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="39" selection-start-line="39" selection-end-line="46" />
+            <state relative-caret-position="223">
+              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+              <folding>
+                <element signature="e#7#30#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,15 +128,15 @@
         <option value="$PROJECT_DIR$/app/Models/FestivalGallery.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/draw/component/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/draw/component/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/FestivalController.php" />
-        <option value="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" />
+        <option value="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -325,6 +307,40 @@
             <path>
               <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -332,82 +348,6 @@
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="festivals" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="draw" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="draw" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="festival" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="festival" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="festival" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -418,7 +358,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/festival" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../birebirdiyet/birebirdiyet-web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -510,7 +450,9 @@
       <workItem from="1566464921534" duration="8000" />
       <workItem from="1566469604521" duration="211000" />
       <workItem from="1566470366860" duration="4932000" />
-      <workItem from="1566492828441" duration="5825000" />
+      <workItem from="1566492828441" duration="6567000" />
+      <workItem from="1566549859716" duration="3000" />
+      <workItem from="1566734242305" duration="1598000" />
     </task>
     <task id="LOCAL-00001" summary="Product wanted sale">
       <created>1564174826328</created>
@@ -736,11 +678,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566500994785</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="festival draw galleries">
+      <created>1566501247612</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1566501247612</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149698000" />
+    <option name="totallyTimeSpent" value="152041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +704,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33154362" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3409396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -1094,13 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FestivalController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -1152,26 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-          <folding>
-            <element signature="e#7#30#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Festival.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2419">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#37#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -1186,27 +1108,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php">
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="29" column="90" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
+        <state relative-caret-position="306">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Festival.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding>
-            <element signature="e#44#67#0#PHP" expanded="true" />
+            <element signature="e#30#37#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
+        <state relative-caret-position="478">
           <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="40" column="109" selection-start-line="40" selection-start-column="109" selection-end-line="40" selection-end-column="109" />
+        <state relative-caret-position="234">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#44#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

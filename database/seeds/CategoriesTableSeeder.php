@@ -33,7 +33,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         Category::create([
-            'title'         => 'Sinema',
+            'title'         => 'Diğer',
         ]);
     }
 }

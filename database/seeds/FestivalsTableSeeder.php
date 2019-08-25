@@ -135,5 +135,285 @@ class FestivalsTableSeeder extends Seeder
             ])
         );
 
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2020',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2020',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(4);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Bağcılar',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 4,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 4,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 4,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2021',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2021',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(5);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Selimiye Camii',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 5,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 5,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 5,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2020',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2020',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(6);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Çamlıca Tepesi',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 6,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 6,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 6,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2022',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2022',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(7);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Hakkari',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 7,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 7,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 7,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2022',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2022',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(8);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Trabzon',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 8,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 8,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 8,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2023',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2023',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(9);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Muş',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 9,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 9,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 9,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        Festival::create([
+            'title'         => 'Kuşadası Gençlik Festivali 2024',
+            'sub_title'     => 'Kuşadası Gençlik Festivali 2024',
+            'advice'       => '“Her zaman iyi müzik” sloganıyla yola çıkan Kuşadası Gençlik Festivali, bu yıl da Ege Bölgesi’nin ses getiren etkinliklerinden biri olmayı amaçlıyor. Geçtiğimiz yıl 90 bin kişinin katıldığı ve coşkunun üst düzeyde yaşandığı festival, Davutlar mevkiinde konumlanan Sevgi Plajı’nda gerçekleşecek.',
+            'place'         => 'Kuşadası Sevgi Plajı',
+            'about'         => '10 – 14 Temmuz / Kuşadası Sevgi Plajı',
+            'price'         => 800.00,
+            'category_id'   => 1,
+            'start_date'    => Carbon::now()->addDays(3),
+            'end_date'      => Carbon::now()->addDays(12),
+        ]);
+
+        $d5 = Festival::query()->find(10);
+        $adress = new Address([
+            'city_id'   => 1,
+            'county_id' => 1,
+            'address'   => 'Etiler',
+        ]);
+        $adress->addressable()->associate($d5);
+        $adress->save();
+
+        FestivalGallery::create([
+            'festival_id' => 10,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 10,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+        FestivalGallery::create([
+            'festival_id' => 10,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
     }
 }

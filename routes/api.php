@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('festival/like/count', ['as' => 'festival.like.count', 'uses' => 'FestivalController@likeCount']);
     Route::get('festival/comment', ['as' => 'festival.comment', 'uses' => 'FestivalController@comment']);
     Route::get('festival/comment/count', ['as' => 'festival.comment.count', 'uses' => 'FestivalController@commentCount']);
+    Route::get('festival/{festival}/likeUsers', ['as' => 'festival.likeUsers', 'uses' => 'FestivalController@likeUsers']);
+    Route::get('festival/{festival}/commentUsers', ['as' => 'festival.commentUsers', 'uses' => 'FestivalController@commentUsers']);
 
     // Message
     Route::get('message/', ['as' => 'message.index', 'uses' => 'MessageController@index']);

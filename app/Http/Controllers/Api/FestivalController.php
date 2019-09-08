@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Comment;
 use App\Models\Festival;
+use App\Models\FestivalGallery;
 use App\Models\Like;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -130,6 +131,36 @@ class FestivalController extends Controller
             ->get(['festivals.id', DB::raw('count(comments.id) as comments')]);
 
         return response()->success($count);
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return
+     */
+    public function likeUsers(Request $request, $id)
+    {
+        $model = Festival::query()->with('likes.user')->find($id);
+        if(!$model) {
+            return response()->error('festival.not-found');
+        }
+
+        return response()->success($model);
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return
+     */
+    public function commentUsers(Request $request, $id)
+    {
+        $model = Festival::query()->with('comments.user')->find($id);
+        if(!$model) {
+            return response()->error('festival.not-found');
+        }
+
+        return response()->success($model);
     }
 
 }

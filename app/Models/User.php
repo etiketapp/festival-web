@@ -145,6 +145,14 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function drawUser()
+    {
+        return $this->belongsTo(DrawUser::class);
+    }
+
+    /**
      * @return mixed
      */
     public function getJWTIdentifier() {

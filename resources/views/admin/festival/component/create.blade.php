@@ -36,6 +36,22 @@
 </div>
 <div class="form-group m-form__group row">
     <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('city_id', trans($transPrefix.'city'), ['class' => 'form-control-label']) !!}
+        {!! Form::select('city_id', $cities, null, ['class' => 'form-control m-input--solid m-bootstrap-select m_selectpicker city_id', 'placeholder' => 'Seçiniz', ' data-live-search="true"']) !!}
+    </div>
+    <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('county_id', trans($transPrefix.'county'), ['class' => 'form-control-label']) !!}
+        <div class="county_div"></div>
+    </div>
+</div>
+<div class="form-group m-form__group row">
+    <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('address', trans($transPrefix.'address'), ['class' => 'form-control-label']) !!}
+        {!! Form::textarea('address', null, ['class' => 'form-control m-input m-input--solid']) !!}
+    </div>
+</div>
+<div class="form-group m-form__group row">
+    <div class="col-lg-6 m-form__group-sub">
         {!! Form::label('start_date', trans($transPrefix.'start_date'), ['class' => 'form-control-label']) !!}
         {!! Form::text('start_date', null, ['class' => 'form-control m-input m-input--solid date']) !!}
     </div>
@@ -62,6 +78,23 @@
 @push('js')
     <script type="text/javascript">
         $(function () {
+            $(document).on('change','.city_id', function () {
+                var city_id = $(this).val();
+                if(city_id > 0){
+                    var countyAjax = $.ajax( {
+                        method: "GET",
+                        url: "/admin/festival/county",
+                        data: { city_id : city_id }
+                    }).done(function(msg) {
+                        $('.county_div').html('');
+                        $('.county_div').html(msg);
+                    })
+                        .fail(function(jqXHR) {
+                            $('.county_div').html('');
+                        });
+                }
+            });$('.city_id').change();
+
             var gallery_count = $('.gallery_div').length;
             $.galleries_div = function()
             {

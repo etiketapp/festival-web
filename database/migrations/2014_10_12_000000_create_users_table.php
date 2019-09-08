@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->date('birth_date')->nullable();
-            $table->enum('gender', User::GENDERS)->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

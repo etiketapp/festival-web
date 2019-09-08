@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('festival/datatable', ['as' => 'festival.datatable', 'uses' => 'FestivalController@datatable']);
     Route::get('festival/ajax/div', ['as' => 'festival.ajax.div', 'uses' => 'FestivalController@ajaxDiv']);
     Route::post('festival/{draw}/ajax/delete', ['as' => 'festival.ajax.delete', 'uses' => 'FestivalController@ajaxDelete']);
+    Route::get('festival/county', ['as' => 'festival.county', 'uses' => 'FestivalController@county']);
     Route::resource('festival', 'FestivalController');
 
     // Category

@@ -151,6 +151,9 @@ return [
         'start_date'        => 'Başlangıç Tarihi',
         'end_date'          => 'Bitiş Tarihi',
         'category_id'       => 'Kategori',
+        'city'              => 'Şehir',
+        'county'            => 'İlçe',
+        'address'           => 'Adres',
     ],
     'category'  =>  [
         'title'             => 'Kategori Adı',

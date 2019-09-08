@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\FestivalRequest;
+use App\Models\Address;
 use App\Models\Category;
+use App\Models\City;
+use App\Models\County;
 use App\Models\Festival;
 use App\Models\FestivalGallery;
 use App\Models\Image;
@@ -46,9 +49,11 @@ class FestivalController extends Controller
     public function create()
     {
         $categories = Category::query()->pluck('title', 'id');
+        $cities = City::query()->pluck('title', 'id');
 
         return view('admin.crud.create')
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('cities', $cities);
     }
 
     /**
@@ -65,6 +70,12 @@ class FestivalController extends Controller
 
         $model = new Festival($request->input());
         $model->save();
+
+        $model->address()->save(new Address([
+            'city_id'   => $request->input('city_id'),
+            'county_id' => $request->input('county_id'),
+            'address'   => $request->input('address'),
+        ]));
 
         if($galleries){
             foreach ($galleries as $key => $gallery){
@@ -120,11 +131,14 @@ class FestivalController extends Controller
             return redirect()->route($this->routePrefix . 'index');
         }
         $categories = Category::query()->pluck('title', 'id');
-
+        $cities = City::query()->pluck('title', 'id');
+        $counties = County::query()->where('city_id', $model->city_id)->pluck('title', 'id');
 
         return view('admin.crud.edit')
             ->with('model', $model)
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('cities', $cities)
+            ->with('counties', $counties);
     }
 
     /**
@@ -146,6 +160,13 @@ class FestivalController extends Controller
 
         $model->fill($request->input());
         $model->save();
+
+        $model->address()->delete();
+        $model->address()->save(new Address([
+            'city_id'   => $request->input('city_id'),
+            'county_id' => $request->input('county_id'),
+            'address'   => $request->input('address'),
+        ]));
 
         if($galleries){
             foreach ($galleries as $key => $gallery){
@@ -229,6 +250,28 @@ class FestivalController extends Controller
             ->make(true);
     }
 
+
+    public function county(Request $request)
+    {
+        $city_id    = (int) $request->input('city_id');
+        $county_id  = (int) $request->input('county_id') ?? 0;
+        $model      = City::query()->find($city_id);
+
+        if (!$model) {
+            return response()->error('City.not-found');
+        }
+
+        $countyCount = $model->counties()->count();
+        if ($countyCount <= 0) {
+            return response()->error('County.county.not-found');
+        }
+
+        $counties = $model->counties()->pluck('title', 'id');
+
+        return view('admin.festival.component.county')
+            ->with('counties', $counties)
+            ->with('county_id', $county_id);
+    }
 
     /**
      * @param Request $request

@@ -84,6 +84,23 @@
 @push('js')
     <script type="text/javascript">
         $(function () {
+            $(document).on('change','.city_id', function () {
+                var city_id = $(this).val();
+                if(city_id > 0){
+                    var countyAjax = $.ajax( {
+                        method: "GET",
+                        url: "/admin/festival/county",
+                        data: { city_id : city_id }
+                    }).done(function(msg) {
+                        $('.county_div').html('');
+                        $('.county_div').html(msg);
+                    })
+                        .fail(function(jqXHR) {
+                            $('.county_div').html('');
+                        });
+                }
+            });$('.city_id').change();
+
             var gallery_count = $('.gallery_div').length;
             $.galleries_div = function()
             {

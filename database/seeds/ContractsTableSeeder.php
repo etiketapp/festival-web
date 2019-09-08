@@ -13,15 +13,14 @@ class ContractsTableSeeder extends Seeder
     public function run()
     {
         Contract::create([
-            'title'     => 'Sözleşme 1',
-            'content'   => 'Sözleşme 1 İçerik',
+            'title'     => 'Kullanım Koşulları Sözleşmesi',
+            'content'   => 'Kullanım Koşulları İçerik',
         ]);
 
         Contract::create([
-            'title'     => 'Sözleşme 2',
-            'content'   => 'Sözleşme 2 İçerik',
+            'title'     => 'Gizlilik Sözleşmesi',
+            'content'   => 'Gizlilik Sözleşmesi İçerik',
         ]);
-
 
     }
 }

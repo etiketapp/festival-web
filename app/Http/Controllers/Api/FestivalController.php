@@ -28,6 +28,7 @@ class FestivalController extends Controller
 
         $query = Festival::query()
             ->with('image', 'address.city', 'address.county', 'category', 'galleries.image')
+            ->withCount('likes')
             ->where('title', 'LIKE',  "%{$title}%");
 
         switch ($sort) {
@@ -39,7 +40,6 @@ class FestivalController extends Controller
         if($category) {
             $query->orderBy($category, 'asc');
         }
-
 
         $query->distance($location);
 
@@ -69,6 +69,8 @@ class FestivalController extends Controller
         $like->user()->associate($user);
         $like->festival()->associate($festival);
         $like->save();
+
+        return response()->success($like);
     }
 
     /**

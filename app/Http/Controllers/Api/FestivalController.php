@@ -45,7 +45,7 @@ class FestivalController extends Controller
 
         $model = $query;
 
-        return response()->success($model->get());
+        return response()->paginate($model);
     }
 
     /**

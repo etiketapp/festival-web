@@ -38,7 +38,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(zz $request, $id)
+    public function update(UserRequest $request, $id)
     {
         /** @var User $user */
         $user = $request->user();

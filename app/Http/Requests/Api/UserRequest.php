@@ -20,8 +20,8 @@ class UserRequest extends FormRequest
         $rules = [
             'full_name'        => 'required|min:2',
             'email'            => 'required|email|unique:users,email,' . $id,
-            'birth_date'       => 'required|date_format:Y-m-d',
-            'gender'           => 'required|in:male,female',
+//            'birth_date'       => 'required|date_format:Y-m-d',
+//            'gender'           => 'required|in:male,female',
 
         ];
 
@@ -33,8 +33,8 @@ class UserRequest extends FormRequest
         return [
             'full_name'        => trans('models.user.full_name'),
             'email'            => trans('models.user.email'),
-            'birth_date'       => trans('models.user.birth_date'),
-            'gender'           => trans('models.user.gender'),
+//            'birth_date'       => trans('models.user.birth_date'),
+//            'gender'           => trans('models.user.gender'),
         ];
     }
 }

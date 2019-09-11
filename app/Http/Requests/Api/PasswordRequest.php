@@ -15,8 +15,8 @@ class PasswordRequest extends FormRequest
     {
 
         $rules = [
-            'password'      => 'required',
-            'new_password'  => 'required',
+            'password'              => 'required',
+            'new_password'          => 'min:6|required_with:password_confirmation|same:password_confirmation',
         ];
 
         return $rules;
@@ -25,10 +25,8 @@ class PasswordRequest extends FormRequest
     public function attributes()
     {
         return [
-            'password'        => trans('models.user.password'),
-            'new_password'    => trans('models.user.new_password'),
-//            'birth_date'       => trans('models.user.birth_date'),
-//            'gender'           => trans('models.user.gender'),
+            'password'              => trans('models.user.password'),
+            'new_password'          => trans('models.user.new_password'),
         ];
     }
 }

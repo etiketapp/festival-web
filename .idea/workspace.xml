@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/PasswordRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +22,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+            <state relative-caret-position="240">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -38,7 +47,6 @@
       <find>message</find>
       <find>login</find>
       <find>giriş yap</find>
-      <find>user</find>
       <find>sezgin</find>
       <find>festival</find>
       <find>categor</find>
@@ -62,6 +70,7 @@
       <find>likes</find>
       <find>address</find>
       <find>clinical</find>
+      <find>user</find>
     </findStrings>
     <replaceStrings>
       <replace>admin</replace>
@@ -73,8 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_14_180115_create_draw_users_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/DrawRequest.php" />
         <option value="$PROJECT_DIR$/app/Models/DrawUserWinner.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_18_005624_create_draw_user_winners_table.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/draw/component/drawresult.blade.php" />
@@ -124,6 +131,8 @@
         <option value="$PROJECT_DIR$/app/Models/DrawUser.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/PasswordRequest.php" />
       </list>
     </option>
   </component>
@@ -283,6 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -320,37 +330,51 @@
               <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests/Api" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\php\festival-web\resources\views\admin\festival\component" />
-      <recent name="C:\php\festival-web\resources\views\admin\festival" />
-      <recent name="C:\php\festival-web\resources\views\admin\draw" />
-      <recent name="C:\php\festival-web\database\seeds\images\users" />
-      <recent name="C:\php\festival-web\database\seeds" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\php\festival-web\database\seeds" />
       <recent name="C:\php\etiket\database\seeds\images\users" />
       <recent name="C:\php\etiket\app\Http\Controllers\Admin" />
       <recent name="C:\php\etiket\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\php\festival-web\app\Http\Requests\Api" />
+      <recent name="C:\php\festival-web\resources\views\admin\festival\component" />
+      <recent name="C:\php\festival-web\resources\views\admin\festival" />
+      <recent name="C:\php\festival-web\resources\views\admin\draw" />
+      <recent name="C:\php\festival-web\database\seeds\images\users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -433,7 +457,8 @@
       <workItem from="1567975708721" duration="4784000" />
       <workItem from="1567980534715" duration="64000" />
       <workItem from="1568013429946" duration="9000" />
-      <workItem from="1568233404446" duration="25000" />
+      <workItem from="1568233404446" duration="910000" />
+      <workItem from="1568235167221" duration="102000" />
     </task>
     <task id="LOCAL-00001" summary="Product wanted sale">
       <created>1564174826328</created>
@@ -764,11 +789,25 @@
       <option name="project" value="LOCAL" />
       <updated>1567980545521</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="api user request fix">
+      <created>1568233441229</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1568233441229</updated>
+    </task>
+    <task id="LOCAL-00049" summary="api user request fix">
+      <created>1568233523730</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1568233523730</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162289000" />
+    <option name="totallyTimeSpent" value="163276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -783,7 +822,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37449664" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37986577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -831,7 +870,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Admin Panel festival &amp;&amp; api auth fixed" />
     <MESSAGE value="Admin Panel Draws" />
     <MESSAGE value="Admin Panel Draws datatable" />
     <MESSAGE value="festival - like &amp;&amp; comment" />
@@ -856,23 +894,10 @@
     <MESSAGE value="festival pagination" />
     <MESSAGE value="contracts table seeder" />
     <MESSAGE value="admin panel festival location added" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin panel festival location added" />
+    <MESSAGE value="api user request fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="api user request fix" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/City.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/County.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_21_220920_create_cities_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1110,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/tr/models.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
@@ -1213,10 +1231,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/tr/models.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/PasswordRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+        <state relative-caret-position="240">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
         </state>
       </provider>
     </entry>

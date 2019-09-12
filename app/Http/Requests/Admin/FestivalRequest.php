@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\Admin;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Request;
 
-class FestivalRequest extends FormRequest
+class FestivalRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.

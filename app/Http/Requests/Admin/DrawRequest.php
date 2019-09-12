@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\Admin;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Request;
 
-class DrawRequest extends FormRequest
+class DrawRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.

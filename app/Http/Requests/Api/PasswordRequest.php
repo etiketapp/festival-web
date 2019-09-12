@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests\Api;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class PasswordRequest extends FormRequest
+class PasswordRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.

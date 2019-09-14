@@ -56,27 +56,28 @@ class FestivalController extends Controller
      */
     public function like(Request $request)
     {
+        $user = $request->user('api');
         $festivalId = $request->input('festival_id');
         $festival = Festival::query()->find($festivalId);
         if(!$festival) {
             return response()->error('festival.not-found');
         }
 
-        $user = $request->user('api');
-
-        $like = $user->festivals()
-            ->where('id', $festival->id)
+        $isLiked = Like::query()
+            ->where('festival_id', $festivalId)
+            ->where('user_id', $user->id)
             ->first();
 
-        if($like == true) {
-            $like = false;
-        } else {
-            $like = true;
-        }
+        if($isLiked) {
+            $user->is_like = false;
 
-        $like = new Like([
-            'like'      => true,
-        ]);
+            return response()->success($isLiked);
+        } else {
+            $like = new Like([
+                'like'      => true,
+            ]);
+            $like->is_like = true;
+        }
 
         $like->save();
 

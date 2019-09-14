@@ -157,7 +157,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function festivals()
     {
-        return $this->belongsToMany(Festival::class);
+        return $this->belongsTo(Festival::class);
     }
 
     /**

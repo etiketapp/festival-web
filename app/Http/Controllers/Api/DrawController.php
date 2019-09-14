@@ -12,7 +12,8 @@ class DrawController extends Controller
     public function index()
     {
         $model = Draw::query()
-            ->with('image', 'galleries.image')
+            ->with('image', 'galleries.image', 'drawUsers')
+            ->withCount('drawUsers')
             ->get();
 
         return response()->success($model);

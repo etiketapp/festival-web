@@ -34,7 +34,7 @@ class Draw extends Model
      */
     public function drawUsers()
     {
-        return $this->belongsTo(DrawUser::class);
+        return $this->hasMany(DrawUser::class);
     }
 
     /**

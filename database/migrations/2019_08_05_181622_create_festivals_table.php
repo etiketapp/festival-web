@@ -24,6 +24,7 @@ class CreateFestivalsTable extends Migration
             $table->text('about');
             $table->date('start_date');
             $table->date('end_date');
+            $table->boolean('is_like')->default(false);
             $table->timestamps();
 
             $table->unsignedInteger('category_id');

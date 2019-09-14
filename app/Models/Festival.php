@@ -4,6 +4,7 @@ namespace App\Models;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Festival extends Model
 {
@@ -16,6 +17,7 @@ class Festival extends Model
         'about',
         'start_date',
         'end_date',
+        'is_like',
 
         'category_id',
         'location',
@@ -33,6 +35,7 @@ class Festival extends Model
 
     protected $appends = [
         'distance',
+        'is_like'
     ];
 
     /*
@@ -157,7 +160,7 @@ class Festival extends Model
     public function getIsLikeAttribute()
     {
         if (Auth::check()) {
-            return !$this->likes->where('user_id', Auth::user()->id)->isEmpty();
+            return !$this->likes->where('user_id', Auth::user()->id);
         }
 
         return false;

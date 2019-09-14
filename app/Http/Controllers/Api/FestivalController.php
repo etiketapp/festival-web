@@ -14,7 +14,6 @@ class FestivalController extends Controller
     /**
      * @return mixed
      */
-    // isim kategori konum
     public function index(Request $request)
     {
         $user = $request->user('api');

@@ -55,7 +55,7 @@ class DrawController extends Controller
     public function users($id)
     {
         $model = DrawUser::query()
-            ->with('user')
+            ->with('user.image')
             ->where('draw_id', $id)->get();
 
         return response()->success($model);

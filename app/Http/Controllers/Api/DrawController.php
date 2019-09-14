@@ -12,7 +12,7 @@ class DrawController extends Controller
     public function index()
     {
         $model = Draw::query()
-            ->with('image', 'galleries.image', 'drawUsers')
+            ->with('image', 'galleries.image')
             ->withCount('drawUsers')
             ->get();
 
@@ -26,7 +26,7 @@ class DrawController extends Controller
         if(!$draw) {
             return response()->error('draw.not-found');
         }
-
+//        $isJoined = Draw::query()->where('user_id', $user->id)
 
         $model = new DrawUser();
         $model->draw()->associate($draw);

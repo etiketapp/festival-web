@@ -154,5 +154,14 @@ class Festival extends Model
         return $this->hasMany(FestivalGallery::class);
     }
 
+    public function getIsLikedAttribute()
+    {
+        if(!$this->relationLoaded()) {
+            return null;
+        }
+
+        return $this->likes ?? null;
+    }
+
 
 }

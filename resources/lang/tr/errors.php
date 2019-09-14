@@ -65,4 +65,7 @@ return [
     'service' => [
         'not-found' => 'Hizmet bulunamadı.',
     ],
+    'festival'  => [
+        'not-found' => 'Festival bulunamadı.',
+    ]
 ];

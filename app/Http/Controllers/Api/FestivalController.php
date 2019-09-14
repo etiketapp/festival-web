@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Comment;
 use App\Models\Festival;
-use App\Models\FestivalGallery;
 use App\Models\Like;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,6 +17,8 @@ class FestivalController extends Controller
     // isim kategori konum
     public function index(Request $request)
     {
+        $user = $request->user('api');
+
         $title      = $request->input('title') ?? '';
         $sort       = $request->input('sort') ?? null;
         $category   = $request->input('category') ?? null;
@@ -47,6 +48,20 @@ class FestivalController extends Controller
         $model = $query;
 
         return response()->paginate($model);
+    }
+
+    public function show(Request $request, $id)
+    {
+        $user = $request->user('api');
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $model = Festival::query()->find($id);
+        if(!$model) {
+            return response()->error('festival.not-found');
+        }
+
     }
 
     /**

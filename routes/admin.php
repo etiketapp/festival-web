@@ -45,4 +45,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
     // Draw Winner User
     Route::get('drawwinner/datatable', ['as' => 'drawwinner.datatable', 'uses' => 'DrawWinnerController@datatable']);
     Route::get('drawwinner/index', ['as' => 'drawwinner.index', 'uses' => 'DrawWinnerController@index']);
+
+    // Admin Notification
+    Route::get('adminnotification/datatable', ['as' => 'adminnotification.datatable', 'uses' => 'AdminNotificationController@datatable']);
+    Route::resource('adminnotification', 'AdminNotificationController');
 });

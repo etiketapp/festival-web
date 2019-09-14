@@ -11,7 +11,10 @@ class DrawController extends Controller
 {
     public function index()
     {
-        $model = Draw::query()->with('image', 'galleries.image')->get();
+        $model = Draw::query()
+            ->with('image', 'galleries.image')
+            ->withCount('drawUsers')
+            ->get();
 
         return response()->success($model);
     }
@@ -24,9 +27,10 @@ class DrawController extends Controller
             return response()->error('draw.not-found');
         }
 
+
         $model = new DrawUser();
-        $model->user()->associate($user);
         $model->draw()->associate($draw);
+        $model->user()->associate($user);
         $model->save();
 
         return response()->success($model);

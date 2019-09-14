@@ -169,5 +169,9 @@ return [
     'drawwinner'    => [
         'user'          => 'Kullanıcı',
         'draw'          => 'Çekiliş',
-    ]
+    ],
+    'adminnotification'     => [
+        'title'         => 'Başlık',
+        'text'          => 'Bildirim',
+    ],
 ];

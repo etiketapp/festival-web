@@ -109,4 +109,9 @@ return [
         'new_create'        => 'Çekiliş Oluştur',
         'new_update'        => 'Çekilişi Güncelle',
     ],
+    'adminnotification' => [
+        'title'             => 'Bildirim|Bildirimler',
+        'new_create'        => 'Bildirim Oluştur',
+        'new_update'        => 'Bildirim Güncelle',
+    ]
 ];

@@ -154,13 +154,13 @@ class Festival extends Model
         return $this->hasMany(FestivalGallery::class);
     }
 
-    public function getIsLikedAttribute()
+    public function getIsLikeAttribute()
     {
-        if(!$this->relationLoaded()) {
-            return null;
+        if (Auth::check()) {
+            return !$this->likes->where('user_id', Auth::user()->id)->isEmpty();
         }
 
-        return $this->likes ?? null;
+        return false;
     }
 
 

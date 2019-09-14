@@ -50,20 +50,6 @@ class FestivalController extends Controller
         return response()->paginate($model);
     }
 
-    public function show(Request $request, $id)
-    {
-        $user = $request->user('api');
-        if(!$user) {
-            return response()->error('auth.not-found');
-        }
-
-        $model = Festival::query()->find($id);
-        if(!$model) {
-            return response()->error('festival.not-found');
-        }
-
-    }
-
     /**
      * @param Request $request
      * @return mixed

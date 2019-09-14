@@ -140,7 +140,7 @@ class FestivalController extends Controller
      */
     public function likeUsers(Request $request, $id)
     {
-        $model = Festival::query()->with('likes.user')->find($id);
+        $model = Festival::query()->with('likes.user.image')->find($id);
         if(!$model) {
             return response()->error('festival.not-found');
         }

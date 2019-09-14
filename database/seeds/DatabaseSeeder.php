@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(FestivalsTableSeeder::class);
         $this->call(DrawsTableSeeder::class);
         $this->call(DrawWinnersTableSeeder::class);
+        $this->call(MessagesTableSeeder::class);
+        $this->call(LikesTableSeeder::class);
+        $this->call(CommentsTableSeeder::class);
     }
 }

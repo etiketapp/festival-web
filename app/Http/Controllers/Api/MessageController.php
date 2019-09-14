@@ -12,10 +12,13 @@ class MessageController extends Controller
 {
     public function index(Request $request)
     {
-        $user = $request->user('api')
-            ->load('image', 'conversations', 'messages');
+//        $user = $request->user('api')
+//            ->load('image', 'conversations', 'messages');
+//
+//        $user['messages'] = $user->messages()->orderBy('created_at', 'desc')->get();
 
-        $user['messages'] = $user->messages()->orderBy('created_at', 'desc')->get();
+        $user = $request->user('api')
+            ->load('image', 'conversations');
 
         return response()->success($user);
     }

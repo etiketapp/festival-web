@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Draw extends Model
 {
@@ -11,6 +12,10 @@ class Draw extends Model
         'sub_title',
         'content',
         'last_date',
+    ];
+
+    protected $appends = [
+        'is_joined'
     ];
 
     /**
@@ -43,6 +48,16 @@ class Draw extends Model
     public function galleries()
     {
         return $this->hasMany(DrawGallery::class);
+    }
+
+
+    public function getIsJoinedAttribute()
+    {
+        if (Auth::check()) {
+            return !$this->drawUsers->where('user_id', Auth::user()->id);
+        }
+
+        return false;
     }
 
 }

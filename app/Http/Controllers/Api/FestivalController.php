@@ -63,6 +63,12 @@ class FestivalController extends Controller
 
         $user = $request->user('api');
 
+        $like = $user->festivals()
+            ->where('id', $festival->id)
+            ->first();
+
+        $like = true;
+
         $like = new Like([
             'like'      => true,
         ]);

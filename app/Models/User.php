@@ -153,6 +153,14 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function festivals()
+    {
+        return $this->belongsToMany(Festival::class);
+    }
+
+    /**
      * @return mixed
      */
     public function getJWTIdentifier() {

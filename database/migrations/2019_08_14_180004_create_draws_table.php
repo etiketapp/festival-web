@@ -19,6 +19,7 @@ class CreateDrawsTable extends Migration
             $table->string('sub_title');
             $table->text('content');
             $table->date('last_date');
+            $table->boolean('is_joined')->default(false);
             $table->timestamps();
         });
     }

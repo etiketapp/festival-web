@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class DrawUser extends Model
 {
@@ -26,4 +27,5 @@ class DrawUser extends Model
     {
         return $this->belongsTo(User::class);
     }
+
 }

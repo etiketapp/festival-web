@@ -54,7 +54,9 @@ class DrawController extends Controller
 
     public function users($id)
     {
-        $model = DrawUser::query()->where('draw_id', $id)->get();
+        $model = DrawUser::query()
+            ->with('user')
+            ->where('draw_id', $id)->get();
 
         return response()->success($model);
     }

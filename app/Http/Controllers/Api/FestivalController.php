@@ -56,7 +56,8 @@ class FestivalController extends Controller
      */
     public function like(Request $request)
     {
-        $festival = Festival::query()->find($request->input('festival_id'));
+        $festivalId = $request->input('festival_id');
+        $festival = Festival::query()->find($festivalId);
         if(!$festival) {
             return response()->error('festival.not-found');
         }
@@ -67,7 +68,11 @@ class FestivalController extends Controller
             ->where('id', $festival->id)
             ->first();
 
-        $like = true;
+        if($like == true) {
+            $like = false;
+        } else {
+            $like = true;
+        }
 
         $like = new Like([
             'like'      => true,

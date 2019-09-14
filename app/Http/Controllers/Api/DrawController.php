@@ -13,7 +13,6 @@ class DrawController extends Controller
     {
         $model = Draw::query()
             ->with('image', 'galleries.image')
-            ->withCount('drawUsers')
             ->get();
 
         return response()->success($model);

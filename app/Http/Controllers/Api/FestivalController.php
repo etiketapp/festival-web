@@ -63,30 +63,56 @@ class FestivalController extends Controller
             return response()->error('festival.not-found');
         }
 
-        $isLiked = Like::query()
-            ->where('festival_id', $festivalId)
+        $festivalLike = Like::query()
+            ->with('festival', 'user')
             ->where('user_id', $user->id)
+            ->where('festival_id', $festivalId)
             ->first();
 
-        if($isLiked) {
-            $user->is_like = false;
 
-            return response()->success($isLiked);
-        } else {
-            $like = new Like([
-                'like'      => true,
-            ]);
-            $like->is_like = true;
+        if(!$festivalLike) {
+            $festivalLike = new Like();
+            $festivalLike->like = true;
+            $festivalLike->user()->associate($user);
+            $festivalLike->festival()->associate($festival);
+            $festivalLike->save();
+
         }
 
+        if($festivalLike->like == false) {
+            $festivalLike->like = true;
+            $festivalLike->save();
+        }
 
-        $like->save();
+        return response()->success($festivalLike);
+    }
 
-        $like->user()->associate($user);
-        $like->festival()->associate($festival);
-        $like->save();
+    public function disLike(Request $request)
+    {
+        $user = $request->user('api');
+        $festivalId = $request->input('festival_id');
+        $festival = Festival::query()->find($festivalId);
+        if(!$festival) {
+            return response()->error('festival.not-found');
+        }
 
-        return response()->success($like);
+        $festivalLike = Like::query()
+            ->with('festival', 'user')
+            ->where('user_id', $user->id)
+            ->where('festival_id', $festivalId)
+            ->first();
+
+
+        if(!$festivalLike) {
+            return response()->error('festival.not-found');
+        }
+
+        if($festivalLike->like = true) {
+            $festivalLike->like = false;
+            $festivalLike->save();
+        }
+
+        return response()->success($festivalLike);
     }
 
     /**

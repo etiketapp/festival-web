@@ -146,7 +146,7 @@ class AuthController extends Controller
         $birthDate  = null;
 
 
-        if (!$email || !$name || !$gsm) {
+        if (!$email || !$name) {
             return response()->json([
                 'code'    => 'auth.social.missing',
                 'message' => trans('errors.auth.social.missing'),

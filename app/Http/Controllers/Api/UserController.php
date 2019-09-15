@@ -8,6 +8,7 @@ use App\Http\Requests\Api\UserRequest;
 use App\Models\Comment;
 use App\Models\Draw;
 use App\Models\DrawUser;
+use App\Models\Festival;
 use App\Models\GsmVerify;
 use App\Models\Like;
 use App\Models\User;

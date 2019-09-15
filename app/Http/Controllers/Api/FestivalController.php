@@ -139,7 +139,12 @@ class FestivalController extends Controller
         $comment->festival()->associate($festival);
         $comment->save();
 
-        return response()->success($comment);
+        $model = Comment::query()->with('user.image')->find($comment->id);
+        if(!$model) {
+            return response()->error('comment.not-found');
+        }
+
+        return response()->success($model);
     }
 
     /**

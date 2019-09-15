@@ -16,6 +16,7 @@ Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractControl
 
 Route::group(['middleware' => 'auth:api'], function () {
     // User
+    Route::get('user/festivals', ['as' => 'user.festivals', 'uses' => 'UserController@festivals']);
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
     Route::resource('user', 'UserController', ['only' => ['show', 'update']]);
 

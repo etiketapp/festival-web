@@ -6,6 +6,7 @@ use App\Http\Requests\Api\GsmRequest;
 use App\Http\Requests\Api\PasswordRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Models\GsmVerify;
+use App\Models\Like;
 use App\Models\User;
 use App\Models\Image;
 use Carbon\Carbon;
@@ -77,6 +78,22 @@ class UserController extends Controller
         $user->save();
 
         return response()->message('auth.password');
+    }
+
+    public function festivals(Request $request)
+    {
+        $user = $request->user('api')
+            ->load('festivals');
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $collection = Like::query()
+            ->with('festival')
+            ->where('user_id', $user->id)
+            ->get();
+
+        return response()->success($collection);
     }
 
 

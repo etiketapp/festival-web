@@ -26,10 +26,12 @@ class DrawController extends Controller
         if(!$draw) {
             return response()->error('draw.not-found');
         }
-        $isJoined = Draw::query()
+
+        $isJoined = DrawUser::query()
             ->where('user_id', $user->id)
-            ->where('id', $drawId)
+            ->where('draw_id', $drawId)
             ->first();
+
 
         if($isJoined) {
             return response()->error('draw.multiple-join');

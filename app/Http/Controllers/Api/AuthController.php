@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\Api\ForgotRequest;
@@ -9,31 +8,28 @@ use App\Http\Requests\Api\LoginRequest;
 use App\Http\Requests\Api\RegisterRequest;
 use App\Http\Requests\Api\VerifyRequest;
 use App\Models\Contract;
+use App\Models\Device;
 use App\Models\GsmVerify;
 use App\Models\PasswordReset;
 use App\Models\Social;
+use Carbon\Carbon;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Validator;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-
     private $auth;
 
-    /**
-     * AuthController constructor.
-     * @param Guard $auth
-     */
     public function __construct(Guard $auth)
     {
         $this->auth = $auth;
     }
+
     /**
-     * @return mixed
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -45,10 +41,11 @@ class AuthController extends Controller
     }
 
     /**
-     * @param RegisterRequest $request
-     * @return mixed
+     * Register api
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
         $user = new User($request->input());
         $user->password = $request->input('password');
@@ -64,7 +61,8 @@ class AuthController extends Controller
                 if ($provider == 'facebook') {
                     $socialUser = Socialite::driver($provider)
                         ->scopes(['email', 'user_gender', 'user_birthday'])
-                        ->fields(['name', 'email', 'birthday', 'verified']);
+                        ->fields(['name', 'email', 'birthday', 'verified'])
+                        ->userFromToken($token);
                 } elseif ($provider == 'google') {
                     /** @var GoogleProvider $socialite */
                     $socialUser = Socialite::driver($provider)
@@ -78,6 +76,7 @@ class AuthController extends Controller
                 } else {
                     throw new \Exception();
                 }
+
 
                 // Attach social profile
                 $social = new Social([
@@ -97,6 +96,11 @@ class AuthController extends Controller
         return response()->success(['token' => auth('api')->login($user), 'user' => $user]);
     }
 
+    /**
+     * @param Request $request
+     * @param $provider
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function social(Request $request, $provider)
     {
         $token = $request->input('token');
@@ -199,14 +203,20 @@ class AuthController extends Controller
     }
 
     /**
+     * login api
+     *
      * @param LoginRequest $request
-     * @return mixed
+     * @return \Illuminate\Http\Response
      */
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $credentials = request(['email', 'password']);
 
-        if (!$token = auth('api')->attempt($credentials)) {
+        $token = Auth::guard('api')->attempt([
+            filter_var($request->input('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'gsm' => $request->input('username'),
+            'password' => $request->input('password'),
+        ]);
+
+        if (!$token) {
             return response()->error('auth.invalid');
         }
 
@@ -219,6 +229,10 @@ class AuthController extends Controller
         return response()->success(['token' => $token, 'user' => $user]);
     }
 
+    /**
+     * @param ForgotRequest $request
+     * @return mixed
+     */
     public function forgot(ForgotRequest $request)
     {
         $user = User::where('email', $request->input('email'))->first();
@@ -241,9 +255,26 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
+        $user = $request->user();
 
         auth('api')->logout();
 
         return response()->message('auth.logout');
     }
+
+    /**
+     * @param $token
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function respondWithToken(User $user, $token)
+    {
+        $token = auth('api')->login($user);
+        $user->load('image');
+
+        return [
+            'token' => $token,
+            'user' => $user,
+        ];
+    }
+
 }

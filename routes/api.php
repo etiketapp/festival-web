@@ -16,7 +16,8 @@ Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractControl
 
 Route::group(['middleware' => 'auth:api'], function () {
     // User
-    Route::get('user/{user}/festivals', ['as' => 'user.user.festivals', 'uses' => 'UserController@festivals']);
+    Route::get('user/{user}/likedFestivals', ['as' => 'user.liked.festivals', 'uses' => 'UserController@likedFestivals']);
+    Route::get('user/{user}/commentedFestivals', ['as' => 'user.commented.festivals', 'uses' => 'UserController@commentedFestivals']);
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
     Route::resource('user', 'UserController', ['only' => ['show', 'update']]);
 

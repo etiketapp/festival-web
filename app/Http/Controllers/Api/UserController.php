@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\GsmRequest;
 use App\Http\Requests\Api\PasswordRequest;
 use App\Http\Requests\Api\UserRequest;
+use App\Models\Comment;
 use App\Models\GsmVerify;
 use App\Models\Like;
 use App\Models\User;
@@ -80,15 +81,30 @@ class UserController extends Controller
         return response()->message('auth.password');
     }
 
-    public function festivals(Request $request, $id)
+    public function likedFestivals(Request $request, $id)
     {
-        $user = $request->user('api')
-            ->load('festivals');
+        $user = $request->user('api');
         if(!$user) {
             return response()->error('auth.not-found');
         }
 
         $collection = Like::query()
+            ->with('festival')
+            ->where('user_id', $user->id)
+            ->get();
+
+        return response()->success($collection);
+    }
+
+    public function commentedFestivals(Request $request, $id)
+    {
+        $user = $request->user('api');
+
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $collection = Comment::query()
             ->with('festival')
             ->where('user_id', $user->id)
             ->get();

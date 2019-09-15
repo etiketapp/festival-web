@@ -18,6 +18,15 @@ class DrawUser extends Model
         'deleted_at',
     ];
 
+    protected $appends = [
+        'user_count'
+    ];
+
+    public function getUserCountAttribute()
+    {
+        return $this->user()->count();
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

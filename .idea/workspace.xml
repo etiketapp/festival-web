@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Festival.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Festival.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DrawUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DrawUser.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,26 +22,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="110" column="28" lean-forward="true" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="410">
+              <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Models/Festival.php">
+        <entry file="file://$PROJECT_DIR$/app/Models/DrawUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="151" column="29" lean-forward="true" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+            <state relative-caret-position="290">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding>
+                <element signature="e#30#69#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,7 +124,6 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Models/Draw.php" />
         <option value="$PROJECT_DIR$/app/Models/DrawGallery.php" />
-        <option value="$PROJECT_DIR$/app/Models/DrawUser.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/app/Models/FestivalGallery.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminnotification/component/create.blade.php" />
@@ -143,6 +135,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
         <option value="$PROJECT_DIR$/app/Models/Like.php" />
         <option value="$PROJECT_DIR$/app/Models/Festival.php" />
+        <option value="$PROJECT_DIR$/app/Models/DrawUser.php" />
       </list>
     </option>
   </component>
@@ -430,21 +423,7 @@
       <workItem from="1568310043471" duration="556000" />
       <workItem from="1568360870254" duration="5000" />
       <workItem from="1568462574993" duration="15029000" />
-      <workItem from="1568551679204" duration="13804000" />
-    </task>
-    <task id="LOCAL-00030" summary="Festival seeders">
-      <created>1566496224911</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1566496224911</updated>
-    </task>
-    <task id="LOCAL-00031" summary="festival draw galleries">
-      <created>1566500234193</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1566500234193</updated>
+      <workItem from="1568551679204" duration="14599000" />
     </task>
     <task id="LOCAL-00032" summary="festival draw galleries">
       <created>1566500994785</created>
@@ -775,11 +754,25 @@
       <option name="project" value="LOCAL" />
       <updated>1568565961529</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="festival like, comment count attribute">
+      <created>1568569908574</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1568569908574</updated>
+    </task>
+    <task id="LOCAL-00080" summary="festival like, comment count attribute">
+      <created>1568570016715</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1568570016715</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194653000" />
+    <option name="totallyTimeSpent" value="195448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,7 +836,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Festival start date end date" />
     <MESSAGE value="Festival category added" />
     <MESSAGE value="Festival seeders" />
     <MESSAGE value="festival draw galleries" />
@@ -868,16 +860,10 @@
     <MESSAGE value="draw" />
     <MESSAGE value="google login fix" />
     <MESSAGE value="auth google fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth google fix" />
+    <MESSAGE value="festival like, comment count attribute" />
+    <option name="LAST_COMMIT_MESSAGE" value="festival like, comment count attribute" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/tr/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -1146,16 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/DrawUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/UsersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1197,13 +1173,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="110" column="28" lean-forward="true" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Like.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -1218,10 +1187,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Festival.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="151" column="29" lean-forward="true" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+        <state relative-caret-position="-1101">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DrawUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

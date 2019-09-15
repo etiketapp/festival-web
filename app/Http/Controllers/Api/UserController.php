@@ -86,7 +86,8 @@ class UserController extends Controller
 
     public function likedFestivals(Request $request, $id)
     {
-        $user = $request->user('api');
+        $user = $request->user('api')
+            ->load('image');
         if(!$user) {
             return response()->error('auth.not-found');
         }
@@ -101,7 +102,8 @@ class UserController extends Controller
 
     public function commentedFestivals(Request $request, $id)
     {
-        $user = $request->user('api');
+        $user = $request->user('api')
+            ->load('image');
 
         if(!$user) {
             return response()->error('auth.not-found');
@@ -117,7 +119,8 @@ class UserController extends Controller
 
     public function userDraws(Request $request, $id)
     {
-        $user = $request->user('api');
+        $user = $request->user('api')
+            ->load('image');
         if(!$user) {
             return response()->error('auth.not-found');
         }

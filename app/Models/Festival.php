@@ -36,8 +36,8 @@ class Festival extends Model
     protected $appends = [
         'distance',
         'is_like',
-        'like_count',
-        'comment_count',
+        'likes_count',
+        'comments_count',
     ];
 
     /*
@@ -102,12 +102,12 @@ class Festival extends Model
             ->addSelect($this->getTable() . '.*', DB::raw($raw));
     }
 
-    public function getLikeCountAttribute()
+    public function getLikesCountAttribute()
     {
         return $this->likes()->count();
     }
 
-    public function getCommentCountAttribute()
+    public function getCommentsCountAttribute()
     {
         return $this->comments()->count();
     }

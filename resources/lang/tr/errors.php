@@ -35,13 +35,6 @@ return [
             'missing'     => 'Bazı bilgiler eksik.',
         ],
     ],
-    'dietician' => [
-        'not-found' => 'Diyetisyen bulunamadı.',
-
-        'service' => [
-            'not-found' => 'Hizmet bulunamadı.',
-        ],
-    ],
     'user' => [
         'gsm' => [
             'registered' => 'Gsm numarası kayıtlı.',
@@ -67,5 +60,9 @@ return [
     ],
     'festival'  => [
         'not-found' => 'Festival bulunamadı.',
-    ]
+    ],
+    'draw'      => [
+        'not-found'     => 'Çekiliş Bulunamadı',
+        'multiple-join' => 'Sadece bir kere katılabilirsiniz.',
+    ],
 ];

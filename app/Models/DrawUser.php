@@ -19,10 +19,10 @@ class DrawUser extends Model
     ];
 
     protected $appends = [
-        'user_count'
+        'draw_users_count'
     ];
 
-    public function getUserCountAttribute()
+    public function getDrawUsersCountAttribute()
     {
         return $this->user()->count();
     }

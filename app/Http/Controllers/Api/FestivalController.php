@@ -89,9 +89,10 @@ class FestivalController extends Controller
 
     public function disLike(Request $request)
     {
-        $user = $request->user('api');
+        $user = $request->user('api')
+            ->load('image');
         $festivalId = $request->input('festival_id');
-        $festival = Festival::query()->find($festivalId);
+        $festival = Festival::query()->with('galleries')->find($festivalId);
         if(!$festival) {
             return response()->error('festival.not-found');
         }
@@ -122,12 +123,13 @@ class FestivalController extends Controller
     public function comment(Request $request)
     {
         $festivalId = $request->input('festival_id');
-        $festival = Festival::query()->find($festivalId);
+        $festival = Festival::query()->with('galleries')->find($festivalId);
         if(!$festival) {
             return response()->error('festival.not-found');
         }
 
-        $user = $request->user('api');
+        $user = $request->user('api')
+            ->load('image');
 
         $comment = new Comment([
             'comment'     => $request->input('comment')

@@ -34,6 +34,10 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password',
         'remember_token',
+
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $dates = [
@@ -147,9 +151,9 @@ class User extends Authenticatable implements JWTSubject
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function drawUser()
+    public function drawUsers()
     {
-        return $this->belongsTo(DrawUser::class);
+        return $this->hasMany(DrawUser::class);
     }
 
     /**
@@ -157,7 +161,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function festivals()
     {
-        return $this->belongsTo(Festival::class);
+        return $this->hasMany(Festival::class);
     }
 
     /**

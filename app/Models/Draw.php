@@ -18,6 +18,14 @@ class Draw extends Model
         'is_joined'
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+
+        'drawUsers'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */

@@ -6,6 +6,8 @@ use App\Http\Requests\Api\GsmRequest;
 use App\Http\Requests\Api\PasswordRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Models\Comment;
+use App\Models\Draw;
+use App\Models\DrawUser;
 use App\Models\GsmVerify;
 use App\Models\Like;
 use App\Models\User;
@@ -89,7 +91,7 @@ class UserController extends Controller
         }
 
         $collection = Like::query()
-            ->with('festival')
+            ->with('festival.galleries.image')
             ->where('user_id', $user->id)
             ->get();
 
@@ -105,7 +107,22 @@ class UserController extends Controller
         }
 
         $collection = Comment::query()
-            ->with('festival')
+            ->with('festival.galleries.image')
+            ->where('user_id', $user->id)
+            ->get();
+
+        return response()->success($collection);
+    }
+
+    public function userDraws(Request $request, $id)
+    {
+        $user = $request->user('api');
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $collection = DrawUser::query()
+            ->with('user', 'draw.galleries.image')
             ->where('user_id', $user->id)
             ->get();
 

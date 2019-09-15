@@ -80,7 +80,7 @@ class UserController extends Controller
         return response()->message('auth.password');
     }
 
-    public function festivals(Request $request)
+    public function festivals(Request $request, $id)
     {
         $user = $request->user('api')
             ->load('festivals');

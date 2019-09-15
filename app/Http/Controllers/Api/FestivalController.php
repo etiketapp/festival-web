@@ -79,6 +79,7 @@ class FestivalController extends Controller
             $like->is_like = true;
         }
 
+
         $like->save();
 
         $like->user()->associate($user);

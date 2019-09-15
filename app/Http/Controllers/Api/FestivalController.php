@@ -121,7 +121,8 @@ class FestivalController extends Controller
      */
     public function comment(Request $request)
     {
-        $festival = Festival::query()->find($request->input('festival_id'));
+        $festivalId = $request->input('festival_id');
+        $festival = Festival::query()->find($festivalId);
         if(!$festival) {
             return response()->error('festival.not-found');
         }
@@ -135,6 +136,8 @@ class FestivalController extends Controller
         $comment->user()->associate($user);
         $comment->festival()->associate($festival);
         $comment->save();
+
+        return response()->success($comment);
     }
 
     /**

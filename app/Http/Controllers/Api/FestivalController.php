@@ -201,7 +201,7 @@ class FestivalController extends Controller
      */
     public function commentUsers(Request $request, $id)
     {
-        $model = Festival::query()->with('comments.user')->find($id);
+        $model = Festival::query()->with('comments.user.image')->find($id);
         if(!$model) {
             return response()->error('festival.not-found');
         }

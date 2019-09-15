@@ -65,6 +65,16 @@ class AuthController extends Controller
                     $socialUser = Socialite::driver($provider)
                         ->scopes(['email', 'user_gender', 'user_birthday'])
                         ->fields(['name', 'email', 'birthday', 'verified']);
+                } elseif ($provider == 'google') {
+                    /** @var GoogleProvider $socialite */
+                    $socialUser = Socialite::driver($provider)
+                        ->userFromToken($token);
+
+                } elseif ($provider == 'googleid') {
+                    /** @var GoogleIdProvider $socialite */
+                    $socialUser = Socialite::driver($provider)
+                        ->userFromToken($token);
+                    $provider = 'google';
                 } else {
                     throw new \Exception();
                 }
@@ -115,7 +125,11 @@ class AuthController extends Controller
         }
 
         // If users email address already registered
-        $user = User::where('email', $socialUser->getEmail())->first();
+        $user = User::query()
+            ->with('image')
+            ->where('email', $socialUser->getEmail())
+            ->first();
+
         if ($user) {
             $social = new Social([
                 'provider'     => $provider,
@@ -125,7 +139,7 @@ class AuthController extends Controller
             $social->user()->associate($user);
             $social->save();
 
-            return response()->success(auth('api')->login($user));
+            return response()->success(['token' => auth('api')->login($user), 'user' => $user]);
         }
 
         // If already logged in before
@@ -135,7 +149,7 @@ class AuthController extends Controller
             $social->access_token = $token;
             $social->save();
 
-            return response()->success(auth('api')->login($user));
+            return response()->success(['token' => auth('api')->login($user), 'user' => $user]);
         }
 
         // Check Required fields
@@ -153,7 +167,6 @@ class AuthController extends Controller
                 'user'    => [
                     'token' => $token,
                     'email' => $email,
-                    'gsm'   => $gsm,
                     'name'  => $name,
                 ],
             ], 400);

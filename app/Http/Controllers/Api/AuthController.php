@@ -12,6 +12,7 @@ use App\Models\Contract;
 use App\Models\GsmVerify;
 use App\Models\PasswordReset;
 use App\Models\Social;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Models\User;

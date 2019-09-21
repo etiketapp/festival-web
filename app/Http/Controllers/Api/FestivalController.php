@@ -28,7 +28,7 @@ class FestivalController extends Controller
         $location = $latitude && $longitude ? "{$latitude},{$longitude}" : null;
 
         $query = Festival::query()
-            ->with('image', 'address.city', 'address.county', 'category', 'galleries.image', 'likes')
+            ->with('image', 'address.city', 'address.county', 'category', 'galleries.image')
             ->withCount('likes', 'comments')
             ->where('title', 'LIKE',  "%{$title}%");
 
@@ -109,11 +109,11 @@ class FestivalController extends Controller
         }
 
         if($festivalLike->is_liked = true) {
-            $festivalLike->is_liked = false;
+            $festivalLike->is_like = false;
             $festivalLike->save();
         }
 
-        return response()->success($festivalLike);
+        return response()->success($festival);
     }
 
     /**

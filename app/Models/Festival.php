@@ -34,7 +34,7 @@ class Festival extends Model
 
     protected $appends = [
         'distance',
-//        'is_like',
+        'is_liked',
         'likes_count',
         'comments_count',
     ];
@@ -167,10 +167,11 @@ class Festival extends Model
         return $this->hasMany(FestivalGallery::class);
     }
 
-    public function getIsLikeAttribute()
+    public function getIsLikedAttribute()
     {
         if (Auth::check()) {
-            return !$this->likes->where('user_id', Auth::user()->id);
+            if($this->likes()->where('user_id', Auth::user()->id)->where('festival_id', $this->id)->first())
+                return true;
         }
 
         return false;

@@ -109,8 +109,7 @@ class FestivalController extends Controller
         }
 
         if($festivalLike->is_liked = true) {
-            $festivalLike->is_liked = false;
-            $festivalLike->save();
+            $festivalLike->delete();
         }
 
         return response()->success($festivalLike);

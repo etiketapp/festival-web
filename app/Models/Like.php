@@ -16,6 +16,12 @@ class Like extends Model
         'festival_id',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
     protected $casts = [
         'is_liked'      => 'boolean'
     ];

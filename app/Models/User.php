@@ -132,7 +132,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function conversations()
     {
-        return $this->hasMany(Conversation::class);
+        return $this->hasMany(Conversation::class, 'user_one_id');
     }
 
     public function messages()

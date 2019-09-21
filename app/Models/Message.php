@@ -8,28 +8,34 @@ class Message extends Model
 {
     protected $fillable = [
         'message',
+        'date',
 
-        'user_id',
-        'receiver_id',
+        'user_one_id',
+        'user_two_id',
         'conversation_id',
     ];
 
     protected $hidden = [
         'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function user() {
-        return $this->belongsToMany(User::class);
+    public function user_one() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function user_two() {
+        return $this->belongsTo(User::class);
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function conversation() {
-        return $this->belongsToMany(Conversation::class);
+        return $this->belongsTo(Conversation::class);
     }
 }

@@ -16,14 +16,14 @@ class MessagesTableSeeder extends Seeder
     public function run()
     {
         Conversation::create([
-            'user_id'       => 1,
-            'user_two'      => 2,
+            'user_one_id'          => 1,
+            'user_two_id'          => 2,
         ]);
 
         Message::create([
             'message'           => 'Message1',
-            'user_id'           => 1,
-            'receiver_id'       => 2,
+            'user_one_id'       => 1,
+            'user_two_id'       => 2,
             'conversation_id'   => 1,
         ]);
     }

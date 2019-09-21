@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     // Message
     Route::get('message/', ['as' => 'message.index', 'uses' => 'MessageController@index']);
-    Route::get('message/send', ['as' => 'message.send', 'uses' => 'MessageController@sendMessage']);
+    Route::post('message/send', ['as' => 'message.send', 'uses' => 'MessageController@sendMessage']);
 
     // Draw
     Route::get('draws', ['as' => 'draws.index', 'uses' => 'DrawController@index']);

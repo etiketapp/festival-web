@@ -17,12 +17,12 @@ class CreateConversationsTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')
+            $table->unsignedInteger('user_one_id');
+            $table->foreign('user_one_id')->references('id')
                 ->on('users')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->unsignedInteger('user_two');
-            $table->foreign('user_two')->references('id')
+            $table->unsignedInteger('user_two_id');
+            $table->foreign('user_two_id')->references('id')
                 ->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }

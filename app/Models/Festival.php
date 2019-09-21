@@ -17,7 +17,6 @@ class Festival extends Model
         'about',
         'start_date',
         'end_date',
-        'is_like',
 
         'category_id',
         'location',
@@ -35,7 +34,7 @@ class Festival extends Model
 
     protected $appends = [
         'distance',
-        'is_like',
+//        'is_like',
         'likes_count',
         'comments_count',
     ];

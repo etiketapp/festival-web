@@ -58,13 +58,13 @@ class FestivalController extends Controller
     {
         $user = $request->user('api');
         $festivalId = $request->input('festival_id');
-        $festival = Festival::query()->find($festivalId);
+        $festival = Festival::query()->with('galleries')->find($festivalId);
         if(!$festival) {
             return response()->error('festival.not-found');
         }
 
         $festivalLike = Like::query()
-            ->with('festival', 'user')
+            ->with('festival', 'user.image')
             ->where('user_id', $user->id)
             ->where('festival_id', $festivalId)
             ->first();
@@ -72,15 +72,15 @@ class FestivalController extends Controller
 
         if(!$festivalLike) {
             $festivalLike = new Like();
-            $festivalLike->like = true;
+            $festivalLike->is_liked = true;
             $festivalLike->user()->associate($user);
             $festivalLike->festival()->associate($festival);
             $festivalLike->save();
 
         }
 
-        if($festivalLike->like == false) {
-            $festivalLike->like = true;
+        if($festivalLike->is_liked == false) {
+            $festivalLike->is_liked = true;
             $festivalLike->save();
         }
 
@@ -98,7 +98,7 @@ class FestivalController extends Controller
         }
 
         $festivalLike = Like::query()
-            ->with('festival', 'user')
+            ->with('festival', 'user.image')
             ->where('user_id', $user->id)
             ->where('festival_id', $festivalId)
             ->first();
@@ -108,8 +108,8 @@ class FestivalController extends Controller
             return response()->error('festival.not-found');
         }
 
-        if($festivalLike->like = true) {
-            $festivalLike->like = false;
+        if($festivalLike->is_liked = true) {
+            $festivalLike->is_liked = false;
             $festivalLike->save();
         }
 

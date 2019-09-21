@@ -84,7 +84,7 @@ class FestivalController extends Controller
             $festivalLike->save();
         }
 
-        return response()->success();
+        return response()->success($festivalLike);
     }
 
     public function disLike(Request $request)

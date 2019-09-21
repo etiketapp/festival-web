@@ -23,6 +23,7 @@ class MessagesTableSeeder extends Seeder
         Message::create([
             'message'           => 'Message1',
             'user_one_id'       => 1,
+            'date'              => \Carbon\Carbon::now(),
             'user_two_id'       => 2,
             'conversation_id'   => 1,
         ]);

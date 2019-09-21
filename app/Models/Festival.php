@@ -103,7 +103,7 @@ class Festival extends Model
 
     public function getLikesCountAttribute()
     {
-        return $this->likes()->count();
+        return $this->likes()->where('is_liked', true)->count();
     }
 
     public function getCommentsCountAttribute()

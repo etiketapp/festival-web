@@ -54,10 +54,6 @@ class User extends Authenticatable implements JWTSubject
         'distance',
     ];
 
-//    protected $appends = [
-//        'last_message'
-//    ];
-//
     //Cinsiyet
     const GENDER_MALE   = 'male';
     const GENDER_FEMALE = 'female';

@@ -68,4 +68,7 @@ return [
     'conversation'  => [
         'not-found'     => 'Konuşma bulunamadı',
     ],
+    'user'          => [
+        'not-found'     => 'Kullanıcı bulunamadı',
+    ]
 ];

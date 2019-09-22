@@ -133,5 +133,15 @@ class UserController extends Controller
         return response()->success($collection);
     }
 
+    public function getUser($id)
+    {
+        $model = User::query()->with('image', 'likes.festival', 'comments.festival')->find($id);
+        if(!$model) {
+            return response()->error('user.not-found');
+        }
+
+        return response()->success($model);
+    }
+
 
 }

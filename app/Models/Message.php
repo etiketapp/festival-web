@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Awobaz\Compoships\Compoships;
 use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
+    use Compoships;
+
     protected $fillable = [
         'message',
         'date',
@@ -25,11 +28,11 @@ class Message extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function user_one() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_one_id');
     }
 
     public function user_two() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_two_id');
     }
 
     /**

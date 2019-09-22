@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use Awobaz\Compoships\Compoships;
 use Symfony\Component\HttpKernel\Tests\DependencyInjection\ArgumentWithoutTypeController;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use SoftDeletes, Notifiable;
+    use SoftDeletes, Notifiable, Compoships;
 
     /**
      * The attributes that are mass assignable.
@@ -52,6 +54,10 @@ class User extends Authenticatable implements JWTSubject
         'distance',
     ];
 
+//    protected $appends = [
+//        'last_message'
+//    ];
+//
     //Cinsiyet
     const GENDER_MALE   = 'male';
     const GENDER_FEMALE = 'female';
@@ -137,7 +143,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function messages()
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany(Message::class, ['user_one_id'], ['user_two_id']);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Conversation extends Model
 {
@@ -17,12 +18,25 @@ class Conversation extends Model
         'deleted_at',
     ];
 
+    protected $appends = [
+        'latest_message'
+    ];
+
+    public function getLatestMessageAttribute()
+    {
+        if(Auth::user()) {
+            return $this->messages()->first();
+        }
+
+        return false;
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function messages()
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany(Message::class)->orderBy('date', 'desc');
     }
 
     /**

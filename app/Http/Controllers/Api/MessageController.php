@@ -19,9 +19,11 @@ class MessageController extends Controller
 //        $user['messages'] = $user->messages()->orderBy('created_at', 'desc')->get();
 
         $user = $request->user('api')
-            ->load('image', 'conversations.user_one.image', 'conversations.user_two.image');
+            ->load('image', 'conversations');
 
-        return response()->success($user);
+        $model = $user->conversations()->with('user_one.image', 'user_two.image')->get();
+
+        return response()->success($model);
     }
 
     public function sendMessage(Request $request)
@@ -52,7 +54,7 @@ class MessageController extends Controller
             'user_one_id'       => $user->id,
             'user_two_id'       => $user_two,
             'conversation_id'   => $conversation !== NULL ? $conversation->id : $newConversation->id,
-            'date'              => Carbon::now(),
+            'date'              => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         return response()->success($model);

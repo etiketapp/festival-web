@@ -4,6 +4,7 @@ use App\Models\Conversation;
 use App\Models\Message;
 use App\Models\User;
 use App\Models\Image;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class MessagesTableSeeder extends Seeder
@@ -23,7 +24,7 @@ class MessagesTableSeeder extends Seeder
         Message::create([
             'message'           => 'Message1',
             'user_one_id'       => 1,
-            'date'              => \Carbon\Carbon::now(),
+            'date'              => Carbon::now()->format('Y-m-d H:i:s'),
             'user_two_id'       => 2,
             'conversation_id'   => 1,
         ]);

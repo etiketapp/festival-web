@@ -18,6 +18,10 @@ class Message extends Model
         'conversation_id',
     ];
 
+    protected $dates = [
+        'date'
+    ];
+
     protected $hidden = [
         'created_at',
         'updated_at',

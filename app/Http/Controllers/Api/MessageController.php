@@ -54,7 +54,7 @@ class MessageController extends Controller
             'user_one_id'       => $user->id,
             'user_two_id'       => $user_two,
             'conversation_id'   => $conversation !== NULL ? $conversation->id : $newConversation->id,
-            'date'              => Carbon::now()->format('Y-m-d H:i:s'),
+            'date'              => Carbon::now(),
         ]);
 
         return response()->success($model);

@@ -67,7 +67,7 @@ class MessageController extends Controller
             return response()->error('conversation.not-found');
         }
 
-        $model = $model->messages()->get();
+        $model = $model->messages()->with('user_one.image', 'user_two.image')->get();
 
         return response()->success($model);
     }

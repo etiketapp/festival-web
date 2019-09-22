@@ -17,4 +17,13 @@ class Category extends Model
     {
         return $this->hasMany(Festival::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
+
 }

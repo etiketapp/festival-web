@@ -13,6 +13,8 @@ Route::post('auth/forgot', ['as' => 'auth.forgot', 'uses' => 'AuthController@for
 Route::get('contract', ['as' => 'contract.index', 'uses' => 'ContractController@index']);
 Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractController@show']);
 
+// User Device
+Route::resource('device', 'DeviceController');
 
 Route::group(['middleware' => 'auth:api'], function () {
     // User

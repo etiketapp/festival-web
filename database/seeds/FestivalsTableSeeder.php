@@ -27,6 +27,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 3,
             'start_date'    => Carbon::now()->addDays(1),
             'end_date'      => Carbon::now()->addDays(20),
+            'rate'          => 75,
         ]);
 
         Festival::create([
@@ -39,6 +40,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 2,
             'start_date'    => Carbon::now()->addDays(7),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 80,
         ]);
 
         $d4 = Festival::query()->find(2);
@@ -61,6 +63,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(4),
             'end_date'      => Carbon::now()->addDays(31),
+            'rate'          => 60,
         ]);
 
         $d5 = Festival::query()->find(1);
@@ -154,6 +157,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 35,
         ]);
 
         $d5 = Festival::query()->find(4);
@@ -194,6 +198,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 25,
         ]);
 
         $d5 = Festival::query()->find(5);
@@ -234,6 +239,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 15,
         ]);
 
         $d5 = Festival::query()->find(6);
@@ -274,6 +280,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 5,
         ]);
 
         $d5 = Festival::query()->find(7);
@@ -314,6 +321,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 40,
         ]);
 
         $d5 = Festival::query()->find(8);
@@ -354,6 +362,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 20,
         ]);
 
         $d5 = Festival::query()->find(9);
@@ -394,6 +403,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
+            'rate'          => 10,
         ]);
 
         $d5 = Festival::query()->find(10);

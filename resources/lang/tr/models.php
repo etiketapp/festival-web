@@ -154,6 +154,7 @@ return [
         'city'              => 'Şehir',
         'county'            => 'İlçe',
         'address'           => 'Adres',
+        'rate'              => 'Puan',
     ],
     'category'  =>  [
         'title'             => 'Kategori Adı',

@@ -30,7 +30,8 @@ class FestivalController extends Controller
         $query = Festival::query()
             ->with('image', 'address.city', 'address.county', 'category.image', 'galleries.image')
             ->withCount('likes', 'comments')
-            ->where('title', 'LIKE',  "%{$title}%");
+            ->where('title', 'LIKE',  "%{$title}%")
+            ->orderBy('rate', 'desc');
 
         switch ($sort) {
             case 'title':

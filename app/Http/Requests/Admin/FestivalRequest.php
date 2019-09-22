@@ -22,6 +22,7 @@ class FestivalRequest extends Request
             'about'             => 'required',
             'start_date'        => 'required',
             'end_date'          => 'required',
+            'rate'              => 'required',
 
             'category_id'       => 'required',
             'city_id'           => 'required',
@@ -46,7 +47,7 @@ class FestivalRequest extends Request
             'about'         => trans('models.festival.about'),
             'start_date'    => trans('models.festival.start_date'),
             'end_date'      => trans('models.festival.end_date'),
-
+            'rate'          => trans('models.festival.rate'),
 
             'category_id'   => trans('models.festival.category_id'),
             'city_id'       => trans('models.festival.city_id'),

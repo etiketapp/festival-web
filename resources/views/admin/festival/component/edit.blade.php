@@ -44,6 +44,12 @@
         {!! Form::text('end_date', null, ['class' => 'form-control m-input m-input--solid date']) !!}
     </div>
 </div>
+<div class="form-group m-form__group row">
+    <div class="col-lg-6 m-form__group-sub">
+        {!! Form::label('rate', trans($transPrefix.'rate'), ['class' => 'form-control-label']) !!}
+        {!! Form::text('rate', null, ['class' => 'form-control m-input m-input--solid']) !!}
+    </div>
+</div>
 <!-- GALERI -->
 <div class="m-form__seperator m-form__seperator--dashed"></div>
 <div class="form-group m-form__group row">

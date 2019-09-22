@@ -16,6 +16,9 @@ Route::get('contract/{id}', ['as' => 'contract.{id}', 'uses' => 'ContractControl
 // User Device
 Route::resource('device', 'DeviceController');
 
+//Version
+Route::resource('version', 'VersionController', ['only' => ['index']]);
+
 Route::group(['middleware' => 'auth:api'], function () {
     // User
     Route::get('user/{user}/likedFestivals', ['as' => 'user.liked.festivals', 'uses' => 'UserController@likedFestivals']);

@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LikesTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
         $this->call(AdminNotificationsTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
     }
 }

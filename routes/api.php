@@ -41,7 +41,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('festival/{festival}/commentUsers', ['as' => 'festival.commentUsers', 'uses' => 'FestivalController@commentUsers']);
 
     // Message
-    Route::get('message/', ['as' => 'message.index', 'uses' => 'MessageController@index']);
+    Route::get('message', ['as' => 'message.index', 'uses' => 'MessageController@index']);
+    Route::get('message/{conversation}/detail', ['as' => 'message.detail', 'uses' => 'MessageController@messageDetail']);
     Route::post('message/send', ['as' => 'message.send', 'uses' => 'MessageController@sendMessage']);
 
     // Draw

@@ -36,7 +36,7 @@ class Conversation extends Model
      */
     public function messages()
     {
-        return $this->hasMany(Message::class)->orderBy('date', 'desc');
+        return $this->hasMany(Message::class)->orderBy('date', 'asc');
     }
 
     /**

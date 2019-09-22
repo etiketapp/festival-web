@@ -65,4 +65,7 @@ return [
         'not-found'     => 'Çekiliş Bulunamadı',
         'multiple-join' => 'Sadece bir kere katılabilirsiniz.',
     ],
+    'conversation'  => [
+        'not-found'     => 'Konuşma bulunamadı',
+    ],
 ];

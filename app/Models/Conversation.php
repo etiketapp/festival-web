@@ -43,11 +43,11 @@ class Conversation extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function user_one() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_one_id');
     }
 
     public function user_two() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_two_id');
     }
 
 }

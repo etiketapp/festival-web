@@ -29,22 +29,23 @@ class MessageController extends Controller
     public function sendMessage(Request $request)
     {
         $user = $request->user('api');
-        $user_two = $request->input('user_two');
+        $user_two = User::query()->find($request->input('user_two'));
 
-        if($user_two== $user->id) {
+
+        if($user_two->id == $user->id) {
             return response()->error('message.self');
         }
 
         // Get conversation data
-        $conversation = Conversation::whereIn('user_one_id', [$user->id, $user_two])
-            ->whereIn('user_two_id', [$user_two, $user->id])
+        $conversation = Conversation::whereIn('user_one_id', [$user->id, $user_two->id])
+            ->whereIn('user_two_id', [$user_two->id, $user->id])
             ->first();
 
         if ($conversation == NULL)
         {
             $newConversation = Conversation::create([
-                'user_one'      => $user,
-                'user_two'      => $user_two
+                'user_one_id'      => $user->id,
+                'user_two_id'      => $user_two->id
             ]);
         }
 
@@ -52,9 +53,9 @@ class MessageController extends Controller
         $model = Message::create([
             'message'           => $request->input('message'),
             'user_one_id'       => $user->id,
-            'user_two_id'       => $user_two,
+            'user_two_id'       => $user_two->id,
             'conversation_id'   => $conversation !== NULL ? $conversation->id : $newConversation->id,
-            'date'              => Carbon::now(),
+            'date'              => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         return response()->success($model);

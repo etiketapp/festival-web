@@ -60,15 +60,23 @@ class MessageController extends Controller
         return response()->success($model);
     }
 
-    public function messageDetail(Request $request, $id)
+    public function messageDetail(Request $request)
     {
-        $model = Conversation::query()->with('messages.user_one.image', 'messages.user_two.image')->find($id);
-        if(!$model) {
-            return response()->error('conversation.not-found');
+        $user = $request->user('api');
+        if(!$user) {
+            return response()->error('auth.not-found');
         }
 
-        $model = $model->messages()->with('user_one.image', 'user_two.image')->get();
+        $userTwo = User::query()->find($request->input('user_two_id'));
 
-        return response()->success($model);
+
+        $conversation = Conversation::query()
+            ->with('messages')
+            ->where('user_one_id', $user->id)
+            ->orWhere('user_two_id', $userTwo->id)
+            ->first();
+
+
+        return response()->success($conversation->messages);
     }
 }

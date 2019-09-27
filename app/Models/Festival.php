@@ -171,7 +171,10 @@ class Festival extends Model
     public function getIsLikedAttribute()
     {
         if (Auth::check()) {
-            if($this->likes()->where('user_id', Auth::user()->id)->where('festival_id', $this->id)->first())
+            if($this->likes()
+                ->where('user_id', Auth::user()->id)
+                ->orWhere('festival_id', $this->id)
+                ->first())
                 return true;
         }
 

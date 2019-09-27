@@ -70,13 +70,15 @@ class MessageController extends Controller
 
         $userTwo = User::query()->find($request->input('user_two_id'));
 
-
         $conversation = Conversation::query()
             ->with('messages')
             ->where('user_one_id', $user->id)
             ->orWhere('user_two_id', $userTwo->id)
             ->first();
 
+        if(!$conversation) {
+            return response()->error('conversation.not-found');
+        }
 
         return response()->success($conversation->messages);
     }

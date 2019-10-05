@@ -20,6 +20,7 @@ class DrawsTableSeeder extends Seeder
             'title'         => 'Araba Çekilişi',
             'sub_title'     => 'Araba Çekilişi',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 

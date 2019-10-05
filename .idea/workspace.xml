@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/AdminNotificationRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/SendPushNotification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminNotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminNotificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/AdminNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/AdminNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_14_124555_create_admin_notifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_14_124555_create_admin_notifications_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/models.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminnotification/component/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminnotification/component/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminnotification/component/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminnotification/component/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,34 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendPushNotificationCommand.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-              <folding>
-                <element signature="e#40#73#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Notifications/SendPushNotification.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/MakeDraw.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
-              <folding>
-                <element signature="e#40#60#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="163">
+              <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -146,7 +113,6 @@
         <option value="$PROJECT_DIR$/resources/lang/tr/notifications.php" />
         <option value="$PROJECT_DIR$/app/Notifications/DrawWinnerUserNotification.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/MakeDraw.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/lang/tr/models.php" />
         <option value="$PROJECT_DIR$/app/Models/AdminNotification.php" />
@@ -157,6 +123,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/adminnotification/component/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Notifications/SendPushNotification.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/SendPushNotificationCommand.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
       </list>
     </option>
   </component>
@@ -317,7 +284,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -394,6 +360,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -526,14 +493,8 @@
       <workItem from="1570136309531" duration="1048000" />
       <workItem from="1570172508329" duration="7000" />
       <workItem from="1570288928530" duration="824000" />
-      <workItem from="1570289974079" duration="8566000" />
-    </task>
-    <task id="LOCAL-00072" summary="google login fix">
-      <created>1568562865194</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1568562865194</updated>
+      <workItem from="1570289974079" duration="8662000" />
+      <workItem from="1570306667248" duration="24000" />
     </task>
     <task id="LOCAL-00073" summary="google login fix">
       <created>1568563084102</created>
@@ -871,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570303588992</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="admin notifications">
+      <created>1570305521805</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1570305521805</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247252000" />
+    <option name="totallyTimeSpent" value="247372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -890,7 +858,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37583894" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38120806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -917,7 +885,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="draw user count fix" />
     <MESSAGE value="comment user image" />
     <MESSAGE value="festival comment return changed" />
     <MESSAGE value="festival like-dislike" />
@@ -942,7 +909,8 @@
     <MESSAGE value="festival like fix" />
     <MESSAGE value="draw tme" />
     <MESSAGE value="notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="notifications" />
+    <MESSAGE value="admin notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin notifications" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Models/Conversation.php">
@@ -1227,13 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="193" column="18" selection-start-line="193" selection-start-column="18" selection-end-line="193" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_14_124555_create_admin_notifications_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1286,12 +1247,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/MakeDraw.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendPushNotificationCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        <state relative-caret-position="296">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
-            <element signature="e#40#60#0#PHP" expanded="true" />
+            <element signature="e#40#73#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1303,13 +1264,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendPushNotificationCommand.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/MakeDraw.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="474">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
           <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
+            <element signature="e#40#60#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
         </state>
       </provider>
     </entry>

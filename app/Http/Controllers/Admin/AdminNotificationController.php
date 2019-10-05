@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\AdminNotificationRequest;
 use App\Models\AdminNotification;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,7 @@ class AdminNotificationController extends Controller
             ['name' => 'id', 'data' => 'id', 'translate' => trans('models.common.id')],
             ['name' => 'title', 'data' => 'title', 'translate' => trans($this->transPrefix. 'title')],
             ['name' => 'text', 'data' => 'text', 'translate' => trans($this->transPrefix. 'text')],
+            ['name' => 'date', 'data' => 'date', 'translate' => trans($this->transPrefix. 'date')],
             ['name' => 'actions', 'data' => 'actions', 'translate' => trans('models.common.actions')],
         ];
         $columns = json_encode($data);
@@ -46,10 +48,13 @@ class AdminNotificationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminNotificationRequest $request)
     {
         $model = new AdminNotification($request->input());
+        $model->save();
 
+        return redirect()->route($this->routePrefix . 'index')
+            ->with('success', trans('messages.crud.store', ['title' => $this->title()]));
     }
 
     /**
@@ -93,7 +98,7 @@ class AdminNotificationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminNotificationRequest $request, $id)
     {
         $model = AdminNotification::query()->find($id);
         if(!$model) {
@@ -141,7 +146,7 @@ class AdminNotificationController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions'])
+            ->rawColumns(['actions', 'title', 'text', 'date'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)
@@ -152,6 +157,9 @@ class AdminNotificationController extends Controller
             })
             ->addColumn('text', function (AdminNotification $model) {
                 return $model->text;
+            })
+            ->addColumn('date', function (AdminNotification $model) {
+                return $model->date;
             })
             ->make(true);
     }

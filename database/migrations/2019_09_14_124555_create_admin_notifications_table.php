@@ -16,7 +16,8 @@ class CreateAdminNotificationsTable extends Migration
         Schema::create('admin_notifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->nullable();
-            $table->string('text')->nullable();
+            $table->text('text')->nullable();
+            $table->timestamp('date');
             $table->timestamps();
             $table->softDeletes();
         });

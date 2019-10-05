@@ -175,5 +175,6 @@ return [
     'adminnotification'     => [
         'title'         => 'Başlık',
         'text'          => 'Bildirim',
+        'date'          => 'Tarih',
     ],
 ];

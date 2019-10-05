@@ -152,7 +152,47 @@ class UserController extends Controller
         }
 
         $model = DrawUser::query()
-            ->with('user', 'draw.galleries.image')
+            ->with('user.image', 'draw.galleries.image')
+            ->where('user_id', $userId)
+            ->get();
+
+        return response()->success($model);
+    }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function getProfileLikes(Request $request)
+    {
+        $userId = $request->input('user_id');
+        $user = User::query()->find($userId);
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $model = Like::query()
+            ->with('user.image', 'festival')
+            ->where('user_id', $userId)
+            ->get();
+
+        return response()->success($model);
+    }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function getProfileComments(Request $request)
+    {
+        $userId = $request->input('user_id');
+        $user = User::query()->find($userId);
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $model = Comment::query()
+            ->with('user.image', 'festival')
             ->where('user_id', $userId)
             ->get();
 

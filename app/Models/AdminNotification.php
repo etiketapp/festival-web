@@ -9,6 +9,7 @@ class AdminNotification extends Model
     protected $fillable = [
         'title',
         'text',
+        'date',
     ];
 
     protected $hidden = [

@@ -167,6 +167,19 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notifiable')->orderBy('created_at', 'desc');
+    }
+
+    public function routeNotificationForFcm()
+    {
+        return $this->devices->whereIn('platform', ['android', 'ios'])->pluck('token')->toArray();
+    }
+
+    /**
      * @return mixed
      */
     public function getJWTIdentifier() {

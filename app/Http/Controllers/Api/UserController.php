@@ -172,7 +172,7 @@ class UserController extends Controller
         }
 
         $model = Like::query()
-            ->with('user.image', 'festival.galleries.image')
+            ->with('user.image', 'festival.galleries.image', 'festival.category')
             ->where('user_id', $userId)
             ->get();
 
@@ -192,7 +192,7 @@ class UserController extends Controller
         }
 
         $model = Comment::query()
-            ->with('user.image', 'festival.galleries.image')
+            ->with('user.image', 'festival.galleries.image', 'festival.category')
             ->where('user_id', $userId)
             ->get();
 

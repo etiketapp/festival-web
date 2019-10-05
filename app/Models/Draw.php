@@ -12,6 +12,7 @@ class Draw extends Model
         'sub_title',
         'content',
         'last_date',
+        'draw_time',
     ];
 
     protected $appends = [

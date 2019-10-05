@@ -51,6 +51,16 @@
     </div>
 </div>
 <div class="form-group m-form__group row">
+    <div class="col-md-6">
+        {!! Form::label('location', trans('')) !!}
+        {!! Form::hidden('location', '0,0', ['class' => 'form-control']) !!}
+        <input type="button" class="form-control btn btn-success btn_change" value="Değiştir" style="color:white;display:none;">
+        <div id="mapContainer">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+<div class="form-group m-form__group row">
     <div class="col-lg-6 m-form__group-sub">
         {!! Form::label('start_date', trans($transPrefix.'start_date'), ['class' => 'form-control-label']) !!}
         {!! Form::text('start_date', null, ['class' => 'form-control m-input m-input--solid date']) !!}
@@ -81,6 +91,68 @@
     </div>
 </div>
 <div class="form-group m-form__group row galleries_div"></div>
+@push('css')
+    <style>
+        div#mapContainer {
+            width: 100%;
+            height: 464px;
+            position: relative;
+        }
+
+        div#map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+@endpush
+@push('js')
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyBCQuoIVnYtTBX1YgBFpqQ_ibo-eu1eqok"></script>
+    <script src="{{ url('/') }}/backend/assets/app/js/locationpicker.jquery.js"></script>
+    <script type="text/javascript">
+        $('document').ready(function () {
+            var latLang = "{{ old('location') ?? ('41.017566, 28.971185') }}".split(',');
+            var map = $('#map').locationpicker({
+                location: {
+                    latitude: latLang[0],
+                    longitude: latLang[1]
+                },
+                zoom:12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                onchanged: function (currentLocation, radius, isMarkerDropped) {
+                    var mapContext = $(this).locationpicker('map');
+                    //mapContext.map.setZoom(12);
+                    //console.log(isMarkerDropped);
+                    if(isMarkerDropped){
+                        latLang = currentLocation.latitude.toFixed(6) +","+ currentLocation.longitude.toFixed(6);
+                        $(".btn_change").hide();
+                        $(".btn_change").show();
+                    }
+                },
+                oninitialized: function(component) {
+                    var mapContext = $(component).locationpicker('map');
+                    address = mapContext.location.formattedAddress;
+
+                    $("textarea[name='address']").val(address);
+                    $("input[name='lat']").val(latLang[0]);
+                    $("input[name='lng']").val(latLang[1]);
+                }
+            });
+            $(".btn_change").click(function(){
+                if(confirm('Yeni konum ayarlansın mı?')){
+                    $("input[name='location']").val(latLang);
+                    swal({
+                        title: "Tebrikler",
+                        text: "Yeni konum alındı, Formu kaydetmeyi unutmayın.",
+                        type: 'success',
+                        timer: 3000,
+                    });
+                    $(this).hide();
+                }
+            });
+        });
+
+    </script>
+@endpush
 @push('js')
     <script type="text/javascript">
         $(function () {

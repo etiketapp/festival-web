@@ -110,8 +110,7 @@ class FestivalController extends Controller
         }
 
         if($festivalLike->is_liked = true) {
-            $festivalLike->is_liked = false;
-            $festivalLike->save();
+            $festivalLike->delete();
         }
 
         return response()->success($festival);
@@ -197,12 +196,12 @@ class FestivalController extends Controller
             return response()->error('festival.not-found');
         }
 
-        $collection = $model->likes()->get();
-        foreach ($collection as $col) {
-            if($col->is_liked == false) {
-                $col->delete();
-            }
-        }
+//        $collection = $model->likes()->get();
+//        foreach ($collection as $col) {
+//            if($col->is_liked == false) {
+//                $col->delete();
+//            }
+//        }
 
         return response()->success($model);
     }

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/backend/assets/app/js/locationpicker.jquery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Draw.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Draw.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_14_180004_create_draws_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_14_180004_create_draws_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,32 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="187" column="7" lean-forward="true" selection-start-line="187" selection-start-column="7" selection-end-line="187" selection-end-column="7" />
+            <state relative-caret-position="425">
+              <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
               <folding>
                 <element signature="e#44#67#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Like.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -53,7 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Edirne</find>
       <find>address</find>
       <find>clinical</find>
       <find>a</find>
@@ -83,6 +70,7 @@
       <find>like</find>
       <find>count</find>
       <find>likes</find>
+      <find>dislike</find>
     </findStrings>
     <replaceStrings>
       <replace>admin</replace>
@@ -97,8 +85,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/contract/component/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/contract/component/show.blade.php" />
         <option value="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_14_180004_create_draws_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Draw.php" />
         <option value="$PROJECT_DIR$/app/Models/DrawGallery.php" />
         <option value="$PROJECT_DIR$/app/Models/FestivalGallery.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminnotification/component/create.blade.php" />
@@ -126,10 +112,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_08_05_181622_create_festivals_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/FestivalsTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/lang/tr/models.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/festival/component/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/tr/errors.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/database/seeds/MessagesTableSeeder.php" />
@@ -144,6 +127,11 @@
         <option value="$PROJECT_DIR$/app/Models/Festival.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_08_14_180004_create_draws_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Draw.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php" />
       </list>
     </option>
@@ -316,13 +304,13 @@
             <path>
               <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,25 +321,25 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/backend/assets/app/js" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\php\festival-web\database\seeds" />
-      <recent name="C:\php\festival-web\app\Http\Requests\Api" />
-      <recent name="C:\php\festival-web\app\Http\Controllers\Api" />
-      <recent name="C:\php\festival-web\database\migrations" />
-      <recent name="C:\php\festival-web\app\Models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\php\festival-web\database\seeds" />
       <recent name="C:\php\etiket\database\seeds\images\users" />
       <recent name="C:\php\etiket\app\Http\Controllers\Admin" />
       <recent name="C:\php\etiket\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\php\festival-web\public\backend\assets\app\js" />
+      <recent name="C:\php\festival-web\database\seeds" />
+      <recent name="C:\php\festival-web\app\Http\Requests\Api" />
+      <recent name="C:\php\festival-web\app\Http\Controllers\Api" />
+      <recent name="C:\php\festival-web\database\migrations" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -457,14 +445,10 @@
       <workItem from="1569252007824" duration="1461000" />
       <workItem from="1569618623640" duration="3408000" />
       <workItem from="1569828876082" duration="24000" />
-      <workItem from="1570136309531" duration="498000" />
-    </task>
-    <task id="LOCAL-00067" summary="user liked festivals">
-      <created>1568552280915</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1568552280915</updated>
+      <workItem from="1570136309531" duration="1048000" />
+      <workItem from="1570172508329" duration="7000" />
+      <workItem from="1570288928530" duration="824000" />
+      <workItem from="1570289974079" duration="209000" />
     </task>
     <task id="LOCAL-00068" summary="user liked festivals user id">
       <created>1568552955960</created>
@@ -802,11 +786,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569621160984</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="festival like fix">
+      <created>1570136818031</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1570136818031</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237305000" />
+    <option name="totallyTimeSpent" value="238895000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -818,10 +809,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35973155" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37583894" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -848,7 +839,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="auth google fix" />
     <MESSAGE value="festival like, comment count attribute" />
     <MESSAGE value="draw user count" />
     <MESSAGE value="draw user count fix" />
@@ -873,30 +863,10 @@
     <MESSAGE value="message create fix" />
     <MESSAGE value="Festival is_liked fix" />
     <MESSAGE value="conversation fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="conversation fix" />
+    <MESSAGE value="festival like fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="festival like fix" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="47" column="75" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/DeviceRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_22_131653_create_settings_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/VersionRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -939,37 +909,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="65" column="85" selection-start-line="65" selection-start-column="85" selection-end-line="65" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/festival/component/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="43" column="85" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="85" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FestivalController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Carbon.php">
@@ -1042,13 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1202,20 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Like.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Festival.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -1223,10 +1146,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Like.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/backend/assets/app/js/locationpicker.jquery.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/FestivalRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FestivalController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/festival/component/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-743">
+          <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/festival/component/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_14_180004_create_draws_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="187" column="7" lean-forward="true" selection-start-line="187" selection-start-column="7" selection-end-line="187" selection-end-column="7" />
+        <state relative-caret-position="425">
+          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
           <folding>
             <element signature="e#44#67#0#PHP" expanded="true" />
           </folding>

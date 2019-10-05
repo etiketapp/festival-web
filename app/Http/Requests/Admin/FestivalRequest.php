@@ -23,6 +23,7 @@ class FestivalRequest extends Request
             'start_date'        => 'required',
             'end_date'          => 'required',
             'rate'              => 'required',
+            'location'          => 'required',
 
             'category_id'       => 'required',
             'city_id'           => 'required',

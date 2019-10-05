@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b4936f508d9f2e1f3caaec750ba660c",
+    "content-hash": "3575662ec9c859be218096e836471816",
     "packages": [
         {
             "name": "awobaz/compoships",
@@ -124,22 +124,22 @@
         },
         {
             "name": "coreproc/laravel-notification-channel-fcm",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CoreProc/fcm.git",
-                "reference": "70e91a3873c7b2aec4a3c9859f1616789f4fcd4e"
+                "reference": "6932191f6278e0bdcc716cc28ed9e51daf9c788d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CoreProc/fcm/zipball/70e91a3873c7b2aec4a3c9859f1616789f4fcd4e",
-                "reference": "70e91a3873c7b2aec4a3c9859f1616789f4fcd4e",
+                "url": "https://api.github.com/repos/CoreProc/fcm/zipball/6932191f6278e0bdcc716cc28ed9e51daf9c788d",
+                "reference": "6932191f6278e0bdcc716cc28ed9e51daf9c788d",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.2",
-                "illuminate/notifications": "^5.3|^5.4|^5.5|^5.6|^5.7|^5.8",
-                "illuminate/support": "^5.1|^5.2|^5.3|^5.4|^5.5|^5.6|^5.7|^5.8",
+                "illuminate/notifications": "^5.3|^5.4|^5.5|^5.6|^5.7|^5.8|^6.0",
+                "illuminate/support": "^5.1|^5.2|^5.3|^5.4|^5.5|^5.6|^5.7|^5.8|^6.0",
                 "php": ">=5.6.4"
             },
             "require-dev": {
@@ -173,7 +173,7 @@
             ],
             "description": "FCM (Firebase Cloud Messaging) Notifications Driver for Laravel",
             "homepage": "https://github.com/CoreProc/fcm",
-            "time": "2019-05-01T10:51:52+00:00"
+            "time": "2019-09-05T06:06:34+00:00"
         },
         {
             "name": "dimsav/laravel-translatable",

@@ -166,6 +166,7 @@ return [
         'last_date'     => 'Son Katılım Tarihi',
         'make_draw'     => 'Çekiliş Yap',
         'category_id'   => 'Çekiliş Seç',
+        'draw_time'     => 'Çekileceği Tarih',
     ],
     'drawwinner'    => [
         'user'          => 'Kullanıcı',

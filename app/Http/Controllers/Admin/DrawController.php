@@ -29,6 +29,7 @@ class DrawController extends Controller
             ['name' => 'title', 'data' => 'title', 'translate' => trans($this->transPrefix . 'title')],
             ['name' => 'sub_title', 'data' => 'sub_title', 'translate' => trans($this->transPrefix . 'sub_title')],
             ['name' => 'last_date', 'data' => 'last_date', 'translate' => trans($this->transPrefix . 'last_date')],
+            ['name' => 'draw_time', 'data' => 'draw_time', 'translate' => trans($this->transPrefix . 'draw_time')],
             ['name' => 'actions', 'data' => 'actions', 'translate' => trans('models.common.actions')],
         ];
         $columns = json_encode($data);
@@ -36,8 +37,7 @@ class DrawController extends Controller
         return view('admin.crud.datatable.index')
             ->with('datatable', route($this->routePrefix . 'datatable'))
             ->with('columns', $columns)
-            ->with('model', $this->model)
-            ->with('is_draw', true);
+            ->with('model', $this->model);
     }
 
     /**
@@ -236,7 +236,7 @@ class DrawController extends Controller
                     return $model->id;
                 },
             ])
-            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'draw'])
+            ->rawColumns(['actions', 'title', 'sub_title', 'last_date', 'draw', 'draw_time'])
             ->addColumn('actions', function ($model) {
                 return view('admin.crud.datatable.actions')
                     ->with('routePrefix', $this->routePrefix)
@@ -250,6 +250,9 @@ class DrawController extends Controller
             })
             ->addColumn('last_date', function (Draw $model) {
                 return $model->last_date;
+            })
+            ->addColumn('draw_time', function (Draw $model) {
+                return $model->draw_time;
             })
             ->make(true);
     }

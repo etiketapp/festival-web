@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('user/{user}/commentedFestivals', ['as' => 'user.commented.festivals', 'uses' => 'UserController@commentedFestivals']);
     Route::get('user/{user}/userDraws', ['as' => 'user.draw.festivals', 'uses' => 'UserController@userDraws']);
     Route::get('user/{user}/getUser', ['as' => 'user.getUser', 'uses' => 'UserController@getUser']);
+    Route::get('user/getProfileDraws', ['as' => 'user.getProfileDraws', 'uses' => 'UserController@getProfileDraws']);
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
     Route::resource('user', 'UserController', ['only' => ['show', 'update']]);
 

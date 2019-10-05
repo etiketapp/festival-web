@@ -143,5 +143,20 @@ class UserController extends Controller
         return response()->success($model);
     }
 
+    public function getProfileDraws(Request $request)
+    {
+        $userId = $request->input('user_id');
+        $user = User::query()->find($userId);
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $model = DrawUser::query()
+            ->with('user', 'draw.galleries.image')
+            ->where('user_id', $userId)
+            ->get();
+
+        return response()->success($model);
+    }
 
 }

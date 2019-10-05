@@ -4,6 +4,7 @@ use App\Helpers\Helper;
 use App\Providers\ResponseServiceProvider;
 use App\Providers\RouteServiceProvider;
 use Dimsav\Translatable\TranslatableServiceProvider;
+use NotificationChannels\Fcm\FcmServiceProvider;
 
 return [
 
@@ -175,6 +176,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Geocoder\Laravel\Providers\GeocoderService::class,
+        NotificationChannels\Fcm\FcmServiceProvider::class,
 
         /*
          * Application Service Providers...

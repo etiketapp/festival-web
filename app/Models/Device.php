@@ -25,10 +25,9 @@ class Device extends Model
 
     protected $fillable = [
         'platform',
-        'brand',
-        'model',
         'device_id',
         'token',
+        'type',
 
         'user_id'
     ];

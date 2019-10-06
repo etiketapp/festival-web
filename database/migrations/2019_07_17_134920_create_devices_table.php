@@ -15,11 +15,10 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('platform', ['android', 'ios', 'apns']);
+            $table->enum('platform', ['android', 'ios', 'apns', 'firebase']);
             $table->string('token')->index();
-            $table->string('brand')->nullable();
-            $table->string('model')->nullable();
             $table->string('device_id')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

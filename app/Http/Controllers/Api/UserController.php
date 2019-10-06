@@ -159,6 +159,31 @@ class UserController extends Controller
         return response()->success($model);
     }
 
+    public function notifications(Request $request, $id)
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        $notifications = $user->notifications()
+            ->with('festival.galleries.image')->get();
+
+        $response = response()->success($notifications);
+
+        $user->notifications->markAsRead();
+
+        return $response;
+    }
+
+    public function notificationCount(Request $request, $id)
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        $count = $user->unreadNotifications()->count();
+
+        return response()->success($count);
+    }
+
     /**
      * @param Request $request
      * @return mixed

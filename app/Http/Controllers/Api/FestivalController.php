@@ -46,6 +46,7 @@ class FestivalController extends Controller
         $query->distance($location);
 
         $model = $query;
+        $model->get()->sortBy('is_liked');
 
         return response()->paginate($model);
     }

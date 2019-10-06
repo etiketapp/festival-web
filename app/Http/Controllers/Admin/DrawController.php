@@ -10,6 +10,7 @@ use App\Models\DrawUser;
 use App\Models\DrawUserWinner;
 use App\Models\User;
 use App\Models\Image;
+use App\Notifications\DrawWinnerUserNotification;
 use Illuminate\Http\Request;
 
 class DrawController extends Controller
@@ -64,6 +65,8 @@ class DrawController extends Controller
         $model = new Draw($request->input());
         $model->save();
 
+        $users = User::query()->find(1);
+
         if($galleries){
             foreach ($galleries as $key => $gallery){
                 if ($galleriesImage[$key] ?? null) {
@@ -75,13 +78,15 @@ class DrawController extends Controller
                     $galleryModel->draw()->associate($model);
                     $galleryModel->save();
 
-                    $galleryModel->image()->delete();
+                        $galleryModel->image()->delete();
                     $galleryModel->image()->save(new Image([
                         'image' =>  $galleriesImage[$key]['image'],
                     ]));
                 }//if ($galleriesImage[$key] ?? null)
             }//foreach ($galleries as $key => $gallery)
         }//$galleries
+
+            $users->notify(new DrawWinnerUserNotification($model, $users));
 
         return redirect()->route($this->routePrefix .'index')
             ->with('success', trans('messages.crud.store', ['title' => $this->title()]));

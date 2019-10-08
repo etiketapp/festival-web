@@ -17,10 +17,9 @@ class LikesTableSeeder extends Seeder
     public function run()
     {
         Like::create([
-            'is_liked'      => true,
-
-            'user_id'       => 1,
-            'festival_id'   => 1,
+            'like_status'       => true,
+            'user_id'           => 1,
+            'festival_id'       => 1,
         ]);
     }
 }

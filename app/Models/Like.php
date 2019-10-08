@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Like extends Model
 {
     protected $fillable = [
-        'is_liked',
-
+        'like_status',
         'user_id',
         'festival_id',
     ];
@@ -21,11 +20,6 @@ class Like extends Model
         'updated_at',
         'deleted_at',
     ];
-
-    protected $casts = [
-        'is_liked'      => 'boolean'
-    ];
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

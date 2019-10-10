@@ -20,6 +20,10 @@ class Like extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    protected $casts = [
+        'is_liked'      => 'boolean'
+    ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

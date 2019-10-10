@@ -12,6 +12,7 @@ class Message extends Model
     protected $fillable = [
         'message',
         'date',
+        'is_seen',
 
         'user_one_id',
         'user_two_id',
@@ -26,6 +27,10 @@ class Message extends Model
         'created_at',
         'updated_at',
         'deleted_at',
+    ];
+
+    protected $casts = [
+        'is_seen'   => 'boolean',
     ];
 
     /**

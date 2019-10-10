@@ -54,6 +54,10 @@ class User extends Authenticatable implements JWTSubject
         'distance',
     ];
 
+    protected $appends = [
+        'is_seen',
+    ];
+
     //Cinsiyet
     const GENDER_MALE   = 'male';
     const GENDER_FEMALE = 'female';
@@ -99,6 +103,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->attributes['distance'];
     }
 
+    public function getIsSeenAttribute()
+    {
+        return $this->messages->is_seen;
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne

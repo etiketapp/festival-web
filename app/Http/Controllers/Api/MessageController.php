@@ -80,6 +80,8 @@ class MessageController extends Controller
             return response()->error('conversation.not-found');
         }
 
+        $conversation->messages->first()->is_seen = true;
+
         return response()->success($conversation->messages);
     }
 }

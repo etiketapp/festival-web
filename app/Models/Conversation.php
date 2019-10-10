@@ -25,7 +25,7 @@ class Conversation extends Model
     public function getLatestMessageAttribute()
     {
         if(Auth::user()) {
-            return $this->messages()->first();
+            return $this->messages->first();
         }
 
         return false;
@@ -36,7 +36,7 @@ class Conversation extends Model
      */
     public function messages()
     {
-        return $this->hasMany(Message::class)->orderBy('date', 'asc');
+        return $this->hasMany(Message::class)->orderBy('id', 'desc');
     }
 
     /**

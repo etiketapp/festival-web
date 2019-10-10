@@ -197,13 +197,6 @@ class FestivalController extends Controller
             return response()->error('festival.not-found');
         }
 
-//        $collection = $model->likes()->get();
-//        foreach ($collection as $col) {
-//            if($col->is_liked == false) {
-//                $col->delete();
-//            }
-//        }
-
         return response()->success($model);
     }
 

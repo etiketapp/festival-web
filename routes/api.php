@@ -37,13 +37,14 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('category', ['as' => 'category.index', 'uses' => 'CategoryController@index']);
 
     // Festival
+    Route::get('festival/{festival}/likeUsers', ['as' => 'festival.likeUsers', 'uses' => 'FestivalController@likeUsers']);
+
     Route::get('festival', ['as' => 'festival.index', 'uses' => 'FestivalController@index']);
     Route::get('festival/like', ['as' => 'festival.like', 'uses' => 'FestivalController@like']);
     Route::get('festival/disLike', ['as' => 'festival.disLike', 'uses' => 'FestivalController@disLike']);
     Route::get('festival/like/count', ['as' => 'festival.like.count', 'uses' => 'FestivalController@likeCount']);
     Route::post('festival/comment', ['as' => 'festival.comment', 'uses' => 'FestivalController@comment']);
     Route::get('festival/comment/count', ['as' => 'festival.comment.count', 'uses' => 'FestivalController@commentCount']);
-    Route::get('festival/{festival}/likeUsers', ['as' => 'festival.likeUsers', 'uses' => 'FestivalController@likeUsers']);
     Route::get('festival/{festival}/commentUsers', ['as' => 'festival.commentUsers', 'uses' => 'FestivalController@commentUsers']);
 
     // Message

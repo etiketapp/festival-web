@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Like extends Model
 {
     protected $fillable = [
-        'like_status',
+        'is_liked',
         'user_id',
         'festival_id',
     ];

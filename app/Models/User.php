@@ -102,11 +102,11 @@ class User extends Authenticatable implements JWTSubject
         }
         return $this->attributes['distance'];
     }
-
-    public function getIsSeenAttribute()
-    {
-        return $this->messages->is_seen;
-    }
+//
+//    public function getIsSeenAttribute()
+//    {
+//        return $this->messages->is_seen;
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne

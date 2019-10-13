@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $model = Category::query()->with('festivals', 'image')->get();
+        $model = Category::query()->with('image')->get();
 
         return response()->success($model);
     }

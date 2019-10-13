@@ -20,7 +20,7 @@ class FestivalController extends Controller
 
         $title      = $request->input('title') ?? '';
         $sort       = $request->input('sort') ?? null;
-        $category   = $request->input('category') ?? false;
+        $category   = $request->input('category_id') ?? false;
         $abroad     = $request->input('abroad') ?? null;
 
         $latitude = $request->input('latitude');

@@ -20,7 +20,8 @@ class FestivalController extends Controller
 
         $title      = $request->input('title') ?? '';
         $sort       = $request->input('sort') ?? null;
-        $category   = $request->input('category') ?? null;
+        $category   = $request->input('category') ?? false;
+        $abroad     = $request->input('abroad') ?? null;
 
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');
@@ -41,6 +42,10 @@ class FestivalController extends Controller
 
         if($category) {
             $query->orderBy($category, 'asc');
+        }
+
+        if($abroad) {
+            $query->orderBy($abroad, 'asc');
         }
 
         $query->distance($location);

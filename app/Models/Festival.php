@@ -18,6 +18,7 @@ class Festival extends Model
         'start_date',
         'end_date',
         'rate',
+        'abroad',
 
         'category_id',
         'location',
@@ -38,6 +39,10 @@ class Festival extends Model
         'is_liked',
         'likes_count',
         'comments_count',
+    ];
+
+    protected $casts = [
+        'abroad'    => 'boolean'
     ];
 
     /*

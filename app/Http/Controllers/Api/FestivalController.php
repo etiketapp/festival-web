@@ -49,8 +49,8 @@ class FestivalController extends Controller
             $query->orderBy($category, 'asc');
         }
 
-        if($abroad) {
-            $query->orderBy($abroad, 'asc');
+        if($isAbroad) {
+            $query->orderBy($isAbroad, 'asc');
         }
 
         $query->distance($location);

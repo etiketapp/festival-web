@@ -25,7 +25,7 @@ class CreateFestivalsTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('rate');
-            $table->boolean('abroad')->default(false);
+            $table->boolean('is_abroad')->default(false);
             $table->timestamps();
 
             $table->unsignedInteger('category_id');

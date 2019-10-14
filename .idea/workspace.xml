@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="93" column="47" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+            <state relative-caret-position="345">
+              <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -485,21 +485,7 @@
       <workItem from="1570987763628" duration="2316000" />
       <workItem from="1571035976130" duration="31000" />
       <workItem from="1571036027612" duration="13000" />
-      <workItem from="1571064895054" duration="3705000" />
-    </task>
-    <task id="LOCAL-00101" summary="version control">
-      <created>1569158465414</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1569158465414</updated>
-    </task>
-    <task id="LOCAL-00102" summary="version control">
-      <created>1569158644394</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1569158644394</updated>
+      <workItem from="1571064895054" duration="5968000" />
     </task>
     <task id="LOCAL-00103" summary="Festival desc rate">
       <created>1569162643243</created>
@@ -830,11 +816,25 @@
       <option name="project" value="LOCAL" />
       <updated>1571072493889</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="message fixed zaaaaaaaaaa">
+      <created>1571072610802</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1571072610802</updated>
+    </task>
+    <task id="LOCAL-00151" summary="message fixed zaaaaaaaaaa">
+      <created>1571072695921</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1571072695921</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269494000" />
+    <option name="totallyTimeSpent" value="271757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -876,7 +876,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Festival is_liked fix" />
     <MESSAGE value="conversation fix" />
     <MESSAGE value="festival like fix" />
     <MESSAGE value="draw tme" />
@@ -901,7 +900,8 @@
     <MESSAGE value="isabroad" />
     <MESSAGE value="abroad migration" />
     <MESSAGE value="abroad seeder" />
-    <option name="LAST_COMMIT_MESSAGE" value="abroad seeder" />
+    <MESSAGE value="message fixed zaaaaaaaaaa" />
+    <option name="LAST_COMMIT_MESSAGE" value="message fixed zaaaaaaaaaa" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/broadcasting.php">
@@ -1275,8 +1275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="93" column="47" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+        <state relative-caret-position="345">
+          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
         </state>
       </provider>
     </entry>

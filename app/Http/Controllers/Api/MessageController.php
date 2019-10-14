@@ -72,8 +72,8 @@ class MessageController extends Controller
 
         $conversation = Conversation::query()
             ->with('messages')
+            ->where('user_two_id', $userTwo->id)
             ->where('user_one_id', $user->id)
-            ->orWhere('user_two_id', $userTwo->id)
             ->first();
 
         if(!$conversation) {

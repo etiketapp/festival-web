@@ -4,10 +4,6 @@
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Conversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Conversation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_13_141318_create_conversations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_13_141318_create_conversations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_14_152313_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_14_152313_create_messages_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,38 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Message.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-              <folding>
-                <element signature="e#30#63#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Conversation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_13_141318_create_conversations_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="489">
+              <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -66,7 +32,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>joindraw</find>
       <find>ad</find>
       <find>conver</find>
       <find>conversati</find>
@@ -96,6 +61,7 @@
       <find>abroad</find>
       <find>is_liked</find>
       <find>conversation.-no</find>
+      <find>unread_message</find>
     </findStrings>
     <replaceStrings>
       <replace>admin</replace>
@@ -156,8 +122,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/FestivalController.php" />
         <option value="$PROJECT_DIR$/app/Models/Message.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_14_152313_create_messages_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Conversation.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_13_141318_create_conversations_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Conversation.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php" />
       </list>
     </option>
@@ -519,21 +485,7 @@
       <workItem from="1570987763628" duration="2316000" />
       <workItem from="1571035976130" duration="31000" />
       <workItem from="1571036027612" duration="13000" />
-      <workItem from="1571064895054" duration="7276000" />
-    </task>
-    <task id="LOCAL-00105" summary="latest message">
-      <created>1569177457909</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1569177457909</updated>
-    </task>
-    <task id="LOCAL-00106" summary="message detail">
-      <created>1569180207721</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1569180207721</updated>
+      <workItem from="1571064895054" duration="7874000" />
     </task>
     <task id="LOCAL-00107" summary="message detail">
       <created>1569180286423</created>
@@ -864,11 +816,25 @@
       <option name="project" value="LOCAL" />
       <updated>1571078258130</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="is seen">
+      <created>1571080407780</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1571080407780</updated>
+    </task>
+    <task id="LOCAL-00155" summary="unread messages">
+      <created>1571080871397</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1571080871397</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273065000" />
+    <option name="totallyTimeSpent" value="273663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -883,7 +849,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3167785" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3167785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -910,8 +876,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="conversation fix" />
-    <MESSAGE value="festival like fix" />
     <MESSAGE value="draw tme" />
     <MESSAGE value="notifications" />
     <MESSAGE value="admin notifications" />
@@ -935,7 +899,9 @@
     <MESSAGE value="abroad migration" />
     <MESSAGE value="abroad seeder" />
     <MESSAGE value="message fixed zaaaaaaaaaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="message fixed zaaaaaaaaaa" />
+    <MESSAGE value="is seen" />
+    <MESSAGE value="unread messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="unread messages" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Models/DrawUserWinner.php">
@@ -1214,16 +1180,6 @@
     <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/acceptance/Swift/MessageAcceptanceTest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="56" selection-start-line="56" selection-end-line="59" />
-          <folding>
-            <element signature="e#30#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1283,6 +1239,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1772">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <element signature="e#30#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1295,22 +1261,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Conversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="640">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_13_141318_create_conversations_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="256">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+        <state relative-caret-position="489">
+          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
         </state>
       </provider>
     </entry>

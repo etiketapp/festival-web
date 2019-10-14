@@ -238,7 +238,7 @@ class UserController extends Controller
             $conversations->push($cv->unread_message);
         }
 
-        $model = $conversations->count();
+        $model['unread_message_count'] = $conversations->count();
 
         return response()->success($model);
     }

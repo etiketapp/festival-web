@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('user/getProfileComments', ['as' => 'user.getProfileComments', 'uses' => 'UserController@getProfileComments']);
     Route::get('user/{user}/notification/count', ['as' => 'user.notification.count', 'uses' => 'UserController@notificationCount']);
     Route::get('user/{user}/notification', ['as' => 'user.notification.index', 'uses' => 'UserController@notifications']);
+    Route::get('user/{user}/unreadcount', ['as' => 'user.unreadmessagecount', 'uses' => 'UserController@unreadMessageCount']);
     Route::put('user/{user}/password', ['as' => 'user.password', 'uses' => 'UserController@password']);
     Route::resource('user', 'UserController', ['only' => ['show', 'update']]);
 

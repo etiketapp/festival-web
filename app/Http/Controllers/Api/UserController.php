@@ -224,4 +224,23 @@ class UserController extends Controller
         return response()->success($model);
     }
 
+    public function unreadMessageCount(Request $request)
+    {
+        $user = $request->user('api');
+        if(!$user) {
+            return response()->error('auth.not-found');
+        }
+
+        $conversations = collect();
+
+        foreach ($user->conversations as $cv)
+        {
+            $conversations->push($cv->unread_message);
+        }
+
+        $model = $conversations->count();
+
+        return response()->success($model);
+    }
+
 }

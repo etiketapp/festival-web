@@ -27,7 +27,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 3,
             'start_date'    => Carbon::now()->addDays(1),
             'end_date'      => Carbon::now()->addDays(20),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 75,
         ]);
 
@@ -41,7 +41,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 2,
             'start_date'    => Carbon::now()->addDays(7),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 80,
         ]);
 
@@ -65,7 +65,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(4),
             'end_date'      => Carbon::now()->addDays(31),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 60,
         ]);
 
@@ -160,7 +160,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 35,
         ]);
 
@@ -202,7 +202,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 25,
         ]);
 
@@ -244,7 +244,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 15,
         ]);
 
@@ -285,7 +285,7 @@ class FestivalsTableSeeder extends Seeder
             'price'         => 800.00,
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'end_date'      => Carbon::now()->addDays(12),
             'rate'          => 5,
         ]);
@@ -328,7 +328,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 40,
         ]);
 
@@ -370,7 +370,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => false,
+            'is_abroad'        => false,
             'rate'          => 20,
         ]);
 
@@ -412,7 +412,7 @@ class FestivalsTableSeeder extends Seeder
             'category_id'   => 1,
             'start_date'    => Carbon::now()->addDays(3),
             'end_date'      => Carbon::now()->addDays(12),
-            'abroad'        => true,
+            'is_abroad'        => true,
             'rate'          => 10,
         ]);
 

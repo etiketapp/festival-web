@@ -42,7 +42,7 @@ class Festival extends Model
     ];
 
     protected $casts = [
-        'abroad'    => 'boolean'
+        'is_abroad'    => 'boolean'
     ];
 
     /*

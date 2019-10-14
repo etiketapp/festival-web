@@ -58,6 +58,10 @@ class MessageController extends Controller
             'date'              => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
+
+        $model->conversation->unread_messages++;
+        $model->conversation->save();
+
         return response()->success($model);
     }
 
@@ -84,6 +88,7 @@ class MessageController extends Controller
         }
 
         $conversation->is_seen = true;
+        $conversation->unread_message = 0;
         $conversation->save();
 
         return response()->success($conversation->messages);

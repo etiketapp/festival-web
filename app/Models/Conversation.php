@@ -11,6 +11,7 @@ class Conversation extends Model
         'user_one_id',
         'user_two_id',
         'is_seen',
+        'unread_messages',
     ];
 
     protected $hidden = [

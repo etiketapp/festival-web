@@ -77,21 +77,11 @@ class MessageController extends Controller
             ->first();
 
         if(!$conversation) {
-            $newConversation = Conversation::create([
+            $conversation = Conversation::create([
                 'user_one_id'      => $user->id,
                 'user_two_id'      => $userTwo->id
             ]);
 
-            // Create message
-            $model = Message::create([
-                'message'           => $request->input('message'),
-                'user_one_id'       => $user->id,
-                'user_two_id'       => $userTwo->id,
-                'conversation_id'   => $conversation != NULL ? $conversation->id : $newConversation->id,
-                'date'              => Carbon::now()->format('Y-m-d H:i:s'),
-            ]);
-
-            return response()->success($model);
         }
 
 

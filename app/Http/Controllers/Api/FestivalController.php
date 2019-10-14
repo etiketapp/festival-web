@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Festival;
 use App\Models\Like;
@@ -20,9 +21,10 @@ class FestivalController extends Controller
 
         $title      = $request->input('title') ?? '';
         $sort       = $request->input('sort') ?? null;
-        $category   = $request->input('category_id') ?? false;
-        $isAbroad     = $request->input('is_abroad') ?? null;
+        $categoryId   = $request->input('category_id') ?? false;
+        $isAbroad   = $request->input('is_abroad') ?? null;
         $isLocation = $request->input('is_location') ?? null;
+
 
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');
@@ -45,17 +47,27 @@ class FestivalController extends Controller
                 break;
         }
 
-        if($category) {
-            $query->orderBy($category, 'asc');
+        if($categoryId) {
+            $category = Category::query()->find($categoryId);
+
+            if(!$category) {
+                return response()->error('category.not-found');
+            }
+
+            $query->get()->sortBy($category->id);
+            return response()->paginate($query);
         }
+
 
         if($isAbroad) {
             $query->orderBy($isAbroad, 'asc');
         }
 
+
         $query->distance($location);
 
         $model = $query;
+
         $model->get()->sortBy('is_liked');
 
         return response()->paginate($model);

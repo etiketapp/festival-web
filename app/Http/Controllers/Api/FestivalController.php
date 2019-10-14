@@ -22,11 +22,16 @@ class FestivalController extends Controller
         $sort       = $request->input('sort') ?? null;
         $category   = $request->input('category_id') ?? false;
         $abroad     = $request->input('abroad') ?? null;
+        $isLocation = $request->input('is_location') ?? null;
 
         $latitude = $request->input('latitude');
         $longitude = $request->input('longitude');
 
         $location = $latitude && $longitude ? "{$latitude},{$longitude}" : null;
+
+        if($isLocation == null) {
+            $location = null;
+        }
 
         $query = Festival::query()
             ->with('image', 'address.city', 'address.county', 'category.image', 'galleries.image')

@@ -10,6 +10,7 @@ class Conversation extends Model
     protected $fillable = [
         'user_one_id',
         'user_two_id',
+        'is_seen',
     ];
 
     protected $hidden = [
@@ -19,8 +20,14 @@ class Conversation extends Model
     ];
 
     protected $appends = [
-        'latest_message'
+        'latest_message',
     ];
+
+
+    protected $casts = [
+        'is_seen'   => 'boolean',
+    ];
+
 
     public function getLatestMessageAttribute()
     {

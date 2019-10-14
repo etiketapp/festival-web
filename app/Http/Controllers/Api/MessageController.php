@@ -81,9 +81,10 @@ class MessageController extends Controller
                 'user_one_id'      => $user->id,
                 'user_two_id'      => $userTwo->id
             ]);
-
         }
 
+        $conversation->is_seen = true;
+        $conversation->save();
 
         return response()->success($conversation->messages);
     }

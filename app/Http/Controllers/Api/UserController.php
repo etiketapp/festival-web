@@ -235,7 +235,7 @@ class UserController extends Controller
 
         foreach ($user->conversations as $cv)
         {
-            $conversations->push($cv->unread_messages);
+            $conversations->push($cv->unread_messages->count());
         }
 
         $model['unread_message_count'] = $conversations->count();

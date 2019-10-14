@@ -231,14 +231,14 @@ class UserController extends Controller
             return response()->error('auth.not-found');
         }
 
-        $conversations = collect();
+        $conversations = [1];
 
         foreach ($user->conversations as $cv)
         {
-            $conversations->push($cv->unread_messages->count());
+            $conversations[0] += $cv->unread_messages;
         }
 
-        $model['unread_message_count'] = $conversations->count();
+        $model['unread_message_count'] = $conversations[0];
 
         return response()->success($model);
     }

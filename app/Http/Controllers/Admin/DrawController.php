@@ -85,8 +85,7 @@ class DrawController extends Controller
                 }//if ($galleriesImage[$key] ?? null)
             }//foreach ($galleries as $key => $gallery)
         }//$galleries
-
-            $users->notify(new DrawWinnerUserNotification($model, $users));
+       $users->notify(new DrawWinnerUserNotification($model, $users));
 
         return redirect()->route($this->routePrefix .'index')
             ->with('success', trans('messages.crud.store', ['title' => $this->title()]));

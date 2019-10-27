@@ -41,7 +41,7 @@ class DrawWinnerUserNotification extends Notification
      */
     public function via($notifiable)
     {
-        return [FcmChannel::class];
+        return [FcmChannel::class, 'database'];
     }
 
     /**

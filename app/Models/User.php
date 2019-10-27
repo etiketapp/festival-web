@@ -11,6 +11,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * @property mixed devices
+ */
 class User extends Authenticatable implements JWTSubject
 {
     use SoftDeletes, Notifiable, Compoships;

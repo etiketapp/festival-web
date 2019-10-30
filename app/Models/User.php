@@ -170,14 +170,6 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function festivals()
-    {
-        return $this->hasMany(Festival::class);
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function devices()
@@ -193,6 +185,9 @@ class User extends Authenticatable implements JWTSubject
         return $this->morphMany(Notification::class, 'notifiable')->orderBy('created_at', 'desc');
     }
 
+    /**
+     * @return mixed
+     */
     public function routeNotificationForFcm()
     {
         return $this->devices->whereIn('platform', ['android', 'ios'])->pluck('token')->toArray();

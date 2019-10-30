@@ -2,7 +2,7 @@
 
 namespace App\Notifications;
 
-use App\Models\User;
+use App\Models\Draw;
 use Illuminate\Notifications\Notification;
 
 class DrawNotification extends Notification

@@ -16,7 +16,6 @@ class DrawRequest extends Request
         $rules = [
             'title'             => 'required',
             'sub_title'         => 'required',
-            'last_date'         => 'required',
             'content'           => 'required',
         ];
 
@@ -31,7 +30,6 @@ class DrawRequest extends Request
         return [
             'title'             => trans('models.draw.title'),
             'sub_title'         => trans('models.draw.sub_title'),
-            'last_date'         => trans('models.draw.last_date'),
             'content'           => trans('models.draw.content'),
         ];
     }

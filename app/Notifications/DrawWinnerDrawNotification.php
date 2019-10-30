@@ -29,7 +29,7 @@ class DrawWinnerDrawNotification extends DrawNotification
      */
     public function __construct(Draw $draw, User $user)
     {
-        parent::__construct($user);
+        parent::__construct($draw);
         $this->draw = $draw;
         $this->user = $user;
     }

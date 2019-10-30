@@ -25,4 +25,9 @@ class Notification extends DatabaseNotification
     {
         return $this->belongsTo(Draw::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

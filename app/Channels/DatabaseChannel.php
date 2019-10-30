@@ -19,7 +19,7 @@ class DatabaseChannel extends \Illuminate\Notifications\Channels\DatabaseChannel
             'type' => get_class($notification),
             'data' => $this->getData($notifiable, $notification),
             'read_at' => null,
-            'user_id' => $notification->getDraw()->id ?? null
+            'draw_id' => $notification->getDraw()->id ?? null
         ];
     }
 }

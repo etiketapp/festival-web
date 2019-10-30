@@ -164,7 +164,8 @@ class UserController extends Controller
         /** @var User $user */
         $user = $request->user();
 
-        $notifications = $user->notifications()->get();
+        $notifications = $user->notifications()
+            ->with('user.image', 'draw.galleries')->get();
 
         $response = response()->success($notifications);
 

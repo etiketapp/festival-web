@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Notifications\Notification;
 
 class UserNotification extends Notification

@@ -19,6 +19,19 @@ class DrawController extends Controller
         return response()->success($model);
     }
 
+    public function show($id)
+    {
+        $model = Draw::query()
+            ->with('galleries.image', 'DrawUserWinner', 'drawUsers', 'image')
+            ->find($id);
+
+        if(!$model) {
+            return response()->error('draw.not-found');
+        }
+
+        return response()->success($model);
+    }
+
     public function joinDraw(Request $request, $drawId)
     {
         $user = $request->user('api');

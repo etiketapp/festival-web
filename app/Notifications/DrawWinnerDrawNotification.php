@@ -25,7 +25,8 @@ class DrawWinnerDrawNotification extends DrawNotification
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param Draw $draw
+     * @param User $user
      */
     public function __construct(Draw $draw, User $user)
     {

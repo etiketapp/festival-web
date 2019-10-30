@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 /**
  * @property mixed devices
+ * @property mixed full_name
  */
 class User extends Authenticatable implements JWTSubject
 {

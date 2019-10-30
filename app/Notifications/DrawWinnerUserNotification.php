@@ -15,7 +15,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class DrawWinnerUserNotification extends Notification
+class DrawWinnerUserNotification extends UserNotification
 {
     use Queueable;
 
@@ -29,6 +29,7 @@ class DrawWinnerUserNotification extends Notification
      */
     public function __construct(Draw $draw, User $user)
     {
+        parent::__construct($user);
         $this->draw = $draw;
         $this->user = $user;
     }
@@ -41,7 +42,7 @@ class DrawWinnerUserNotification extends Notification
      */
     public function via($notifiable)
     {
-        return [FcmChannel::class, 'database'];
+        return [FcmChannel::class, DatabaseChannel::class];
     }
 
     /**
@@ -67,7 +68,7 @@ class DrawWinnerUserNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'text'      => 'Çekilişin Kazananı'
+            'text'      => $this->draw->title . ' Kazananı ' . $this->user->full_name
         ];
     }
 
@@ -78,7 +79,7 @@ class DrawWinnerUserNotification extends Notification
     public function toFcm($notifiable)
     {
         $fcmNotification = FcmNotification::create()
-            ->setTitle(trans('Çekilişin Kazananı 🥑'))
+            ->setTitle($this->draw->title . ' Kazananı 🥑')
             ->setSound("default")
             ->setBadge("1")
             ->setBody(trans('notifications.draw.text', [

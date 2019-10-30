@@ -47,6 +47,7 @@ class FestivalController extends Controller
                 break;
         }
 
+
         if($categoryId) {
             $category = Category::query()->find($categoryId);
 
@@ -54,7 +55,8 @@ class FestivalController extends Controller
                 return response()->error('category.not-found');
             }
 
-            $query->get()->sortBy($category->id);
+            $query->where('category_id', $categoryId)->get();
+//            $query->get()->sortBy($category->id);
             return response()->paginate($query);
         }
 

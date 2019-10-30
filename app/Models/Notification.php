@@ -14,8 +14,8 @@ class Notification extends DatabaseNotification
 
         'updated_at',
 
-        'user_id',
-        'draw_id'
+        'draw_id',
+        'user_id'
     ];
 
     /**
@@ -24,10 +24,5 @@ class Notification extends DatabaseNotification
     public function draw()
     {
         return $this->belongsTo(Draw::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 }

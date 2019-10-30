@@ -23,7 +23,7 @@ class CreateNotificationsTable extends Migration
 
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')
-                ->on('userss')->onUpdate('cascade')->onDelete('cascade');
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
 
             $table->unsignedInteger('draw_id')->nullable();
             $table->foreign('draw_id')->references('id')

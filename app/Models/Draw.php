@@ -62,6 +62,14 @@ class Draw extends Model
         return $this->hasMany(DrawGallery::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
 
     public function getIsJoinedAttribute()
     {

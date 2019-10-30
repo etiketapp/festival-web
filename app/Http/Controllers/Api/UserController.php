@@ -164,8 +164,7 @@ class UserController extends Controller
         /** @var User $user */
         $user = $request->user();
 
-        $notifications = $user->notifications()
-            ->with('festival.galleries.image')->get();
+        $notifications = $user->notifications()->get();
 
         $response = response()->success($notifications);
 

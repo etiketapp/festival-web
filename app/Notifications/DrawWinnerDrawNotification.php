@@ -15,7 +15,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class DrawWinnerUserNotification extends UserNotification
+class DrawWinnerDrawNotification extends DrawNotification
 {
     use Queueable;
 

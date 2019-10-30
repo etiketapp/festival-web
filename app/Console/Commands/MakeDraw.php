@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Draw;
 use App\Models\DrawUserWinner;
 use App\Models\User;
-use App\Notifications\DrawWinnerUserNotification;
+use App\Notifications\DrawWinnerDrawNotification;
 use App\Notifications\WelcomeNotification;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -56,7 +56,7 @@ class MakeDraw extends Command
         $model->save();
 
         foreach ($users as $user) {
-            $user->notify(new DrawWinnerUserNotification($model, $user));
+            $user->notify(new DrawWinnerDrawNotification($model, $user));
         }
     }
 }

@@ -54,7 +54,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('message/send', ['as' => 'message.send', 'uses' => 'MessageController@sendMessage']);
 
     // Draw
-    Route::resource('draws', 'DRawController');
+    Route::resource('draws', 'DrawController');
     Route::get('draw/{drawId}/join', ['as' => 'draw.{drawId}.join', 'uses' => 'DrawController@joinDraw']);
     Route::get('draw/{drawId}/disjoin', ['as' => 'draw.{drawId}.disjoin', 'uses' => 'DrawController@disJoinDraw']);
     Route::get('draw/{drawId}/users', ['as' => 'draw.{drawId}.users', 'uses' => 'DrawController@users']);

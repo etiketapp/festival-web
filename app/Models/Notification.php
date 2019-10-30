@@ -15,7 +15,6 @@ class Notification extends DatabaseNotification
         'updated_at',
 
         'draw_id',
-        'user_id'
     ];
 
     /**

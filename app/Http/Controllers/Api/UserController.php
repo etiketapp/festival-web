@@ -165,7 +165,7 @@ class UserController extends Controller
         $user = $request->user();
 
         $notifications = $user->notifications()
-            ->with('draw.DrawUserWinner')->get();
+            ->with('draw')->get();
 
         $response = response()->success($notifications);
 

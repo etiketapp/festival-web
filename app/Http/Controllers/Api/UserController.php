@@ -226,21 +226,15 @@ class UserController extends Controller
 
     public function unreadMessageCount(Request $request)
     {
-        $user = $request->user('api');
+        $user = $request->user('api')
+            ->load('conversations');
         if(!$user) {
             return response()->error('auth.not-found');
         }
 
-        $conversations = [1];
+        $conversations = $user->conversations;
 
-        foreach ($user->conversations as $cv)
-        {
-            $conversations[0] += $cv->unread_messages;
-        }
-
-        $model['unread_message_count'] = $conversations[0];
-
-        return response()->success($model);
+        return response()->success($conversations);
     }
 
 }

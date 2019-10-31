@@ -234,7 +234,13 @@ class UserController extends Controller
 
         $conversations = $user->conversations;
 
-        return response()->success($conversations);
+        $count['unread_message_count'] = 0;
+
+        foreach ($conversations as $cv) {
+            $count['unread_message_count'] += $cv->unread_message;
+        }
+
+        return response()->success($count);
     }
 
 }

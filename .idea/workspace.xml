@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Conversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Conversation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +22,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
+            <state relative-caret-position="210">
               <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="e#30#63#0#PHP" expanded="true" />
@@ -40,11 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Conversation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="244">
               <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="242" column="40" lean-forward="true" selection-start-line="242" selection-start-column="40" selection-end-line="242" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -140,12 +149,12 @@
         <option value="$PROJECT_DIR$/app/Models/Draw.php" />
         <option value="$PROJECT_DIR$/app/Models/Notification.php" />
         <option value="$PROJECT_DIR$/app/Channels/DatabaseChannel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_13_141318_create_conversations_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php" />
         <option value="$PROJECT_DIR$/app/Models/Conversation.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
       </list>
     </option>
   </component>
@@ -488,21 +497,7 @@
       <workItem from="1572457250093" duration="3762000" />
       <workItem from="1572463149398" duration="966000" />
       <workItem from="1572507325811" duration="11000" />
-      <workItem from="1572547966090" duration="1527000" />
-    </task>
-    <task id="LOCAL-00146" summary="abroad migration">
-      <created>1571065570208</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1571065570208</updated>
-    </task>
-    <task id="LOCAL-00147" summary="abroad seeder">
-      <created>1571065663338</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1571065663338</updated>
+      <workItem from="1572547966090" duration="1976000" />
     </task>
     <task id="LOCAL-00148" summary="abroad seeder">
       <created>1571072377490</created>
@@ -833,11 +828,25 @@
       <option name="project" value="LOCAL" />
       <updated>1572549402834</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="message success">
+      <created>1572549497559</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1572549497559</updated>
+    </task>
+    <task id="LOCAL-00196" summary="unread message">
+      <created>1572549787382</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1572549787382</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286990000" />
+    <option name="totallyTimeSpent" value="287439000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -879,7 +888,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="notification test" />
     <MESSAGE value="devices fix" />
     <MESSAGE value="like status" />
     <MESSAGE value="message" />
@@ -904,7 +912,8 @@
     <MESSAGE value="asdsa" />
     <MESSAGE value="draw detail added" />
     <MESSAGE value="message success" />
-    <option name="LAST_COMMIT_MESSAGE" value="message success" />
+    <MESSAGE value="unread message" />
+    <option name="LAST_COMMIT_MESSAGE" value="unread message" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php">
@@ -1212,13 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -1254,16 +1256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding>
-            <element signature="e#30#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="896">
@@ -1271,10 +1263,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#30#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Conversation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
+        <state relative-caret-position="244">
           <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="242" column="40" lean-forward="true" selection-start-line="242" selection-start-column="40" selection-end-line="242" selection-end-column="40" />
         </state>
       </provider>
     </entry>

@@ -92,11 +92,11 @@ class MessageController extends Controller
 
         if($user->id == $userTwo->id)
         {
-            $conversation->is_seen = false;
+            $conversation->is_seen = true;
         }
         else
         {
-            $conversation->is_seen = true;
+            $conversation->is_seen = false;
         }
 
         $conversation->unread_messages = 0;

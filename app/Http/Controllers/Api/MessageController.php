@@ -62,7 +62,7 @@ class MessageController extends Controller
         $model->conversation->unread_messages++;
         $model->conversation->save();
 
-        return response()->success($model);
+        return response()->message('message.send.success');
     }
 
     public function messageDetail(Request $request)

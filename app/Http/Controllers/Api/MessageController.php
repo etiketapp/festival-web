@@ -7,6 +7,7 @@ use App\Models\Conversation;
 use App\Models\Message;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -62,7 +63,9 @@ class MessageController extends Controller
         $model->conversation->unread_messages++;
         $model->conversation->save();
 
-        return response()->message('message.send.success');
+        $model = Message::query()->find($model->id);
+
+        return response()->success($model);
     }
 
     public function messageDetail(Request $request)

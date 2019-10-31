@@ -62,14 +62,20 @@ class MessageController extends Controller
 
         if($model->user_one_id == $user->id)
         {
+
+            $model->conversation->unread_messages++;
+            $model = Message::query()->find($model->id);
+
+            return response()->success($model);
+
+
+        } else {
             $model->conversation->save();
 
             $model = Message::query()->find($model->id);
 
             return response()->success($model);
         }
-        $model->conversation->unread_messages++;
-        $model = Message::query()->find($model->id);
 
         return response()->success($model);
     }

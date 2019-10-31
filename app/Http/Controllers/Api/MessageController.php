@@ -90,7 +90,15 @@ class MessageController extends Controller
             ]);
         }
 
-        $conversation->is_seen = true;
+        if($user->id == $userTwo->id)
+        {
+            $conversation->is_seen = false;
+        }
+        else
+        {
+            $conversation->is_seen = true;
+        }
+
         $conversation->unread_messages = 0;
         $conversation->save();
 

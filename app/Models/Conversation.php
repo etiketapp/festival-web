@@ -33,7 +33,7 @@ class Conversation extends Model
     public function getLatestMessageAttribute()
     {
         if(Auth::user()) {
-            $this->messages()->orderBy('id', 'desc');
+            $this->messages()->orderBy('id', 'asc');
             return $this->messages()->first();
         }
 

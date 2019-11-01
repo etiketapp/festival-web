@@ -56,26 +56,14 @@ class MessageController extends Controller
             'user_one_id'       => $user->id,
             'user_two_id'       => $user_two->id,
             'conversation_id'   => $conversation != NULL ? $conversation->id : $newConversation->id,
+            'is_readed'         => 0,
             'date'              => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
+        $model->conversation->unread_messages++;
+        $model->conversation->save();
 
-        if($model->user_one_id == $user->id)
-        {
-
-            $model->conversation->unread_messages++;
-            $model = Message::query()->find($model->id);
-
-            return response()->success($model);
-
-
-        } else {
-            $model->conversation->save();
-
-            $model = Message::query()->find($model->id);
-
-            return response()->success($model);
-        }
+        $model = Message::query()->find($model->id);
 
         return response()->success($model);
     }

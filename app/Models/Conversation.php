@@ -22,6 +22,7 @@ class Conversation extends Model
 
     protected $appends = [
         'latest_message',
+        'unreaded_message_count'
     ];
 
 
@@ -38,6 +39,14 @@ class Conversation extends Model
         }
 
         return false;
+    }
+
+    public function getUnreadedMessageCountAttribute()
+    {
+        $this->messages()
+            ->where('user_one_id', '!=',  \Auth::user()->id)
+            ->where('is_readed', 0)
+            ->count();
     }
 
     /**

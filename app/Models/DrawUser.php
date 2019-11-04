@@ -19,12 +19,20 @@ class DrawUser extends Model
     ];
 
     protected $appends = [
-        'draw_users_count'
+        'draw_users_count',
+        'is_draw_joined'
     ];
 
     public function getDrawUsersCountAttribute()
     {
         return $this->user()->count();
+    }
+
+    public function getIsDrawJoinedAttribute()
+    {
+        if($this->user)
+            return true;
+        return false;
     }
 
     /**

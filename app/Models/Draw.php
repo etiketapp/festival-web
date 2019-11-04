@@ -19,7 +19,7 @@ class Draw extends Model
     ];
 
     protected $appends = [
-        'is_joined'
+//        'is_joined'
     ];
 
     protected $hidden = [

@@ -43,7 +43,7 @@ class Conversation extends Model
 
     public function getUnreadedMessageCountAttribute()
     {
-        $this->messages()
+        return $this->messages()
             ->where('user_one_id', '!=',  \Auth::user()->id)
             ->where('is_readed', 0)
             ->count();

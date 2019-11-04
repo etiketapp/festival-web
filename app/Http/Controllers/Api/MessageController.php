@@ -60,7 +60,6 @@ class MessageController extends Controller
             'date'              => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
-        $model->conversation->unread_messages++;
         $model->conversation->save();
 
         $model = Message::query()->find($model->id);

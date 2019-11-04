@@ -16,7 +16,6 @@ class CreateConversationsTable extends Migration
         Schema::create('conversations', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('is_seen')->default(true);
-            $table->integer('unread_messages')->default(0);
             $table->timestamps();
 
             $table->unsignedInteger('user_one_id');

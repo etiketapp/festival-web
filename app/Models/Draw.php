@@ -74,7 +74,7 @@ class Draw extends Model
     public function getIsJoinedAttribute()
     {
         if (Auth::check()) {
-            return !$this->drawUsers->where('user_id', Auth::user()->id);
+            return $this->drawUsers->where('user_id', Auth::user()->id);
         }
 
         return false;

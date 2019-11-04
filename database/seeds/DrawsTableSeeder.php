@@ -24,6 +24,54 @@ class DrawsTableSeeder extends Seeder
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
+        Draw::create([
+            'title'         => 'Araba Çekilişi1',
+            'sub_title'     => 'Araba Çekilişi1',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
+            'last_date'     => \Carbon\Carbon::now()
+        ]);
+
+        Draw::create([
+            'title'         => 'Araba Çekilişi1',
+            'sub_title'     => 'Araba Çekilişi1',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
+            'last_date'     => \Carbon\Carbon::now()
+        ]);
+
+        Draw::create([
+            'title'         => 'Araba Çekilişi1',
+            'sub_title'     => 'Araba Çekilişi1',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
+            'last_date'     => \Carbon\Carbon::now()
+        ]);
+
+        Draw::create([
+            'title'         => 'Araba Çekilişi1',
+            'sub_title'     => 'Araba Çekilişi1',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
+            'last_date'     => \Carbon\Carbon::now()
+        ]);
+
+        Draw::create([
+            'title'         => 'Araba Çekilişi1',
+            'sub_title'     => 'Araba Çekilişi1',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
+            'last_date'     => \Carbon\Carbon::now()
+        ]);
+
+        Draw::create([
+            'title'         => 'Araba Çekilişi1',
+            'sub_title'     => 'Araba Çekilişi1',
+            'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
+            'draw_time'     => \Carbon\Carbon::now()->addHour(1),
+            'last_date'     => \Carbon\Carbon::now()
+        ]);
+
         DrawUser::create([
            'draw_id'        => 1,
            'user_id'        => 1,

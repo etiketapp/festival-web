@@ -156,7 +156,7 @@ class UserController extends Controller
             ->where('user_id', $userId)
             ->get();
 
-        $model->sortBy('created_at', 'desc');
+        $model->sortByDesc('created_at');
 
         return response()->success($model);
     }

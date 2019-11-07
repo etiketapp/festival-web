@@ -200,6 +200,7 @@ class UserController extends Controller
         $model = Like::query()
             ->with('user.image', 'festival.galleries.image', 'festival.category')
             ->where('user_id', $userId)
+            ->orderBy('id', 'DESC')
             ->get();
 
         return response()->success($model);
@@ -220,6 +221,7 @@ class UserController extends Controller
         $model = Comment::query()
             ->with('user.image', 'festival.galleries.image', 'festival.category')
             ->where('user_id', $userId)
+            ->where('id', 'DESC')
             ->get();
 
         return response()->success($model);

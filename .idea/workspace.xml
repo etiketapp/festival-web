@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b736b1f-bd2e-469c-94e1-0bc15c4426d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Draw.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Draw.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DrawUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DrawUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_14_180115_create_draw_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_14_180115_create_draw_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,21 +18,12 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+            <state relative-caret-position="594">
+              <caret line="151" column="90" selection-start-line="151" selection-start-column="90" selection-end-line="151" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -127,7 +115,6 @@
         <option value="$PROJECT_DIR$/app/Models/Message.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_14_152313_create_messages_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/MessagesTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/app/Models/Conversation.php" />
@@ -137,6 +124,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" />
         <option value="$PROJECT_DIR$/app/Models/DrawUser.php" />
         <option value="$PROJECT_DIR$/app/Models/Draw.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -312,19 +300,28 @@
             <path>
               <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="festival-web" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="festival-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="festival-web" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="categories" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -502,14 +499,8 @@
       <workItem from="1572851747155" duration="25000" />
       <workItem from="1572899180039" duration="5488000" />
       <workItem from="1572942292838" duration="72000" />
-      <workItem from="1573140502974" duration="420000" />
-    </task>
-    <task id="LOCAL-00158" summary="unread messages">
-      <created>1571081440923</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1571081440923</updated>
+      <workItem from="1573140502974" duration="1071000" />
+      <workItem from="1573148005987" duration="224000" />
     </task>
     <task id="LOCAL-00159" summary="unread messages">
       <created>1571083163975</created>
@@ -847,11 +838,18 @@
       <option name="project" value="LOCAL" />
       <updated>1572904636652</updated>
     </task>
-    <option name="localTasksCounter" value="207" />
+    <task id="LOCAL-00207" summary="Draw Users Fixed">
+      <created>1573140955092</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1573140955093</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294975000" />
+    <option name="totallyTimeSpent" value="295850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,7 +864,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26040268" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2637584" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -893,7 +891,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="likeusers comment users fix" />
     <MESSAGE value="is liked" />
     <MESSAGE value="latest message" />
     <MESSAGE value="is seen added" />
@@ -918,7 +915,8 @@
     <MESSAGE value="draw" />
     <MESSAGE value="conversation" />
     <MESSAGE value="draw user" />
-    <option name="LAST_COMMIT_MESSAGE" value="draw user" />
+    <MESSAGE value="Draw Users Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draw Users Fixed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_05_181622_create_festivals_table.php">
@@ -1217,13 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="81" column="34" lean-forward="true" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1275,6 +1266,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -1282,10 +1280,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+        <state relative-caret-position="594">
+          <caret line="151" column="90" selection-start-line="151" selection-start-column="90" selection-end-line="151" selection-end-column="90" />
         </state>
       </provider>
     </entry>

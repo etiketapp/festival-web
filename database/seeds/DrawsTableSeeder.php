@@ -17,56 +17,56 @@ class DrawsTableSeeder extends Seeder
     public function run()
     {
         Draw::create([
-            'title'         => 'Araba Çekilişi',
-            'sub_title'     => 'Araba Çekilişi',
+            'title'         => '1',
+            'sub_title'     => '1',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
         Draw::create([
-            'title'         => 'Araba Çekilişi1',
-            'sub_title'     => 'Araba Çekilişi1',
+            'title'         => '2',
+            'sub_title'     => '2',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
         Draw::create([
-            'title'         => 'Araba Çekilişi1',
-            'sub_title'     => 'Araba Çekilişi1',
+            'title'         => '3',
+            'sub_title'     => '3',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
         Draw::create([
-            'title'         => 'Araba Çekilişi1',
-            'sub_title'     => 'Araba Çekilişi1',
+            'title'         => '4',
+            'sub_title'     => '4',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
         Draw::create([
-            'title'         => 'Araba Çekilişi1',
-            'sub_title'     => 'Araba Çekilişi1',
+            'title'         => '4',
+            'sub_title'     => '4',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
         Draw::create([
-            'title'         => 'Araba Çekilişi1',
-            'sub_title'     => 'Araba Çekilişi1',
+            'title'         => '5',
+            'sub_title'     => '5',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
         ]);
 
         Draw::create([
-            'title'         => 'Araba Çekilişi1',
-            'sub_title'     => 'Araba Çekilişi1',
+            'title'         => '6',
+            'sub_title'     => '6',
             'content'       => 'Renault Clio Otomobil Kazanma Şansı Yakalayabilirsiniz!',
             'draw_time'     => \Carbon\Carbon::now()->addHour(1),
             'last_date'     => \Carbon\Carbon::now()
@@ -117,5 +117,41 @@ class DrawsTableSeeder extends Seeder
                 'image' => Intervention::make(database_path('seeds/images/festivals/image_1.jpg')),
             ])
         );
+
+        DrawGallery::create([
+            'draw_id' => 2,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_3.jpg')),
+            ])
+        );
+
+        DrawGallery::create([
+            'draw_id' => 3,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/festivals/image_2.jpg')),
+            ])
+        );
+
+        DrawGallery::create([
+            'draw_id' => 4,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/categories/festival.png')),
+            ])
+        );
+
+        DrawGallery::create([
+            'draw_id' => 5,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/categories/other.png')),
+            ])
+        );
+
+        DrawGallery::create([
+            'draw_id' => 6,
+        ])->image()->save(new Image([
+                'image' => Intervention::make(database_path('seeds/images/categories/muzik.png')),
+            ])
+        );
+
     }
 }

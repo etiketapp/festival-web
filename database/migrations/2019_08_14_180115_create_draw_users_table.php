@@ -15,6 +15,7 @@ class CreateDrawUsersTable extends Migration
     {
         Schema::create('draw_users', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('is_joined')->default(false);
             $table->timestamps();
 
             $table->unsignedInteger('draw_id');

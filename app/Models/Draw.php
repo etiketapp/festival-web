@@ -18,9 +18,6 @@ class Draw extends Model
         'draw_time',
     ];
 
-    protected $appends = [
-//        'is_joined'
-    ];
 
     protected $hidden = [
         'created_at',
@@ -29,6 +26,20 @@ class Draw extends Model
 
         'drawUsers'
     ];
+
+    protected $appends = [
+        'is_joined',
+    ];
+
+    public function getIsJoinedAttribute()
+    {
+        if($this->drawUsers()
+            ->where('user_id', Auth::user('api')->id)
+            ->where('draw_id', $this->id)
+            ->first())
+            return true;
+        return false;
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne
@@ -68,17 +79,6 @@ class Draw extends Model
     public function notifications()
     {
         return $this->hasMany(Notification::class);
-    }
-
-
-    public function getIsJoinedAttribute()
-    {
-        if (Auth::check()) {
-            if($this->drawUsers->where('user_id', Auth::user()->id))
-                return true;
-        }
-
-        return false;
     }
 
 }

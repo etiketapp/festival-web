@@ -10,6 +10,8 @@ class DrawUser extends Model
     protected $fillable = [
         'draw_id',
         'user_id',
+
+        'is_joined',
     ];
 
     protected $hidden = [
@@ -20,7 +22,7 @@ class DrawUser extends Model
 
     protected $appends = [
         'draw_users_count',
-        'is_draw_joined'
+//        'is_draw_joined'
     ];
 
     public function getDrawUsersCountAttribute()
@@ -28,12 +30,12 @@ class DrawUser extends Model
         return $this->user()->count();
     }
 
-    public function getIsDrawJoinedAttribute()
-    {
-        if($this->user)
-            return true;
-        return false;
-    }
+//    public function getIsDrawJoinedAttribute()
+//    {
+//        if($this->user == Auth::user())
+//            return true;
+//        return false;
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

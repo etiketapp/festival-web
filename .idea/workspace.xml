@@ -22,17 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/DrawUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="414">
+              <caret line="158" column="42" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -50,7 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>likeCOun</find>
       <find>count</find>
       <find>likes</find>
       <find>dislike</find>
@@ -80,6 +70,7 @@
       <find>is_joined</find>
       <find>drawUser</find>
       <find>like</find>
+      <find>Drawuser</find>
     </findStrings>
     <replaceStrings>
       <replace>admin</replace>
@@ -139,9 +130,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/MessageController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_14_180115_create_draw_users_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php" />
-        <option value="$PROJECT_DIR$/app/Models/Draw.php" />
         <option value="$PROJECT_DIR$/database/seeds/DrawsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Models/DrawUser.php" />
+        <option value="$PROJECT_DIR$/app/Models/Draw.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
       </list>
     </option>
@@ -540,21 +531,7 @@
       <workItem from="1572942292838" duration="72000" />
       <workItem from="1573140502974" duration="1071000" />
       <workItem from="1573148005987" duration="1168000" />
-      <workItem from="1573149662897" duration="920000" />
-    </task>
-    <task id="LOCAL-00169" summary="Notifications channel added">
-      <created>1572457755044</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1572457755044</updated>
-    </task>
-    <task id="LOCAL-00170" summary="Notifications channel added">
-      <created>1572457894572</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1572457894572</updated>
+      <workItem from="1573149662897" duration="1167000" />
     </task>
     <task id="LOCAL-00171" summary="Notifications channel added">
       <created>1572458012263</created>
@@ -885,11 +862,25 @@
       <option name="project" value="LOCAL" />
       <updated>1573150556545</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="DrawGallery">
+      <created>1573150587333</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1573150587333</updated>
+    </task>
+    <task id="LOCAL-00219" summary="DrawGallery">
+      <created>1573150754989</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1573150754989</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297714000" />
+    <option name="totallyTimeSpent" value="297961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1161,13 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_14_152313_create_messages_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -1290,22 +1274,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/UsersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/DrawUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DrawController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1314,10 +1284,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DrawUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Draw.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
+        <state relative-caret-position="414">
+          <caret line="158" column="42" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
         </state>
       </provider>
     </entry>

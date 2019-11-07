@@ -156,7 +156,9 @@ class UserController extends Controller
             ->where('user_id', $userId)
             ->get();
 
-        $model->orderBy('created_at', 'desc');
+        $model->orderBy('created_at', 'asc');
+
+
 
 
         return response()->success($model);

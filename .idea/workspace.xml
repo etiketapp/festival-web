@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="157" column="20" lean-forward="true" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+            <state relative-caret-position="262">
+              <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -522,21 +522,7 @@
       <workItem from="1572942292838" duration="72000" />
       <workItem from="1573140502974" duration="1071000" />
       <workItem from="1573148005987" duration="1168000" />
-      <workItem from="1573149662897" duration="225000" />
-    </task>
-    <task id="LOCAL-00160" summary="unread messages">
-      <created>1571083257568</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1571083257568</updated>
-    </task>
-    <task id="LOCAL-00161" summary="unread messages">
-      <created>1571083726343</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1571083726343</updated>
+      <workItem from="1573149662897" duration="449000" />
     </task>
     <task id="LOCAL-00162" summary="unread messages">
       <created>1572205610900</created>
@@ -867,11 +853,25 @@
       <option name="project" value="LOCAL" />
       <updated>1573148383089</updated>
     </task>
-    <option name="localTasksCounter" value="209" />
+    <task id="LOCAL-00209" summary="DrawGallery">
+      <created>1573149894304</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1573149894305</updated>
+    </task>
+    <task id="LOCAL-00210" summary="DrawGallery">
+      <created>1573150082225</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1573150082225</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297019000" />
+    <option name="totallyTimeSpent" value="297243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1302,8 +1302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="157" column="20" lean-forward="true" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+        <state relative-caret-position="262">
+          <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
         </state>
       </provider>
     </entry>

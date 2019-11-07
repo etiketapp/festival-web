@@ -158,8 +158,6 @@ class UserController extends Controller
 
         $model->sortByDesc('created_at');
 
-        dd($model);
-
         return response()->success($model);
     }
 

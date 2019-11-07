@@ -157,10 +157,6 @@ class UserController extends Controller
             ->orderBy('id', 'DESC')
             ->get();
 
-        foreach ($model as $key => $md) {
-            $md[$key]->orderBy('id', 'desc');
-        }
-
         return response()->success($model);
     }
 

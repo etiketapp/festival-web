@@ -154,7 +154,7 @@ class UserController extends Controller
         $model = DrawUser::query()
             ->with('user.image', 'draw.galleries.image')
             ->where('user_id', $userId)
-            ->orderBy('is_joined', true)
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return response()->success($model);

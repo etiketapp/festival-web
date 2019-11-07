@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="156" column="32" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
+            <state relative-caret-position="489">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
@@ -522,21 +522,7 @@
       <workItem from="1572942292838" duration="72000" />
       <workItem from="1573140502974" duration="1071000" />
       <workItem from="1573148005987" duration="1168000" />
-      <workItem from="1573149662897" duration="1333000" />
-    </task>
-    <task id="LOCAL-00173" summary="asdsa">
-      <created>1572458326636</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1572458326636</updated>
-    </task>
-    <task id="LOCAL-00174" summary="asdsa">
-      <created>1572458430339</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1572458430339</updated>
+      <workItem from="1573149662897" duration="1468000" />
     </task>
     <task id="LOCAL-00175" summary="asdsa">
       <created>1572458788743</created>
@@ -867,11 +853,25 @@
       <option name="project" value="LOCAL" />
       <updated>1573150957792</updated>
     </task>
-    <option name="localTasksCounter" value="222" />
+    <task id="LOCAL-00222" summary="DrawGallery">
+      <created>1573151002144</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1573151002144</updated>
+    </task>
+    <task id="LOCAL-00223" summary="DrawGallery">
+      <created>1573151093836</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1573151093836</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298127000" />
+    <option name="totallyTimeSpent" value="298262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,13 +941,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="DrawGallery" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/Device.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/DeviceRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1298,10 +1291,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="1734" column="61" lean-forward="true" selection-start-line="1734" selection-start-column="61" selection-end-line="1734" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="156" column="32" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
+        <state relative-caret-position="489">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>

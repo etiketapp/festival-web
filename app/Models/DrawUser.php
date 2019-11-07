@@ -12,13 +12,12 @@ class DrawUser extends Model
         'user_id',
 
         'is_joined',
-    ];
-
-    protected $hidden = [
         'created_at',
         'updated_at',
         'deleted_at',
+
     ];
+
 
     protected $appends = [
         'draw_users_count',

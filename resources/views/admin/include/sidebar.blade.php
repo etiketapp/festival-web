@@ -18,7 +18,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['admin'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.admin.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon flaticon-users-1"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('admin.admin.title', 2) }}</span>
@@ -28,7 +28,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['user'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.user.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon flaticon-users-1"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('admin.user.title', 2) }}</span>
@@ -38,7 +38,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['festival'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.festival.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon flaticon2-map"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('models.festival.title', 2) }}</span>
@@ -48,7 +48,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['category'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.category.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon flaticon2-files-and-folders"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('models.category.title', 2) }}</span>
@@ -58,7 +58,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['contract'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.contract.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon flaticon2-writing"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('admin.contract.title', 2) }}</span>
@@ -68,7 +68,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['draw'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.draw.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon flaticon-gift"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('admin.draw.title', 2) }}</span>
@@ -78,7 +78,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['drawwinner'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.drawwinner.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-iconflaticon-user-ok"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('admin.drawwinner.title', 2) }}</span>
@@ -88,7 +88,7 @@
             </li>
             <li class="m-menu__item {{ Helper::isActiveRoute(['adminnotification'])  }}" aria-haspopup="true">
                 <a href="{{ route('admin.adminnotification.index') }}" class="m-menu__link ">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon  flaticon2-notification"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">{{ trans_choice('admin.adminnotification.title', 2) }}</span>

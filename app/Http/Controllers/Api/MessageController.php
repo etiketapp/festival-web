@@ -98,7 +98,7 @@ class MessageController extends Controller
             $conversation->is_seen = false;
         }
 
-        $conversation->unread_messages = 0;
+        $conversation->unread_messages_count = 0;
         $conversation->save();
 
         return response()->success($conversation->messages);
